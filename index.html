@@ -21,12 +21,12 @@
 <header id="mainHeader">
     <a href="index.html" class="marca-estudio">
   <div class="logo-lockup" style="display:flex;align-items:center;gap:12px">
-    <span class="logo-text" style="font-family:'Playfair Display',serif;font-size:22px;letter-spacing:6px;font-weight:600;color:#fff">RGMA</span>
-    <img src="isologo-dorado-transparente.png" alt="" style="width:32px;height:auto;display:block">
+    <!-- CAMBIO CLAVE: archivo que funciona -->
+    <img src="nombre-logo-estudio.webp" alt="" style="height:38px;width:auto;display:block;background:transparent!important;mix-blend-mode:normal!important;">
   </div>
   <div class="nombre-estudio">
     <span class="apellido-principal">RIGANTI, GEILER</span>
-    <span class="apellido-secundario">& MÁRQUEZ ALLURALDE</span>
+    <span class="apellido-secundario"><span style="font-family:'Times New Roman',serif;font-style:italic;font-weight:400;font-size:1.1em;margin-right:5px;color:#C8B090;">&</span> MÁRQUEZ ALLURALDE</span>
   </div>
 </a>
 
@@ -43,20 +43,18 @@
               <div class="mega-line"></div>
               <p>Especialización<br>a medida.</p>
             </div>
+            <!-- UNIFICADO A NOMENCLATURA PREMIUM (regla #2) -->
             <div class="mega-grid-simple">
-              <a href="derecho-civil-comercial.html">Derecho Civil y Comercial <i>→</i></a>
-              <a href="derecho-familia.html">Derecho de Familia <i>→</i></a>
-              <a href="sucesiones.html">Sucesiones <i>→</i></a>
-              <a href="derecho-inmobiliario.html">Inmobiliario y Propiedad Horizontal <i>→</i></a>
-              <a href="derecho-administrativo.html">Derecho Administrativo <i>→</i></a>
-              <a href="derecho-laboral.html">Derecho Laboral <i>→</i></a>
-              <a href="derecho-consumidor.html">Derecho del Consumidor <i>→</i></a>
-              <a href="derecho-empresarial.html">Derecho Empresarial <i>→</i></a>
-              <a href="contratos-preventivo.html">Contratos y asesoramiento preventivo <i>→</i></a>
-              <a href="litigios.html">Litigios y resolución de conflictos <i>→</i></a>
-              <a href="derecho-deportivo.html">Derecho Deportivo y Entretenimientos <i>→</i></a>
-              <a href="derecho-civil-seguros.html">Derecho Civil, Patrimonial y Seguros <i>→</i></a>
-              <a href="patrimonio-familiar.html">Patrimonio Familiar <i>→</i></a>
+              <a href="derecho-empresarial.html">Empresario y PyMEs <i>→</i></a>
+              <a href="derecho-laboral.html">Laboral Empresario <i>→</i></a>
+              <a href="derecho-civil-seguros.html">Civil y Seguros <i>→</i></a>
+              <a href="derecho-inmobiliario.html">Inmobiliario y PH <i>→</i></a>
+              <a href="derecho-consumidor.html">Digital, IP y Consumidor <i>→</i></a>
+              <a href="derecho-administrativo.html">Administrativo <i>→</i></a>
+              <a href="derecho-deportivo.html">Deportivo <i>→</i></a>
+              <a href="sucesiones.html">Patrimonio Familiar <i>→</i></a>
+              <a href="contratos-preventivo.html">Contratos Preventivo <i>→</i></a>
+              <a href="litigios.html">Litigios <i>→</i></a>
             </div>
           </div>
         </li>
@@ -65,16 +63,56 @@
 
    <div class="right-group">
     <a href="flex.html" class="btn-area-flex">ÁREA FLEX</a>
-    <a href="#contacto" class="btn-nav">CONTACTO</a>
+    <a href="#contacto" class="btn-nav">CONTACTO →</a>
     <a href="invertirenargentina.html" class="investment-pill" id="investmentPill">
       <span class="pill-new">NEW 2026</span>
-      <span class="pill-text">Investment in Argentina</span>
+      <span class="pill-text">Investment in Argentina ↗</span>
     </a>
     <button class="btn-burger" id="btnBurger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
    </div>
 </header>
+
+<style>
+/* BLINDAJE ANTI-CUADRADO BLANCO + ALTA COSTURA */
+#mainHeader img{
+  background:transparent!important;
+  filter:none!important;
+  mix-blend-mode:normal!important;
+}
+#mainHeader{
+  background:#0A1931;
+  border-bottom:1px solid rgba(200,176,144,.15);
+}
+.marca-estudio{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  text-decoration:none;
+  transition:opacity .35s cubic-bezier(0.2,0.8,0.2,1);
+}
+.marca-estudio:hover{opacity:.85}
+.nombre-estudio{
+  display:flex;
+  flex-direction:column;
+  border-left:1px solid rgba(200,176,144,.35);
+  padding-left:16px;
+  line-height:1.1;
+}
+.apellido-principal{font-family:'Playfair Display',serif;color:#fff;font-size:12.5px;letter-spacing:3px}
+.apellido-secundario{font-family:'Playfair Display',serif;color:#fff;font-size:11.5px;letter-spacing:2.5px;margin-top:2px}
+
+/* Regla Flechas: → interno / ↗ externo */
+.mega-grid-simple a i{
+  font-style:normal;
+  transition:transform .4s cubic-bezier(0.2,0.8,0.2,1);
+  display:inline-block;
+}
+.mega-grid-simple a:hover i{transform:translateX(4px)}
+.btn-nav{transition:all .35s cubic-bezier(0.2,0.8,0.2,1)!important}
+.investment-pill .pill-text{letter-spacing:1px}
+</style>
 
 <!-- MOBILE OVERLAY PREMIUM -->
 <div class="mobile-overlay" id="mobileMenu">
