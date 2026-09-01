@@ -392,3 +392,31 @@ header, nav ul{ overflow:visible !important; }
   .investment-seal-link{bottom:22%;right:24px;transform:scale(.8)}
   .f-bottom{flex-direction:column;gap:8px;text-align:center}
 }
+/* === PARCHE ALTA COSTURA DIGITAL - RGMA 2026 === */
+
+/* 1. CTAs - Consistencia flechas */
+.btn-premium-final span, .btn-premium-borde span, .boton-enviar i, .f-btn{
+  display:inline-block; transition:transform .4s cubic-bezier(0.2,0.8,0.2,1);
+}
+.btn-premium-final:hover span, .btn-premium-borde:hover span, .boton-enviar:hover i{ transform:translateX(4px); }
+a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
+
+/* 2. Micro-animaciones premium */
+.nav-desktop a, .mega-grid-simple a, .f-col a, .item-flotante{
+  transition:all .35s cubic-bezier(0.2,0.8,0.2,1) !important;
+}
+.boton-enviar{ background:var(--navy); }
+.boton-enviar:hover{ background:#111827; box-shadow:0 12px 30px rgba(10,25,49,.22); }
+
+/* 3. Formulario UI fina */
+.campo-flotante input::placeholder, .campo-flotante textarea::placeholder{ opacity:0; }
+.campo-flotante label{ opacity:.45; font-weight:300; }
+.campo-flotante input, .campo-flotante textarea{ border-bottom-width:1px !important; border-bottom-color:#E8E2D6 !important; }
+.campo-flotante input:focus + label, .campo-flotante textarea:focus + label{ opacity:1; }
+
+/* 4. Aire para cita sastre */
+.texto-estudio blockquote{
+  line-height:1.6 !important; letter-spacing:.2px; 
+  padding:36px 0 36px 28px; margin:48px 0 !important;
+  font-size:23px; font-weight:300;
+}
