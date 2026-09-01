@@ -4,20 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RGMA | Pesca ITQ & Blue Economy - Teaser Confidencial</title>
-<meta name="description" content="Pesca Argentina ITQ - Cuota transferible, plantas RIGI Mar del Plata / Madryn, Ley 24.922. Estructura SPV Delaware ↔ Argentina. Teaser confidencial bajo NDA.">
+<meta name="description" content="Pesca Argentina ITQ - Cuota transferible, plantas RIGI Mar del Plata / Madryn, Ley 24.922. Estructura SPV Delaware ↔ Argentina.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0A1931;--gold:#C8B090;--paper:#fcfcfc}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit-font-smoothing:antialiased}
-img{ display:block; max-width:100% }
+img{display:block;max-width:100%}
 .font-serif{font-family:'Playfair Display',serif}
-.top-bar{position:absolute;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fff;background:rgba(10,25,49,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,.15)}
+/* FIX PISADO: top-bar absolute pero hero con padding-top real */
+.top-bar{position:absolute;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fff;background:rgba(10,25,49,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,.15)}
 .top-brand{display:flex;align-items:center;gap:16px;color:var(--gold);font-weight:600}
-.hero-pesca{position:relative;height:78vh;min-height:580px;background:var(--navy);display:flex;overflow:hidden}
-.h-left{width:46%;display:flex;flex-direction:column;justify-content:center;padding:110px 5% 60px 6%;background:var(--navy);position:relative;z-index:2}
+.lang-switch{display:flex;gap:8px;align-items:center}
+.lang-switch button{background:transparent;border:1px solid rgba(200,176,144,.25);color:#fff;font-size:9px;letter-spacing:2px;padding:6px 10px;cursor:pointer;transition:all.35s}
+.lang-switch button.active,.lang-switch button:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.hero-pesca{position:relative;height:82vh;min-height:620px;background:var(--navy);display:flex;overflow:hidden}
+.h-left{width:46%;display:flex;flex-direction:column;justify-content:center;padding:150px 5% 60px 6%;background:var(--navy);position:relative;z-index:2}
 .h-right{width:54%;position:relative;overflow:hidden}
-.h-right img{width:100%;height:100%;object-fit:cover;display:block}
+.h-right img{width:100%;height:100%;object-fit:cover}
 .h-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, var(--navy) 0%, transparent 28%)}
 .eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:600}
 .title{font-family:'Playfair Display';font-size:clamp(32px,4vw,56px);line-height:.95;font-weight:300;color:#fff;margin-bottom:20px}
@@ -25,16 +29,24 @@ img{ display:block; max-width:100% }
 .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;margin-top:24px;max-width:420px}
 .kpi b{font-family:'Playfair Display';font-size:22px;color:var(--gold);font-weight:400;display:block}
 .kpi span{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.45);text-transform:uppercase}
-.cta{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,176,144,.35);padding:14px 28px;text-decoration:none;transition:.35s;background:transparent}
+.cta{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,176,144,.35);padding:14px 28px;text-decoration:none;transition:.35s}
 .cta:hover{background:var(--gold);color:var(--navy)}
-.cta.gold{background:transparent;color:var(--gold)}
-.cta.gold:hover{background:var(--gold);color:var(--navy)}
-.sticky-nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #eee}
-.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+/* NAV CON DROPDOWN FIXEADO */
+.sticky-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #eee;overflow:visible}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;overflow:visible}
 .logo{font-family:'Playfair Display';font-weight:700;font-size:13px;color:var(--navy);display:flex;align-items:center;gap:12px;text-decoration:none}
+.menu{display:flex;gap:24px;align-items:center}
 .m-link{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;text-decoration:none;padding:24px 0;transition:.3s}
 .m-link:hover{color:var(--navy)}
-.content{max-width:1280px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:80px;align-items:start}
+.dropdown{position:relative;padding:24px 0}
+.dropdown-trigger{color:var(--gold)!important;font-weight:700;cursor:pointer}
+.dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);display:none;min-width:340px;background:#0A1931;border-top:2px solid #C8B090;box-shadow:0 25px 50px rgba(10,25,49,.4);z-index:200}
+.dropdown:hover.dropdown-menu,
+.dropdown:focus-within.dropdown-menu{display:block}
+.dropdown-menu a{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;color:rgba(255,255,255,.75);font-size:11px;letter-spacing:2.2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07)}
+.dropdown-menu a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
+.btn-home{background:var(--gold);color:var(--navy);padding:8px 16px;font-size:9px;letter-spacing:2px;font-weight:700;text-decoration:none;border:1px solid var(--gold)}
+.content{max-width:1280px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1.2fr.8fr;gap:80px}
 .card{background:#fff;border:1px solid #EAEAEA;padding:36px;box-shadow:0 10px 40px rgba(10,25,49,.06)}
 .card-dark{background:var(--navy);border:1px solid rgba(255,255,255,.1);padding:36px;color:#fff}
 .row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,.08);padding-bottom:14px;margin-bottom:14px;font-size:13px}
@@ -45,21 +57,13 @@ img{ display:block; max-width:100% }
 .row-dark span:last-child{color:#fff}
 .btn{display:block;text-align:center;background:var(--navy);border:1px solid var(--navy);color:#fff;font-size:11px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none;margin-top:24px;transition:.35s;cursor:pointer}
 .btn:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
-.btn-gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
-.btn-gold:hover{background:var(--navy);color:#fff}
 #nda-modal{position:fixed;inset:0;z-index:9999;background:rgba(8,15,31,.85);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:20px}
 #nda-modal.open{display:flex}
-.nda-box{background:#fff;max-width:520px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.nda-box{background:#fff;max-width:520px;width:100%}
 .nda-header{background:var(--navy);padding:28px 32px;display:flex;justify-content:space-between;align-items:center}
-.nda-header h3{font-family:'Playfair Display';color:#fff;font-size:18px;font-weight:400}
-.nda-header span{color:var(--gold);font-size:10px;letter-spacing:2px}
 .nda-body{padding:28px 32px}
-.nda-check{display:flex;gap:12px;align-items:flex-start;background:#FAFAF8;border:1px solid #eee;padding:16px;margin:20px 0}
-.nda-btn{flex:1;padding:14px;font-size:10px;letter-spacing:2px;font-weight:700;cursor:pointer;border:1px solid;transition:.3s;text-transform:uppercase}
-.nda-confirm{background:var(--navy);border-color:var(--navy);color:#fff}
-.nda-confirm:disabled{opacity:.4;pointer-events:none}
-.nda-cancel{background:#fff;border-color:#ddd;color:#6b7280}
-@media(max-width:1024px){.hero-pesca{flex-direction:column;height:auto}.h-left{width:100%;padding:100px 24px 40px}.h-right{width:100%;height:360px}.h-right::after{background:linear-gradient(180deg, var(--navy) 0%, transparent 20%)}.content{grid-template-columns:1fr;padding:40px 24px;gap:40px}.top-bar{padding:12px 16px}}
+.nda-check{display:flex;gap:12px;background:#FAFAF8;border:1px solid #eee;padding:16px;margin:20px 0}
+@media(max-width:1024px){.hero-pesca{flex-direction:column;height:auto}.h-left{width:100%;padding:120px 24px 40px}.h-right{width:100%;height:360px}.content{grid-template-columns:1fr;padding:40px 24px}.top-bar{padding:12px 16px;flex-wrap:wrap;gap:10px}.menu{display:none}}
 </style>
 </head>
 <body>
@@ -68,100 +72,72 @@ img{ display:block; max-width:100% }
   <div class="top-brand">
     <img src="logo-final.webp" alt="RGMA" style="height:28px;width:auto">
     <span style="width:1px;height:18px;background:rgba(255,255,255,0.2);display:inline-block"></span>
-    <div>RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK</div>
+    <div data-i18n="top_brand">RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK</div>
   </div>
-  <a href="index.html" style="color:#fff;text-decoration:none">← VOLVER</a>
+  <div style="display:flex;gap:16px;align-items:center">
+    <a href="index.html" class="btn-home" data-i18n="btn_inicio">INICIO</a>
+    <div class="lang-switch"><button class="active" data-lang="es">ES</button><button data-lang="en">EN</button><button data-lang="pt">PT</button><button data-lang="zh">中文</button></div>
+    <a href="index.html" style="color:#fff;text-decoration:none" data-i18n="btn_volver">← VOLVER</a>
+  </div>
 </div>
 
 <div class="hero-pesca">
   <div class="h-left">
-    <div class="eyebrow">04 — EXCLUSIVO RGMA • LEY 24.922</div>
-    <h1 class="title">Pesca: la última<br>frontera RIGI que<br>nadie mira.</h1>
-    <p class="desc">Flota, plantas y JV con cuota ITQ transferible. Planta RIGI Mar del Plata / Puerto Madryn con 0% retenciones, libre giro de divisas y estabilidad fiscal 30 años. Estructura S.A.U. + Quota Trust.</p>
-    <div style="display:flex;gap:12px">
-      <a class="cta gold" href="#solicitar">SOLICITAR TEASER PESCA →</a>
-      <a class="cta" href="index.html">VER TODAS LAS ÁREAS</a>
+    <div class="eyebrow" data-i18n="eye">04 — EXCLUSIVO RGMA • LEY 24.922</div>
+    <h1 class="title" data-i18n="title">Pesca: la última<br>frontera RIGI que<br>nadie mira.</h1>
+    <p class="desc" data-i18n="desc">Flota, plantas y JV con cuota ITQ transferible. Planta RIGI Mar del Plata / Puerto Madryn con 0% retenciones, libre giro de divisas y estabilidad fiscal 30 años.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="cta" href="#solicitar" data-i18n="cta1">SOLICITAR TEASER PESCA →</a>
+      <a class="cta" href="index.html" data-i18n="cta2">VER TODAS LAS ÁREAS</a>
     </div>
     <div class="kpi">
-      <div><b>USD 2.1B</b><span>Export 2024</span></div>
-      <div><b>0%</b><span>RIGI Retenciones</span></div>
-      <div><b>ITQ</b><span>Cuota Transferible</span></div>
+      <div><b>USD 2.1B</b><span data-i18n="k1">Export 2024</span></div>
+      <div><b>0%</b><span data-i18n="k2">RIGI Retenciones</span></div>
+      <div><b>ITQ</b><span data-i18n="k3">Cuota Transferible</span></div>
     </div>
   </div>
-  <div class="h-right">
-    <img src="pesca-altura.webp" alt="Pesca altura Argentina ITQ" fetchpriority="high">
-  </div>
+  <div class="h-right"><img src="pesca-altura.webp" alt=""></div>
 </div>
 
-<nav class="sticky-nav"><div class="nav-inner"><a href="index.html" class="logo"><img src="logo-final.webp" alt="RGMA" style="height:26px;width:auto"> RGMA ARGENTINA DESK — PESCA</a><div style="display:flex;gap:24px"><a class="m-link" href="energia.html">Energía</a><a class="m-link" href="agronegocios.html">Agronegocios</a><a class="m-link" href="mineria.html">Minería</a><a class="m-link" href="pesca.html" style="color:var(--gold);font-weight:700">Pesca ★</a><a class="m-link" href="logistica.html">Logística</a></div></div></nav>
+<nav class="sticky-nav"><div class="nav-inner">
+<a href="index.html" class="logo"><img src="logo-final.webp" alt="RGMA" style="height:26px"> RGMA ARGENTINA DESK — PESCA</a>
+<div class="menu">
+  <a class="m-link" href="index.html" style="color:var(--gold);font-weight:700" data-i18n="btn_inicio">INICIO</a>
+  <div class="dropdown"><span class="m-link dropdown-trigger">AREAS ▾</span><div class="dropdown-menu">
+    <a href="energia.html"><span>01 — ENERGÍA</span><span>→</span></a>
+    <a href="agronegocios.html"><span>02 — AGRONEGOCIOS</span><span>→</span></a>
+    <a href="mineria.html"><span>03 — MINERÍA</span><span>→</span></a>
+    <a href="pesca.html"><span>04 — PESCA ★</span><span>→</span></a>
+    <a href="logistica.html"><span>05 — LOGÍSTICA</span><span>→</span></a>
+  </div></div>
+  <a class="m-link" href="energia.html">Energía</a><a class="m-link" href="pesca.html" style="color:var(--gold);font-weight:700">Pesca</a>
+</div>
+</div></nav>
 
 <div class="content">
   <div>
-    <span style="font-size:10px;letter-spacing:3.6px;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:20px">BLUE ECONOMY — RGMA ARGENTINA DESK</span>
-    <h2 class="font-serif" style="font-size:clamp(28px,3.5vw,44px);line-height:1.05;font-weight:300;color:var(--navy);margin-bottom:24px">Estructura jurídica para<br>flota, cuota ITQ y<br>planta RIGI en USD.</h2>
-    <p style="font-size:14.5px;line-height:1.75;color:#5A6B82;margin-bottom:32px">Traducimos la Ley Federal de Pesca 24.922 en una arquitectura de inversión clara. La cuota ITQ es un activo transferible, prendable y heredable. Combinada con una planta de procesamiento bajo RIGI (Ley 27.742), obtenés 0% derechos de exportación, libre disponibilidad de divisas y estabilidad por 30 años.</p>
-    
-    <div style="background:#FFFBF2;border:1px solid #E9E0CE;padding:24px;margin-bottom:32px">
-      <h4 class="font-serif" style="color:var(--navy);margin-bottom:12px">¿Por qué Pesca es la frontera RIGI que nadie ve?</h4>
-      <ul style="font-size:13px;line-height:1.7;color:#4A5A6F;padding-left:18px">
-        <li><strong>ITQ transferible:</strong> La cuota no es permiso, es activo. Se puede comprar, vender y dar en garantía.</li>
-        <li><strong>Planta RIGI 0%:</strong> Procesamiento en Mar del Plata / Madryn con 0% retenciones y reintegros.</li>
-        <li><strong>JV con armador local:</strong> No necesitás comprar flota. JV + contrato de fletamento.</li>
-        <li><strong>Off-take Asia:</strong> Langostino, merluza hubbsi y calamar con off-take directo.</li>
-      </ul>
-    </div>
-
+    <span style="font-size:10px;letter-spacing:3.6px;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:20px" data-i18n="label">BLUE ECONOMY — RGMA ARGENTINA DESK</span>
+    <h2 class="font-serif" style="font-size:clamp(28px,3.5vw,44px);line-height:1.05;font-weight:300;color:var(--navy);margin-bottom:24px" data-i18n="h2">Estructura jurídica para<br>flota, cuota ITQ y<br>planta RIGI en USD.</h2>
+    <p style="font-size:14.5px;line-height:1.75;color:#5A6B82;margin-bottom:32px" data-i18n="p1">Traducimos la Ley Federal de Pesca 24.922 en una arquitectura de inversión clara. La cuota ITQ es un activo transferible, prendable y heredable. Combinada con una planta de procesamiento bajo RIGI (Ley 27.742), obtenés 0% derechos de exportación, libre disponibilidad de divisas y estabilidad por 30 años.</p>
     <div class="card">
-      <h3 class="font-serif" style="color:var(--navy);margin-bottom:24px">Vehículo Recomendado — Fishing SPV</h3>
-      <div class="row"><span>Vehículo</span><span>S.A.U. + Fideicomiso de Cuota ITQ</span></div>
-      <div class="row"><span>Ley aplicable</span><span>Ley 24.922 + RIGI Ley 27.742</span></div>
-      <div class="row"><span>Activo</span><span>Cuota ITQ Langostino / Merluza + Buques</span></div>
+      <h3 class="font-serif" style="color:var(--navy);margin-bottom:24px" data-i18n="card_title">Vehículo Recomendado — Fishing SPV</h3>
+      <div class="row"><span data-i18n="r1">Vehículo</span><span>S.A.U. + Fideicomiso de Cuota ITQ</span></div>
+      <div class="row"><span>Ley</span><span>Ley 24.922 + RIGI Ley 27.742</span></div>
+      <div class="row"><span>Activo</span><span data-i18n="r3">Cuota ITQ Langostino / Merluza + Buques</span></div>
       <div class="row"><span>Planta</span><span>RIGI Mar del Plata / Madryn 30 años</span></div>
       <div class="row"><span>Ticket</span><span>USD 5M - 40M</span></div>
-      <div class="row" style="border:0;margin:0"><span>Exit</span><span>Dividendo USD + Venta de cuota</span></div>
-    </div>
-
-    <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
-      <div style="background:var(--navy);padding:20px"><b style="color:var(--gold);font-family:'Playfair Display';font-size:20px">USD 2.1B</b><br><span style="font-size:9px;color:rgba(255,255,255,.5);letter-spacing:2px">EXPORT PESCA 2024</span></div>
-      <div style="background:#fff;border:1px solid #eee;padding:20px"><b style="color:var(--navy);font-family:'Playfair Display';font-size:20px">100%</b><br><span style="font-size:9px;color:#999;letter-spacing:2px">LIBRE GIRO DIVISAS RIGI</span></div>
+      <div class="row" style="border:0;margin:0"><span>Exit</span><span data-i18n="r6">Dividendo USD + Venta de cuota</span></div>
     </div>
   </div>
-
   <div id="solicitar">
     <div class="card-dark">
-      <span style="font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:600">PROTOCOLO CONFIDENCIAL</span>
-      <h3 class="font-serif" style="font-size:26px;font-weight:300;margin:12px 0 20px;line-height:1.1">Solicitar Teaser<br>Pesca ITQ</h3>
-      <p style="font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.6);margin-bottom:24px">Este teaser contiene estructura SPV, modelo de cuota transferible, CAPEX de planta RIGI y comparables de M&A. Requiere aceptación de NDA.</p>
-      
+      <span style="font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:600" data-i18n="prot">PROTOCOLO CONFIDENCIAL</span>
+      <h3 class="font-serif" style="font-size:26px;font-weight:300;margin:12px 0 20px;line-height:1.1" data-i18n="form_title">Solicitar Teaser<br>Pesca ITQ</h3>
       <form id="form-pesca" style="display:grid;gap:12px">
-        <input required placeholder="Nombre completo" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff">
-        <input required type="email" placeholder="Email corporativo" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff">
-        <input placeholder="Fondo / Empresa" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff">
-        <select style="background:#0A1931;border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff">
-          <option>Ticket estimado</option>
-          <option>USD 5M - 15M</option>
-          <option>USD 15M - 40M</option>
-          <option>USD 40M+</option>
-        </select>
-        <button type="submit" class="btn btn-gold" style="margin-top:8px">✓ SOLICITAR TEASER PESCA + NDA</button>
-        <span style="font-size:9px;color:rgba(255,255,255,.35);text-align:center;letter-spacing:1px;margin-top:8px">RGMA — DESDE 1948 — CONFIDENCIAL BAJO NDA 24 MESES</span>
+        <input required placeholder="Nombre completo" data-i18n-ph="ph_name" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff">
+        <input required type="email" placeholder="Email corporativo" data-i18n-ph="ph_email" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff">
+        <button type="submit" class="btn" style="background:var(--gold);color:var(--navy)" data-i18n="btn_form">✓ SOLICITAR TEASER PESCA + NDA</button>
       </form>
-    </div>
-
-    <div class="card" style="margin-top:24px;padding:24px">
-      <h4 class="font-serif" style="color:var(--navy);margin-bottom:12px;font-size:15px">Incluye en el Teaser:</h4>
-      <ul style="font-size:12px;line-height:1.8;color:#4A5A6F;padding-left:16px">
-        <li>Estructura Delaware LLC ↔ S.A.U. Argentina</li>
-        <li>Contrato tipo de transferencia de Cuota ITQ</li>
-        <li>CAPEX/OPEX planta RIGI Mar del Plata</li>
-        <li>Modelo fiscal: 0% retenciones + reintegros</li>
-        <li>Due diligence checklist 48hs RGMA</li>
-      </ul>
-    </div>
-
-    <div style="margin-top:24px">
-      <img src="pesca-altura.webp" alt="Pesca altura ITQ" style="width:100%;height:200px;object-fit:cover;opacity:.9">
-      <p style="font-size:9px;letter-spacing:2px;color:#999;text-transform:uppercase;margin-top:8px;text-align:center">FLOTA PESQUERA ALTURA • LEY 24.922 • CUOTA ITQ TRANSFERIBLE</p>
     </div>
   </div>
 </div>
@@ -169,39 +145,36 @@ img{ display:block; max-width:100% }
 <footer style="background:#080F1F;color:#666;padding:32px;text-align:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:12px">
   <img src="logo-final.webp" alt="RGMA" style="height:28px;width:auto;opacity:.8">
   <span>© 2026 RGMA — PESCA DESK • ITQ + RIGI • CONFIDENCIAL</span>
-  <a href="index.html" style="color:var(--gold);text-decoration:none;letter-spacing:3px;margin-top:8px">← VOLVER A ARGENTINA DESK</a>
+  <a href="index.html" style="color:var(--gold);text-decoration:none;margin-top:8px" data-i18n="volver">← VOLVER A ARGENTINA DESK</a>
 </footer>
 
-<div id="nda-modal">
-  <div class="nda-box">
-    <div class="nda-header"><div><h3>Teaser Pesca ITQ — Confidencial</h3><span>ÁREA: PESCA — LEY 24.922 + RIGI</span></div><button class="close-nda" id="close-nda" style="background:transparent;border:0;color:rgba(255,255,255,.5);font-size:20px;cursor:pointer">✕</button></div>
-    <div class="nda-body">
-      <p><strong style="color:var(--navy)">RGMA Argentina Desk — Protocolo de Confidencialidad Pesca.</strong></p>
-      <p style="font-size:13px;line-height:1.6;color:#4A5A6F">Este Teaser contiene información privilegiada sobre cuotas ITQ de langostino/merluza, contratos de JV con armadores, CAPEX de planta RIGI y estructuras Delaware ↔ Argentina. Su divulgación a competidores o terceros está prohibida por 24 meses.</p>
-      <div class="nda-check"><input type="checkbox" id="check-nda"><label for="check-nda" style="font-size:11.5px;line-height:1.5;color:#0A1931">He leído y acepto el <strong>NDA de Pesca RGMA</strong>. Entiendo que la cuota ITQ y el modelo RIGI son confidenciales. Acepto jurisdicción CABA.</label></div>
-      <div style="display:flex;gap:12px"><button class="nda-btn nda-cancel" id="cancel-nda">Cancelar</button><button class="nda-btn nda-confirm" id="confirm-nda" disabled>✓ ACEPTAR NDA Y ENVIAR TEASER</button></div>
-    </div>
-  </div>
-</div>
+<div id="nda-modal"><div class="nda-box"><div class="nda-header"><div><h3 data-i18n="nda_title">Teaser Pesca ITQ — Confidencial</h3><span>ÁREA: PESCA — LEY 24.922 + RIGI</span></div><button id="close-nda" style="background:transparent;border:0;color:#fff;font-size:20px">✕</button></div><div class="nda-body"><p data-i18n="nda_p1">Este Teaser contiene información privilegiada sobre cuotas ITQ...</p><div class="nda-check"><input type="checkbox" id="check-nda"><label for="check-nda" style="font-size:11.5px" data-i18n="nda_check">He leído y acepto el NDA de Pesca RGMA.</label></div><div style="display:flex;gap:12px"><button class="btn" id="cancel-nda" style="background:#fff;color:#666;border-color:#ddd;flex:1">Cancelar</button><button class="btn" id="confirm-nda" disabled style="flex:1">✓ ACEPTAR NDA</button></div></div></div></div>
 
 <script>
-const modal=document.getElementById('nda-modal');
-const check=document.getElementById('check-nda');
-const btnConfirm=document.getElementById('confirm-nda');
+const i18n={
+es:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",btn_inicio:"INICIO",btn_volver:"← VOLVER",eye:"04 — EXCLUSIVO RGMA • LEY 24.922",title:"Pesca: la última<br>frontera RIGI que<br>nadie mira.",desc:"Flota, plantas y JV con cuota ITQ transferible. Planta RIGI Mar del Plata / Puerto Madryn con 0% retenciones, libre giro de divisas y estabilidad fiscal 30 años.",cta1:"SOLICITAR TEASER PESCA →",cta2:"VER TODAS LAS ÁREAS",k1:"Export 2024",k2:"RIGI Retenciones",k3:"Cuota Transferible",label:"BLUE ECONOMY — RGMA ARGENTINA DESK",h2:"Estructura jurídica para<br>flota, cuota ITQ y<br>planta RIGI en USD.",p1:"Traducimos la Ley Federal de Pesca 24.922 en una arquitectura de inversión clara.",card_title:"Vehículo Recomendado — Fishing SPV",r1:"Vehículo",r3:"Cuota ITQ Langostino / Merluza + Buques",r6:"Dividendo USD + Venta de cuota",prot:"PROTOCOLO CONFIDENCIAL",form_title:"Solicitar Teaser<br>Pesca ITQ",ph_name:"Nombre completo",ph_email:"Email corporativo",btn_form:"✓ SOLICITAR TEASER PESCA + NDA",volver:"← VOLVER A ARGENTINA DESK",nda_title:"Teaser Pesca ITQ — Confidencial",nda_p1:"Este Teaser contiene información privilegiada sobre cuotas ITQ de langostino/merluza, contratos de JV, CAPEX de planta RIGI y estructuras Delaware ↔ Argentina. Prohibida divulgación 24 meses.",nda_check:"He leído y acepto el NDA de Pesca RGMA."},
+en:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",btn_inicio:"HOME",btn_volver:"← BACK",eye:"04 — EXCLUSIVE RGMA • LAW 24.922",title:"Fishing: the last<br>RIGI frontier<br>no one sees.",desc:"Fleet, plants and JV with transferable ITQ quota. RIGI plant Mar del Plata / Puerto Madryn with 0% retentions, free FX and 30-year fiscal stability.",cta1:"REQUEST FISHING TEASER →",cta2:"VIEW ALL AREAS",k1:"Export 2024",k2:"RIGI Retentions",k3:"Transferable Quota",label:"BLUE ECONOMY — RGMA ARGENTINA DESK",h2:"Legal architecture for<br>fleet, ITQ quota and<br>RIGI plant in USD.",p1:"We translate Federal Fishing Law 24.922 into a clear investment architecture. ITQ quota is a transferable asset.",card_title:"Recommended Vehicle — Fishing SPV",r1:"Vehicle",r3:"ITQ Shrimp / Hake Quota + Vessels",r6:"USD Dividend + Quota Sale",prot:"CONFIDENTIAL PROTOCOL",form_title:"Request<br>ITQ Fishing Teaser",ph_name:"Full name",ph_email:"Corporate email",btn_form:"✓ REQUEST FISHING TEASER + NDA",volver:"← BACK TO ARGENTINA DESK",nda_title:"Fishing ITQ Teaser — Confidential",nda_p1:"This Teaser contains privileged information on shrimp/hake ITQ quotas, JV contracts, RIGI plant CAPEX and Delaware ↔ Argentina structures. No disclosure for 24 months.",nda_check:"I have read and accept RGMA Fishing NDA."},
+pt:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",btn_inicio:"INÍCIO",btn_volver:"← VOLTAR",eye:"04 — EXCLUSIVO RGMA • LEI 24.922",title:"Pesca: a última<br>fronteira RIGI que<br>ninguém vê.",desc:"Frota, plantas e JV com quota ITQ transferível. Planta RIGI Mar del Plata / Puerto Madryn com 0% retenções, livre câmbio e estabilidade fiscal de 30 anos.",cta1:"SOLICITAR TEASER PESCA →",cta2:"VER TODAS AS ÁREAS",k1:"Export 2024",k2:"Retenções RIGI",k3:"Quota Transferível",label:"BLUE ECONOMY — RGMA ARGENTINA DESK",h2:"Arquitetura jurídica para<br>frota, quota ITQ e<br>planta RIGI em USD.",p1:"Traduzimos a Lei Federal de Pesca 24.922 em uma arquitetura de investimento clara.",card_title:"Veículo Recomendado — Fishing SPV",r1:"Veículo",r3:"Quota ITQ Camarão / Merluza + Embarcações",r6:"Dividendo USD + Venda de quota",prot:"PROTOCOLO CONFIDENCIAL",form_title:"Solicitar Teaser<br>Pesca ITQ",ph_name:"Nome completo",ph_email:"E-mail corporativo",btn_form:"✓ SOLICITAR TEASER PESCA + NDA",volver:"← VOLTAR AO ARGENTINA DESK",nda_title:"Teaser Pesca ITQ — Confidencial",nda_p1:"Este Teaser contém informação privilegiada sobre quotas ITQ de camarão/merluza, contratos JV, CAPEX planta RIGI e estruturas Delaware ↔ Argentina.",nda_check:"Li e aceito o NDA de Pesca RGMA."},
+zh:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — 阿根廷服务台",btn_inicio:"首页",btn_volver:"← 返回",eye:"04 — RGMA 独家 • 第24.922号法律",title:"渔业：最后的<br>RIGI前沿<br>无人关注。",desc:"拥有可转让ITQ配额的船队、工厂和合资企业。Mar del Plata / Puerto Madryn 的RIGI工厂，0%预扣，自由外汇和30年财政稳定。",cta1:"索取渔业资料 →",cta2:"查看所有领域",k1:"2024年出口",k2:"RIGI预扣",k3:"可转让配额",label:"蓝色经济 — RGMA 阿根廷服务台",h2:"为船队、ITQ配额和<br>RIGI工厂提供<br>美元法律架构。",p1:"我们将第24.922号联邦渔业法转化为清晰的投资架构。ITQ配额是可转让资产。",card_title:"推荐载体 — 渔业SPV",r1:"载体",r3:"ITQ 虾/鳕鱼配额 + 船只",r6:"美元分红 + 配额出售",prot:"保密协议",form_title:"索取<br>ITQ渔业资料",ph_name:"全名",ph_email:"企业邮箱",btn_form:"✓ 索取渔业资料 + NDA",volver:"← 返回阿根廷服务台",nda_title:"ITQ渔业资料 — 保密",nda_p1:"本资料包含关于虾/鳕鱼ITQ配额、JV合同、RIGI工厂CAPEX和Delaware ↔ 阿根廷结构的特权信息。24个月内禁止披露。",nda_check:"我已阅读并接受RGMA渔业NDA。"}
+};
+function setLang(l){
+ localStorage.setItem('rgma_lang',l);
+ document.documentElement.lang=l;
+ document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+ document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(i18n[l]&&i18n[l][k]) el.innerHTML=i18n[l][k];});
+ document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const k=el.getAttribute('data-i18n-ph'); if(i18n[l]&&i18n[l][k]) el.placeholder=i18n[l][k];});
+}
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+setLang(localStorage.getItem('rgma_lang')||'es');
+const modal=document.getElementById('nda-modal'), check=document.getElementById('check-nda'), btnConfirm=document.getElementById('confirm-nda');
 function openNDA(){modal.classList.add('open');check.checked=false;btnConfirm.disabled=true;}
 function closeNDA(){modal.classList.remove('open');}
 check.addEventListener('change',()=>{btnConfirm.disabled=!check.checked;});
 document.getElementById('close-nda').addEventListener('click',closeNDA);
 document.getElementById('cancel-nda').addEventListener('click',closeNDA);
 modal.addEventListener('click',(e)=>{if(e.target===modal) closeNDA();});
-document.getElementById('form-pesca').addEventListener('submit',(e)=>{
-  e.preventDefault();
-  openNDA();
-});
-btnConfirm.addEventListener('click',()=>{
-  closeNDA();
-  document.getElementById('form-pesca').innerHTML=`<p style="color:#0A1931;line-height:1.6;font-size:14px"><strong>✓ Solicitud enviada.</strong><br><span style="color:#5A6B82;font-size:12.5px">Teaser Pesca ITQ será enviado bajo NDA en 24hs a su email corporativo. Incluye modelo RIGI planta Mar del Plata + contrato tipo ITQ.</span></p>`;
-});
+document.getElementById('form-pesca').addEventListener('submit',(e)=>{e.preventDefault();openNDA();});
+btnConfirm.addEventListener('click',()=>{closeNDA();document.getElementById('form-pesca').innerHTML=`<p style="color:#0A1931"><strong>✓ Solicitud enviada.</strong><br><span style="font-size:12px">Teaser enviado bajo NDA en 24hs.</span></p>`;});
 </script>
 </body>
 </html>
