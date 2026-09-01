@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGMA | Energía Vaca Muerta RIGI - Teaser Confidencial</title>
+<meta name="description" content="Energía Argentina Vaca Muerta - LNG, midstream RIGI, Ley 27.742. Estructura SPV Delaware ↔ Argentina. Teaser confidencial bajo NDA.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1931;--gold:#C8B090;--paper:#fcfcfc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.font-serif{font-family:'Playfair Display',serif}
+.top-bar{position:absolute;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fff;background:rgba(10,25,49,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,.15)}
+.top-brand{display:flex;align-items:center;gap:16px;color:var(--gold);font-weight:600}
+.lang-switch{display:flex;gap:8px;align-items:center}
+.lang-switch button{background:transparent;border:1px solid rgba(200,176,144,.25);color:#fff;font-size:9px;letter-spacing:2px;padding:6px 10px;cursor:pointer;transition:.35s}
+.lang-switch button.active,.lang-switch button:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.hero-pesca{position:relative;min-height:680px;background:var(--navy);display:flex;overflow:hidden}
+.h-left{width:46%;display:flex;flex-direction:column;justify-content:center;padding:150px 5% 60px 6%;background:var(--navy);position:relative;z-index:2}
+.h-right{width:54%;position:relative;overflow:hidden;background:var(--navy)}
+.h-right img{width:100%;height:100%;object-fit:cover}
+.h-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, var(--navy) 0%, transparent 30%)}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;font-weight:700}
+.title{font-family:'Playfair Display';font-size:clamp(34px,4vw,56px);line-height:.95;font-weight:300;color:#fff;margin-bottom:22px}
+.desc{font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.65);max-width:430px;margin-bottom:30px;font-weight:300}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;margin-top:28px;max-width:420px}
+.kpi b{font-family:'Playfair Display';font-size:22px;color:var(--gold);font-weight:400;display:block}
+.kpi span{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.45);text-transform:uppercase}
+.cta{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,176,144,.35);padding:14px 28px;text-decoration:none;transition:.35s}
+.cta:hover{background:var(--gold);color:var(--navy)}
+.sticky-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #eee;overflow:visible}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;overflow:visible}
+.logo{font-family:'Playfair Display';font-weight:700;font-size:13px;color:var(--navy);display:flex;align-items:center;gap:12px;text-decoration:none}
+.menu{display:flex;gap:26px;align-items:center}
+.m-link{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;text-decoration:none;padding:24px 0;transition:.3s}
+.m-link:hover{color:var(--navy)}
+.dropdown{position:relative;padding:24px 0}
+.dropdown-trigger{color:var(--gold)!important;font-weight:700;cursor:pointer}
+.dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);display:none;min-width:350px;background:#0A1931;border-top:2px solid #C8B090;box-shadow:0 25px 50px rgba(10,25,49,.4);z-index:200}
+.dropdown:hover.dropdown-menu,.dropdown:focus-within.dropdown-menu{display:block}
+.dropdown-menu a{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;color:rgba(255,255,255,.75);font-size:11px;letter-spacing:2.2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07)}
+.dropdown-menu a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
+.btn-home{background:var(--gold);color:var(--navy);padding:8px 16px;font-size:9px;letter-spacing:2px;font-weight:700;text-decoration:none;border:1px solid var(--gold)}
+.content{max-width:1280px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1.2fr.8fr;gap:80px;align-items:start}
+.card{background:#fff;border:1px solid #EAEAEA;padding:36px;box-shadow:0 10px 40px rgba(10,25,49,.06)}
+.card-dark{background:var(--navy);border:1px solid rgba(255,255,255,.1);padding:36px;color:#fff}
+.row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,.08);padding-bottom:14px;margin-bottom:14px;font-size:13px}
+.row span:first-child{color:#6b7280}
+.row span:last-child{font-weight:600;color:#0A1931}
+.row-dark{border-bottom:1px solid rgba(255,255,255,.08)}
+.row-dark span:first-child{color:rgba(255,255,255,.5)}
+.row-dark span:last-child{color:#fff}
+.btn{display:block;text-align:center;background:var(--navy);border:1px solid var(--navy);color:#fff;font-size:11px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none;margin-top:24px;transition:.35s;cursor:pointer}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+#nda-modal{position:fixed;inset:0;z-index:9999;background:rgba(8,15,31,.85);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:20px}
+#nda-modal.open{display:flex}
+.nda-box{background:#fff;max-width:520px;width:100%}
+.nda-header{background:var(--navy);padding:28px 32px;display:flex;justify-content:space-between;align-items:center}
+.nda-body{padding:28px 32px}
+.nda-check{display:flex;gap:12px;background:#FAFAF8;border:1px solid #eee;padding:16px;margin:20px 0}
+@media(max-width:1024px){.hero-pesca{flex-direction:column;height:auto}.h-left{width:100%;padding:120px 24px 40px}.h-right{width:100%;height:380px}.content{grid-template-columns:1fr;padding:40px 24px}.top-bar{padding:12px 16px;flex-wrap:wrap}.menu{display:none}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-brand">
+    <img src="logo-final.webp" alt="RGMA" style="height:28px;width:auto">
+    <span style="width:1px;height:18px;background:rgba(255,255,255,0.2);display:inline-block"></span>
+    <div data-i18n="top_brand">RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK</div>
+  </div>
+  <div style="display:flex;gap:16px;align-items:center">
+    <a href="index.html" class="btn-home" data-i18n="btn_inicio">INICIO</a>
+    <div class="lang-switch"><button class="active" data-lang="es">ES</button><button data-lang="en">EN</button><button data-lang="pt">PT</button><button data-lang="zh">中文</button></div>
+    <a href="index.html" style="color:#fff;text-decoration:none" data-i18n="btn_volver">← VOLVER</a>
+  </div>
+</div>
+
+<div class="hero-pesca">
+  <div class="h-left">
+    <div class="eyebrow" data-i18n="eye">01 — EXCLUSIVO RGMA • VACA MUERTA + RIGI LEY 27.742</div>
+    <h1 class="title" data-i18n="title">Energía: Vaca Muerta<br>no es petróleo.<br>Es un bono en USD.</h1>
+    <p class="desc" data-i18n="desc">Midstream, LNG y gasoducto dedicado bajo RIGI con 100% libre disponibilidad de divisas, estabilidad fiscal 30 años y arbitraje CIADI. Estructura Delaware LLC + S.A.U.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="cta" href="#solicitar" data-i18n="cta1">SOLICITAR TEASER ENERGÍA →</a>
+      <a class="cta" href="index.html" data-i18n="cta2">VER TODAS LAS ÁREAS</a>
+    </div>
+    <div class="kpi">
+      <div><b>USD 30B</b><span data-i18n="k1">Inversión RIGI</span></div>
+      <div><b>30 AÑOS</b><span data-i18n="k2">Estabilidad</span></div>
+      <div><b>100%</b><span data-i18n="k3">Libre Divisas</span></div>
+    </div>
+  </div>
+  <div class="h-right"><img src="energia-vaca-muerta.webp" alt="Vaca Muerta RIGI" onerror="this.src='pesca-altura.webp'"></div>
+</div>
+
+<nav class="sticky-nav"><div class="nav-inner">
+<a href="index.html" class="logo"><img src="logo-final.webp" alt="RGMA" style="height:26px;width:auto"> RGMA ARGENTINA DESK — ENERGÍA</a>
+<div class="menu">
+  <a class="m-link" href="index.html" style="color:var(--gold);font-weight:700" data-i18n="btn_inicio">INICIO</a>
+  <div class="dropdown"><span class="m-link dropdown-trigger">AREAS ▾</span>
+    <div class="dropdown-menu">
+      <a href="energia.html"><span>01 — ENERGÍA ★</span><span>→</span></a>
+      <a href="agronegocios.html"><span>02 — AGRONEGOCIOS</span><span>→</span></a>
+      <a href="mineria.html"><span>03 — MINERÍA</span><span>→</span></a>
+      <a href="pesca.html"><span>04 — PESCA</span><span>→</span></a>
+      <a href="logistica.html"><span>05 — LOGÍSTICA</span><span>→</span></a>
+    </div>
+  </div>
+  <a class="m-link" href="energia.html" style="color:var(--gold);font-weight:700">Energía ★</a>
+</div>
+</div></nav>
+
+<div class="content">
+  <div>
+    <span style="font-size:10px;letter-spacing:3.6px;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:20px" data-i18n="label">ENERGY — VACA MUERTA RIGI</span>
+    <h2 class="font-serif" style="font-size:clamp(28px,3.5vw,44px);line-height:1.05;font-weight:300;color:var(--navy);margin-bottom:24px" data-i18n="h2">Estructura jurídica para<br>LNG, Midstream y<br>gasoducto dedicado.</h2>
+    <p style="font-size:14.5px;line-height:1.75;color:#5A6B82;margin-bottom:32px" data-i18n="p1">Traducimos el RIGI (Ley 27.742) en un vehículo bankable. Proyecto de más de USD 200M con VPU, 0% retenciones post-año 3, libre giro y protección CIADI. No es concesión petrolera, es infraestructura energética en USD.</p>
+    <div class="card">
+      <h3 class="font-serif" style="color:var(--navy);margin-bottom:24px" data-i18n="card_title">Vehículo Recomendado — Energy SPV</h3>
+      <div class="row"><span>Vehículo</span><span>VPU + S.A.U. RIGI + Delaware HoldCo</span></div>
+      <div class="row"><span>Ley</span><span>RIGI Ley 27.742 — Cap. Inversiones</span></div>
+      <div class="row"><span>Activo</span><span>Gasoducto Dedicado / Planta LNG / Midstream</span></div>
+      <div class="row"><span>Ticket</span><span>USD 200M - 1.5B</span></div>
+      <div class="row" style="border:0;margin:0"><span>Exit</span><span>Off-take 15 años + Dividendo USD</span></div>
+    </div>
+  </div>
+  <div id="solicitar">
+    <div class="card-dark">
+      <span style="font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:600">PROTOCOLO CONFIDENCIAL</span>
+      <h3 class="font-serif" style="font-size:26px;font-weight:300;margin:12px 0 20px;line-height:1.1" data-i18n="form_title">Solicitar Teaser<br>Energía RIGI</h3>
+      <form id="form-pesca" style="display:grid;gap:12px">
+        <input required placeholder="Nombre completo" data-i18n-ph="ph_name" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff">
+        <input required type="email" placeholder="Email corporativo" data-i18n-ph="ph_email" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff">
+        <button type="submit" class="btn" style="background:var(--gold);color:var(--navy);border-color:var(--gold)" data-i18n="btn_form">✓ SOLICITAR TEASER ENERGÍA + NDA</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer style="background:#080F1F;color:#666;padding:32px;text-align:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:12px">
+  <img src="logo-final.webp" alt="RGMA" style="height:28px;width:auto;opacity:.8">
+  <span>© 2026 RGMA — ENERGY DESK • RIGI • CONFIDENCIAL</span>
+  <a href="index.html" style="color:var(--gold);text-decoration:none;margin-top:8px" data-i18n="volver">← VOLVER A ARGENTINA DESK</a>
+</footer>
+
+<div id="nda-modal"><div class="nda-box"><div class="nda-header"><div><h3 style="color:#fff">Teaser Energía — Confidencial</h3><span style="color:var(--gold);font-size:10px;letter-spacing:2px">ÁREA: ENERGÍA — RIGI LEY 27.742</span></div><button id="close-nda" style="background:transparent;border:0;color:#fff;font-size:20px">✕</button></div><div class="nda-body"><p style="font-size:13px;line-height:1.6;color:#4A5A6F" data-i18n="nda_p1">Este Teaser contiene información privilegiada sobre proyectos RIGI de Vaca Muerta, midstream y LNG. Prohibida divulgación 24 meses.</p><div class="nda-check"><input type="checkbox" id="check-nda"><label for="check-nda" style="font-size:11.5px" data-i18n="nda_check">He leído y acepto el NDA de Energía RGMA.</label></div><div style="display:flex;gap:12px"><button class="btn" id="cancel-nda" style="background:#fff;color:#6b7280;flex:1">Cancelar</button><button class="btn" id="confirm-nda" disabled style="flex:1">✓ ACEPTAR NDA</button></div></div></div></div>
+
+<script>
+const i18n={
+es:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",btn_inicio:"INICIO",btn_volver:"← VOLVER",eye:"01 — EXCLUSIVO RGMA • VACA MUERTA + RIGI LEY 27.742",title:"Energía: Vaca Muerta<br>no es petróleo.<br>Es un bono en USD.",desc:"Midstream, LNG y gasoducto dedicado bajo RIGI con 100% libre disponibilidad de divisas, estabilidad fiscal 30 años y arbitraje CIADI.",cta1:"SOLICITAR TEASER ENERGÍA →",cta2:"VER TODAS LAS ÁREAS",k1:"Inversión RIGI",k2:"Estabilidad",k3:"Libre Divisas",label:"ENERGY — VACA MUERTA RIGI",h2:"Estructura jurídica para<br>LNG, Midstream y<br>gasoducto dedicado.",p1:"Traducimos el RIGI (Ley 27.742) en un vehículo bankable. Proyecto de más de USD 200M con VPU, 0% retenciones post-año 3, libre giro y protección CIADI.",card_title:"Vehículo Recomendado — Energy SPV",form_title:"Solicitar Teaser<br>Energía RIGI",ph_name:"Nombre completo",ph_email:"Email corporativo",btn_form:"✓ SOLICITAR TEASER ENERGÍA + NDA",volver:"← VOLVER A ARGENTINA DESK",nda_p1:"Este Teaser contiene información privilegiada sobre proyectos RIGI de Vaca Muerta, midstream y LNG. Prohibida divulgación 24 meses.",nda_check:"He leído y acepto el NDA de Energía RGMA."},
+en:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",btn_inicio:"HOME",btn_volver:"← BACK",eye:"01 — EXCLUSIVE RGMA • VACA MUERTA + RIGI LAW 27.742",title:"Energy: Vaca Muerta<br>is not oil.<br>It is a USD bond.",desc:"Midstream, LNG and dedicated pipeline under RIGI with 100% free FX availability, 30-year fiscal stability and ICSID arbitration.",cta1:"REQUEST ENERGY TEASER →",cta2:"VIEW ALL AREAS",k1:"RIGI Investment",k2:"Stability",k3:"Free FX",label:"ENERGY — VACA MUERTA RIGI",h2:"Legal structure for<br>LNG, Midstream and<br>dedicated pipeline.",p1:"We translate RIGI (Law 27.742) into a bankable vehicle. USD 200M+ project with VPU, 0% retentions after year 3.",card_title:"Recommended Vehicle — Energy SPV",form_title:"Request<br>Energy RIGI Teaser",ph_name:"Full name",ph_email:"Corporate email",btn_form:"✓ REQUEST ENERGY TEASER + NDA",volver:"← BACK TO ARGENTINA DESK",nda_p1:"This Teaser contains privileged information on Vaca Muerta RIGI, midstream and LNG projects. No disclosure for 24 months.",nda_check:"I have read and accept RGMA Energy NDA."},
+pt:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",btn_inicio:"INÍCIO",btn_volver:"← VOLTAR",eye:"01 — EXCLUSIVO RGMA • VACA MUERTA + RIGI LEI 27.742",title:"Energia: Vaca Muerta<br>não é petróleo.<br>É um bônus em USD.",desc:"Midstream, LNG e gasoduto dedicado sob RIGI com 100% livre disponibilidade de divisas, estabilidade fiscal de 30 anos e arbitragem CIADI.",cta1:"SOLICITAR TEASER ENERGIA →",cta2:"VER TODAS AS ÁREAS",k1:"Investimento RIGI",k2:"Estabilidade",k3:"Livre Câmbio",label:"ENERGY — VACA MUERTA RIGI",h2:"Estrutura jurídica para<br>LNG, Midstream e<br>gasoduto dedicado.",p1:"Traduzimos o RIGI (Lei 27.742) em um veículo bancável. Projeto de mais de USD 200M com VPU.",card_title:"Veículo Recomendado — Energy SPV",form_title:"Solicitar Teaser<br>Energia RIGI",ph_name:"Nome completo",ph_email:"E-mail corporativo",btn_form:"✓ SOLICITAR TEASER ENERGIA + NDA",volver:"← VOLTAR AO ARGENTINA DESK",nda_p1:"Este Teaser contém informação privilegiada sobre projetos RIGI de Vaca Muerta, midstream e LNG. Sem divulgação por 24 meses.",nda_check:"Li e aceito o NDA de Energia RGMA."},
+zh:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — 阿根廷服务台",btn_inicio:"首页",btn_volver:"← 返回",eye:"01 — RGMA 独家 • VACA MUERTA + RIGI 第27.742号法律",title:"能源：Vaca Muerta<br>不是石油。<br>是美元债券。",desc:"RIGI下的中游、LNG和专用管道，100%自由外汇，30年财政稳定和ICSID仲裁。",cta1:"索取能源资料 →",cta2:"查看所有领域",k1:"RIGI投资",k2:"稳定性",k3:"自由外汇",label:"能源 — VACA MUERTA RIGI",h2:"为LNG、中游和<br>专用管道提供<br>法律架构。",p1:"我们将RIGI（第27.742号法律）转化为可融资的载体。超过2亿美元的项目，带有VPU。",card_title:"推荐载体 — 能源SPV",form_title:"索取<br>能源RIGI资料",ph_name:"全名",ph_email:"企业邮箱",btn_form:"✓ 索取能源资料 + NDA",volver:"← 返回阿根廷服务台",nda_p1:"本资料包含关于Vaca Muerta RIGI、中游和LNG项目的特权信息。24个月内禁止披露。",nda_check:"我已阅读并接受RGMA能源NDA。"}
+};
+function setLang(l){localStorage.setItem('rgma_lang',l);document.documentElement.lang=l;document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(i18n[l]&&i18n[l][k]) el.innerHTML=i18n[l][k];});document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const k=el.getAttribute('data-i18n-ph');if(i18n[l]&&i18n[l][k]) el.placeholder=i18n[l][k];});}
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));setLang(localStorage.getItem('rgma_lang')||'es');
+const modal=document.getElementById('nda-modal'), check=document.getElementById('check-nda'), btnConfirm=document.getElementById('confirm-nda');
+function openNDA(){modal.classList.add('open');check.checked=false;btnConfirm.disabled=true;}
+function closeNDA(){modal.classList.remove('open');}
+check.addEventListener('change',()=>{btnConfirm.disabled=!check.checked;});
+document.getElementById('close-nda').addEventListener('click',closeNDA);
+document.getElementById('cancel-nda').addEventListener('click',closeNDA);
+modal.addEventListener('click',(e)=>{if(e.target===modal) closeNDA();});
+document.getElementById('form-pesca').addEventListener('submit',(e)=>{e.preventDefault();openNDA();});
+btnConfirm.addEventListener('click',()=>{closeNDA();document.getElementById('form-pesca').innerHTML=`<p><strong>✓ Solicitud enviada.</strong></p>`;});
+</script>
+</body>
+</html>
