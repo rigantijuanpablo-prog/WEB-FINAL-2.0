@@ -10,8 +10,16 @@
 body{font-family:'Inter',sans-serif;background:#0F2A20;overflow-x:hidden;color:#fff;-webkit-font-smoothing:antialiased}
 :root{--gold:#C8B090;--green:#102821;--green2:#0A1410;--paper:#F7F3EB}
 
-/* NAV - BLINDADO ANTI-CUADRADO BLANCO */
-header img{ background:transparent !important; filter:none !important; mix-blend-mode:normal !important; display:block; }
+/* NAV - FIX LOGO DEFINITIVO */
+header img, #preloader-flex img { 
+  background: transparent !important; 
+  background-color: transparent !important;
+  mix-blend-mode: normal !important; 
+  filter: none !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 .nav-link{color:#fff;text-decoration:none;font-size:10px;letter-spacing:2.5px;transition:.35s cubic-bezier(0.2,0.8,0.2,1);margin-left:32px;text-transform:uppercase;opacity:.7}
 .nav-link:hover{color:var(--gold);opacity:1;transform:translateY(-1px)}
 .nav-btn{border:1px solid var(--gold);color:#fff;padding:9px 18px;text-decoration:none;font-size:10px;letter-spacing:2px;transition:.35s cubic-bezier(0.2,0.8,0.2,1);margin-left:32px;text-transform:uppercase}
@@ -57,7 +65,6 @@ header img{ background:transparent !important; filter:none !important; mix-blend
 .col-comp li::before{content:'—';position:absolute;left:0;opacity:.5}
 .col-comp.flex li{color:#fff;opacity:.9}
 
-/* PLANES - CORREGIDO */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:transparent;border:none;margin-top:40px;align-items:stretch}
 .plan{background:#fff;padding:40px 32px;transition:all .6s cubic-bezier(.16,1,.3,1);position:relative;border:1px solid rgba(16,40,33,.08);display:flex;flex-direction:column}
 .plan:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(16,40,33,.12)}
@@ -75,7 +82,6 @@ header img{ background:transparent !important; filter:none !important; mix-blend
 .plan.destacado li::before{color:var(--gold)}
 .plan.destacado::after{content:'';position:absolute;inset:-1px;border:1px solid var(--gold);opacity:.2;pointer-events:none}
 
-/* BOTONES - PARCHE FLECHAS */
 .btn-flex{background:var(--gold);color:var(--green);padding:16px 28px;text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;font-weight:600;transition:.35s cubic-bezier(0.2,0.8,0.2,1);border:1px solid var(--gold)}
 .btn-flex span{transition:transform .4s cubic-bezier(0.2,0.8,0.2,1);display:inline-block}
 .btn-flex:hover{background:#d6c2a3;transform:translateY(-2px);box-shadow:0 12px 30px rgba(200,176,144,.25)}
@@ -100,14 +106,14 @@ nav{display:none !important}
 <body>
 
 <div id="preloader-flex">
-  <img src="logo-final.webp" alt="" style="height:54px;width:auto;">
+  <img src="./logo-final.webp" alt="RGMA" style="height:54px;width:auto;object-fit:contain;">
   <span style="color:#C8B090;letter-spacing:6px;font-size:10px;font-family:'Inter',sans-serif;margin-top:22px;display:block;text-transform:uppercase">RGMA FLEX</span>
   <span style="width:32px;height:1px;background:#C8B090;display:block;margin-top:18px;opacity:.6"></span>
 </div>
 
 <header style="position:fixed;top:0;left:0;width:100%;height:72px;background:#0A1410;display:flex;align-items:center;justify-content:space-between;padding:0 3%;z-index:1000;border-bottom:1px solid rgba(255,255,255,.08)">
   <a href="index.html" style="display:flex;align-items:center;gap:16px;text-decoration:none">
-    <img src="logo-final.webp" alt="" style="height:34px;width:auto;">
+    <img src="./logo-final.webp" alt="RGMA" style="height:34px;width:auto;object-fit:contain;">
     <span style="width:1px;height:22px;background:rgba(255,255,255,0.2);display:inline-block"></span>
     <span style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:2.8px;line-height:1.5;color:#C8B090;text-transform:uppercase">
       <span style="display:block">RIGANTI, GEILER</span><span style="display:block">& MÁRQUEZ ALLURALDE</span>
