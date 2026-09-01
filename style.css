@@ -429,15 +429,24 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   height:auto;
   display:block;
 }
+/* VUELTA A 2 RENGLONES - TAMAÑO EDITORIAL */
 #inicio h1{
-  font-size: 62px !important;
+  font-size: 56px !important;
   font-weight: 400 !important;
-  line-height: 1.05 !important;
+  line-height: 1.08 !important;
+  max-width: 750px !important; /* esto lo fuerza a 2 renglones */
+  opacity: 1 !important;
+  min-height: auto !important;
 }
+
 #inicio h1 em{
   font-weight: 400 !important;
   font-style: italic !important;
 }
-@media(max-width:768px){
-  #inicio h1{font-size: 36px !important;}
+
+@media(max-width: 1100px){
+  #inicio h1{ font-size: 48px !important; max-width: 650px !important; }
+}
+@media(max-width: 768px){
+  #inicio h1{ font-size: 34px !important; max-width: 100% !important; line-height: 1.15 !important; }
 }
