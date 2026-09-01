@@ -429,3 +429,15 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   height:auto;
   display:block;
 }
+#inicio h1{
+  font-size: 62px !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+}
+#inicio h1 em{
+  font-weight: 400 !important;
+  font-style: italic !important;
+}
+@media(max-width:768px){
+  #inicio h1{font-size: 36px !important;}
+}
