@@ -450,3 +450,43 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 @media(max-width: 768px){
   #inicio h1{ font-size: 34px !important; max-width: 100% !important; line-height: 1.15 !important; }
 }
+/* LEGIBILIDAD TEXTO SOBRE BOCETO */
+.seccion-cierre-premium .contenido-cierre .eyebrow.light{
+  color: #C8B090 !important;
+  letter-spacing: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+.seccion-cierre-premium .contenido-cierre h2{
+  color: #ffffff !important;
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 0.95;
+  margin-bottom: 18px;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.9);
+}
+
+.seccion-cierre-premium .contenido-cierre p{
+  color: rgba(255,255,255,0.75) !important;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 32px auto;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.9);
+}
+
+.seccion-cierre-premium .contenido-cierre .btn-premium-borde{
+  color: #C8B090;
+  border: 1px solid rgba(200,176,144,0.5);
+  background: rgba(10,25,49,0.4);
+  backdrop-filter: blur(4px);
+}
+.seccion-cierre-premium .contenido-cierre .btn-premium-borde:hover{
+  background: #C8B090;
+  color: #0A1931;
+  border-color: #C8B090;
+}
