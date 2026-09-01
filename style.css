@@ -420,3 +420,12 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   padding:36px 0 36px 28px; margin:48px 0 !important;
   font-size:23px; font-weight:300;
 }
+/* FIX LOGO FINAL - EVITA CUADRADO BLANCO */
+.marca-estudio img{ 
+  background:transparent !important; 
+  filter:none !important; 
+  mix-blend-mode:normal !important; 
+  width:32px;
+  height:auto;
+  display:block;
+}
