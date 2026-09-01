@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGMA | Logística Puertos & Hidrovía RIGI - Teaser Confidencial</title>
+<meta name="description" content="Logística Argentina - Puertos, Hidrovía Paraná, RIGI, parques logísticos. Estructura SPV Delaware ↔ Argentina.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1931;--gold:#C8B090;--paper:#fcfcfc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.font-serif{font-family:'Playfair Display',serif}
+.top-bar{position:absolute;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fff;background:rgba(10,25,49,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,176,144,.15)}
+.top-brand{display:flex;align-items:center;gap:16px;color:var(--gold);font-weight:600}
+.lang-switch{display:flex;gap:8px}
+.lang-switch button{background:transparent;border:1px solid rgba(200,176,144,.25);color:#fff;font-size:9px;letter-spacing:2px;padding:6px 10px;cursor:pointer;transition:.35s}
+.lang-switch button.active,.lang-switch button:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.hero-pesca{position:relative;min-height:680px;background:var(--navy);display:flex;overflow:hidden}
+.h-left{width:46%;display:flex;flex-direction:column;justify-content:center;padding:150px 5% 60px 6%;background:var(--navy);z-index:2}
+.h-right{width:54%;position:relative;overflow:hidden}
+.h-right img{width:100%;height:100%;object-fit:cover}
+.h-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, var(--navy) 0%, transparent 30%)}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;font-weight:700}
+.title{font-family:'Playfair Display';font-size:clamp(34px,4vw,56px);line-height:.95;font-weight:300;color:#fff;margin-bottom:22px}
+.desc{font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.65);max-width:430px;margin-bottom:30px}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;margin-top:28px;max-width:420px}
+.kpi b{font-family:'Playfair Display';font-size:22px;color:var(--gold);font-weight:400;display:block}
+.kpi span{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.45);text-transform:uppercase}
+.cta{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,176,144,.35);padding:14px 28px;text-decoration:none;transition:.35s}
+.cta:hover{background:var(--gold);color:var(--navy)}
+.sticky-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #eee;overflow:visible}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;overflow:visible}
+.logo{font-family:'Playfair Display';font-weight:700;font-size:13px;color:var(--navy);display:flex;align-items:center;gap:12px;text-decoration:none}
+.menu{display:flex;gap:26px;align-items:center}
+.m-link{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;text-decoration:none;padding:24px 0}
+.dropdown{position:relative;padding:24px 0}
+.dropdown-trigger{color:var(--gold)!important;font-weight:700;cursor:pointer}
+.dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);display:none;min-width:350px;background:#0A1931;border-top:2px solid #C8B090;box-shadow:0 25px 50px rgba(10,25,49,.4);z-index:200}
+.dropdown:hover.dropdown-menu,.dropdown:focus-within.dropdown-menu{display:block}
+.dropdown-menu a{display:flex;justify-content:space-between;padding:18px 24px;color:rgba(255,255,255,.75);font-size:11px;letter-spacing:2.2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07)}
+.dropdown-menu a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
+.btn-home{background:var(--gold);color:var(--navy);padding:8px 16px;font-size:9px;letter-spacing:2px;font-weight:700;text-decoration:none;border:1px solid var(--gold)}
+.content{max-width:1280px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1.2fr.8fr;gap:80px}
+.card{background:#fff;border:1px solid #EAEAEA;padding:36px;box-shadow:0 10px 40px rgba(10,25,49,.06)}
+.card-dark{background:var(--navy);border:1px solid rgba(255,255,255,.1);padding:36px;color:#fff}
+.row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,.08);padding-bottom:14px;margin-bottom:14px;font-size:13px}
+.btn{display:block;text-align:center;background:var(--navy);border:1px solid var(--navy);color:#fff;font-size:11px;letter-spacing:2px;font-weight:700;padding:16px;text-decoration:none;margin-top:24px;cursor:pointer}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+#nda-modal{position:fixed;inset:0;z-index:9999;background:rgba(8,15,31,.85);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:20px}
+#nda-modal.open{display:flex}
+.nda-box{background:#fff;max-width:520px;width:100%}
+.nda-header{background:var(--navy);padding:28px 32px;display:flex;justify-content:space-between;align-items:center}
+.nda-body{padding:28px 32px}
+.nda-check{display:flex;gap:12px;background:#FAFAF8;border:1px solid #eee;padding:16px;margin:20px 0}
+@media(max-width:1024px){.hero-pesca{flex-direction:column;height:auto}.h-left{width:100%;padding:120px 24px 40px}.h-right{width:100%;height:380px}.content{grid-template-columns:1fr;padding:40px 24px}.top-bar{padding:12px 16px;flex-wrap:wrap}.menu{display:none}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-brand"><img src="logo-final.webp" alt="RGMA" style="height:28px"><span style="width:1px;height:18px;background:rgba(255,255,255,0.2);display:inline-block"></span><div data-i18n="top_brand">RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK</div></div>
+  <div style="display:flex;gap:16px;align-items:center"><a href="index.html" class="btn-home" data-i18n="btn_inicio">INICIO</a><div class="lang-switch"><button class="active" data-lang="es">ES</button><button data-lang="en">EN</button><button data-lang="pt">PT</button><button data-lang="zh">中文</button></div><a href="index.html" style="color:#fff;text-decoration:none" data-i18n="btn_volver">← VOLVER</a></div>
+</div>
+
+<div class="hero-pesca">
+  <div class="h-left">
+    <div class="eyebrow" data-i18n="eye">05 — EXCLUSIVO RGMA • HIDROVÍA + PUERTOS RIGI</div>
+    <h1 class="title" data-i18n="title">Logística: puertos<br>no son fierros.<br>Son peaje en USD.</h1>
+    <p class="desc" data-i18n="desc">Hidrovía Paraná, puertos privados y parques logísticos bajo RIGI. Concesión 30 años, tarifa en USD, libre giro y estabilidad fiscal. Estructura S.A.U. + VPU.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="cta" href="#solicitar" data-i18n="cta1">SOLICITAR TEASER LOGÍSTICA →</a><a class="cta" href="index.html" data-i18n="cta2">VER TODAS LAS ÁREAS</a></div>
+    <div class="kpi"><div><b>USD 80%</b><span data-i18n="k1">Comercio por Hidrovía</span></div><div><b>30 AÑOS</b><span data-i18n="k2">Concesión</span></div><div><b>USD</b><span data-i18n="k3">Tarifa</span></div></div>
+  </div>
+  <div class="h-right"><img src="logistica-puerto.webp" alt="Logística Puerto Hidrovía" onerror="this.src='pesca-altura.webp'"></div>
+</div>
+
+<nav class="sticky-nav"><div class="nav-inner"><a href="index.html" class="logo"><img src="logo-final.webp" alt="RGMA" style="height:26px"> RGMA — LOGÍSTICA</a><div class="menu"><a class="m-link" href="index.html" style="color:var(--gold);font-weight:700" data-i18n="btn_inicio">INICIO</a><div class="dropdown"><span class="m-link dropdown-trigger">AREAS ▾</span><div class="dropdown-menu"><a href="energia.html"><span>01 — ENERGÍA</span><span>→</span></a><a href="agronegocios.html"><span>02 — AGRONEGOCIOS</span><span>→</span></a><a href="mineria.html"><span>03 — MINERÍA</span><span>→</span></a><a href="pesca.html"><span>04 — PESCA</span><span>→</span></a><a href="logistica.html"><span>05 — LOGÍSTICA ★</span><span>→</span></a></div></div><a class="m-link" href="logistica.html" style="color:var(--gold);font-weight:700">Logística ★</a></div></div></nav>
+
+<div class="content">
+  <div>
+    <span style="font-size:10px;letter-spacing:3.6px;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:20px" data-i18n="label">LOGISTICS — HIDROVÍA RIGI</span>
+    <h2 class="font-serif" style="font-size:clamp(28px,3.5vw,44px);line-height:1.05;font-weight:300;color:var(--navy);margin-bottom:24px" data-i18n="h2">Estructura para<br>puertos, hidrovía y<br>parques logísticos en USD.</h2>
+    <p style="font-size:14.5px;line-height:1.75;color:#5A6B82;margin-bottom:32px" data-i18n="p1">Estructuramos puerto privado + parque logístico RIGI sobre Hidrovía. Tarifa en USD, concesión 30 años, libre giro y off-take logístico con agro y minería.</p>
+    <div class="card"><h3 class="font-serif" style="color:var(--navy);margin-bottom:24px" data-i18n="card_title">Vehículo — Logistics SPV</h3><div class="row"><span>Vehículo</span><span>VPU RIGI + S.A.U. + Fideicomiso</span></div><div class="row"><span>Activo</span><span>Puerto Privado / Parque Logístico Hidrovía</span></div><div class="row"><span>Ticket</span><span>USD 30M - 250M</span></div><div class="row" style="border:0;margin:0"><span>Exit</span><span>Peaje USD + Venta participación</span></div></div>
+  </div>
+  <div id="solicitar"><div class="card-dark"><span style="font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase">PROTOCOLO CONFIDENCIAL</span><h3 class="font-serif" style="font-size:26px;font-weight:300;margin:12px 0 20px" data-i18n="form_title">Solicitar Teaser<br>Logística RIGI</h3><form id="form-pesca" style="display:grid;gap:12px"><input required placeholder="Nombre completo" data-i18n-ph="ph_name" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff"><input required type="email" placeholder="Email corporativo" data-i18n-ph="ph_email" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:14px;color:#fff"><button type="submit" class="btn" style="background:var(--gold);color:var(--navy)" data-i18n="btn_form">✓ SOLICITAR TEASER LOGÍSTICA + NDA</button></form></div></div>
+</div>
+
+<footer style="background:#080F1F;color:#666;padding:32px;text-align:center;font-size:10px;letter-spacing:2px;display:flex;flex-direction:column;align-items:center;gap:12px"><img src="logo-final.webp" alt="RGMA" style="height:28px;opacity:.8"><span>© 2026 RGMA — LOGISTICS DESK • RIGI • CONFIDENCIAL</span><a href="index.html" style="color:var(--gold);text-decoration:none" data-i18n="volver">← VOLVER A ARGENTINA DESK</a></footer>
+
+<div id="nda-modal"><div class="nda-box"><div class="nda-header"><div><h3 style="color:#fff" data-i18n="nda_title">Teaser Logística — Confidencial</h3><span style="color:var(--gold);font-size:10px">ÁREA: LOGÍSTICA — HIDROVÍA RIGI</span></div><button id="close-nda" style="background:transparent;border:0;color:#fff;font-size:20px">✕</button></div><div class="nda-body"><p style="font-size:13px;color:#4A5A6F" data-i18n="nda_p1">Teaser con puertos, hidrovía y parques logísticos RIGI. Confidencial 24 meses.</p><div class="nda-check"><input type="checkbox" id="check-nda"><label for="check-nda" style="font-size:11.5px" data-i18n="nda_check">Acepto NDA Logística RGMA.</label></div><div style="display:flex;gap:12px"><button class="btn" id="cancel-nda" style="background:#fff;color:#6b7280;flex:1">Cancelar</button><button class="btn" id="confirm-nda" disabled style="flex:1">✓ ACEPTAR NDA</button></div></div></div></div>
+
+<script>
+const i18n={
+es:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",btn_inicio:"INICIO",btn_volver:"← VOLVER",eye:"05 — EXCLUSIVO RGMA • HIDROVÍA + PUERTOS RIGI",title:"Logística: puertos<br>no son fierros.<br>Son peaje en USD.",desc:"Hidrovía Paraná, puertos privados y parques logísticos bajo RIGI. Concesión 30 años, tarifa en USD, libre giro y estabilidad fiscal.",cta1:"SOLICITAR TEASER LOGÍSTICA →",cta2:"VER TODAS LAS ÁREAS",k1:"Comercio por Hidrovía",k2:"Concesión",k3:"Tarifa",label:"LOGISTICS — HIDROVÍA RIGI",h2:"Estructura para<br>puertos, hidrovía y<br>parques logísticos en USD.",p1:"Estructuramos puerto privado + parque logístico RIGI sobre Hidrovía. Tarifa en USD, concesión 30 años.",card_title:"Vehículo — Logistics SPV",form_title:"Solicitar Teaser<br>Logística RIGI",ph_name:"Nombre completo",ph_email:"Email corporativo",btn_form:"✓ SOLICITAR TEASER LOGÍSTICA + NDA",volver:"← VOLVER A ARGENTINA DESK",nda_title:"Teaser Logística — Confidencial",nda_p1:"Teaser con puertos, hidrovía y parques logísticos RIGI. Confidencial 24 meses.",nda_check:"He leído y acepto el NDA de Logística RGMA."},
+en:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",btn_inicio:"HOME",btn_volver:"← BACK",eye:"05 — EXCLUSIVE RGMA • WATERWAY + PORTS RIGI",title:"Logistics: ports<br>are not steel.<br>They are USD toll.",desc:"Paraná Waterway, private ports and logistics parks under RIGI. 30-year concession, tariff in USD, free FX and fiscal stability.",cta1:"REQUEST LOGISTICS TEASER →",cta2:"VIEW ALL AREAS",k1:"Trade via Waterway",k2:"Concession",k3:"Tariff",label:"LOGISTICS — WATERWAY RIGI",h2:"Structure for<br>ports, waterway and<br>logistics parks in USD.",p1:"We structure private port + RIGI logistics park on Waterway. Tariff in USD, 30-year concession.",card_title:"Vehicle — Logistics SPV",form_title:"Request<br>Logistics RIGI Teaser",ph_name:"Full name",ph_email:"Corporate email",btn_form:"✓ REQUEST LOGISTICS TEASER + NDA",volver:"← BACK TO ARGENTINA DESK",nda_title:"Logistics Teaser — Confidential",nda_p1:"Teaser with ports, waterway and RIGI logistics parks. Confidential 24 months.",nda_check:"I accept RGMA Logistics NDA."},
+pt:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — ARGENTINA DESK",btn_inicio:"INÍCIO",btn_volver:"← VOLTAR",eye:"05 — EXCLUSIVO RGMA • HIDROVIA + PORTOS RIGI",title:"Logística: portos<br>não são ferros.<br>São pedágio em USD.",desc:"Hidrovia Paraná, portos privados e parques logísticos sob RIGI. Concessão 30 anos, tarifa em USD.",cta1:"SOLICITAR TEASER LOGÍSTICA →",cta2:"VER TODAS AS ÁREAS",k1:"Comércio por Hidrovia",k2:"Concessão",k3:"Tarifa",label:"LOGISTICS — HIDROVIA RIGI",h2:"Estrutura para<br>portos, hidrovia e<br>parques logísticos em USD.",p1:"Estruturamos porto privado + parque logístico RIGI sobre Hidrovia. Tarifa em USD, concessão 30 anos.",card_title:"Veículo — Logistics SPV",form_title:"Solicitar Teaser<br>Logística RIGI",ph_name:"Nome completo",ph_email:"E-mail corporativo",btn_form:"✓ SOLICITAR TEASER LOGÍSTICA + NDA",volver:"← VOLTAR AO ARGENTINA DESK",nda_title:"Teaser Logística — Confidencial",nda_p1:"Teaser com portos, hidrovia e parques logísticos RIGI. Confidencial 24 meses.",nda_check:"Li e aceito o NDA de Logística RGMA."},
+zh:{top_brand:"RIGANTI, GEILER & MÁRQUEZ ALLURALDE — 阿根廷服务台",btn_inicio:"首页",btn_volver:"← 返回",eye:"05 — RGMA 独家 • 水道 + 港口 RIGI",title:"物流：港口<br>不是钢铁。<br>是美元收费。",desc:"巴拉那水道、私人港口和RIGI下的物流园区。30年特许权，美元关税，自由外汇和财政稳定。",cta1:"索取物流资料 →",cta2:"查看所有领域",k1:"水道贸易",k2:"特许权",k3:"关税",label:"物流 — 水道 RIGI",h2:"为港口、水道和<br>物流园区提供<br>美元架构。",p1:"我们构建水道上的私人港口 + RIGI物流园区。美元关税，30年特许权。",card_title:"载体 — 物流SPV",form_title:"索取<br>物流RIGI资料",ph_name:"全名",ph_email:"企业邮箱",btn_form:"✓ 索取物流资料 + NDA",volver:"← 返回阿根廷服务台",nda_title:"物流资料 — 保密",nda_p1:"包含港口、水道和RIGI物流园区的资料。保密24个月。",nda_check:"我已阅读并接受RGMA物流NDA。"}
+};
+function setLang(l){localStorage.setItem('rgma_lang',l);document.documentElement.lang=l;document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(i18n[l]&&i18n[l][k]) el.innerHTML=i18n[l][k];});document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const k=el.getAttribute('data-i18n-ph');if(i18n[l]&&i18n[l][k]) el.placeholder=i18n[l][k];});}
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));setLang(localStorage.getItem('rgma_lang')||'es');
+const modal=document.getElementById('nda-modal'), check=document.getElementById('check-nda'), btnConfirm=document.getElementById('confirm-nda');
+function openNDA(){modal.classList.add('open');check.checked=false;btnConfirm.disabled=true;}
+function closeNDA(){modal.classList.remove('open');}
+check.addEventListener('change',()=>{btnConfirm.disabled=!check.checked;});
+document.getElementById('close-nda').addEventListener('click',closeNDA);
+document.getElementById('cancel-nda').addEventListener('click',closeNDA);
+modal.addEventListener('click',(e)=>{if(e.target===modal) closeNDA();});
+document.getElementById('form-pesca').addEventListener('submit',(e)=>{e.preventDefault();openNDA();});
+btnConfirm.addEventListener('click',()=>{closeNDA();document.getElementById('form-pesca').innerHTML=`<p><strong>✓ Solicitud enviada.</strong></p>`;});
+</script>
+</body>
+</html>
