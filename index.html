@@ -8,6 +8,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital@0,400;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+      /* FIX NUCLEAR - No pinta hasta que la fuente está lista */
+      #inicio{opacity:0;}
+      html.fonts-loaded #inicio{opacity:1; transition: opacity 0.4s ease;}
+      html.fonts-failed #inicio{opacity:1;} /* por si falla Google */
+    </style>
+    <script>
+      // Espera a que Playfair baje y recién muestra
+      document.fonts.ready.then(function(){
+        document.documentElement.classList.add('fonts-loaded');
+      });
+      // Fallback: si en 3s no carga, muestra igual
+      setTimeout(function(){
+        if(!document.documentElement.classList.contains('fonts-loaded')){
+          document.documentElement.classList.add('fonts-failed');
+        }
+      }, 3000);
+    </script>
 </head>
 <body>
 
