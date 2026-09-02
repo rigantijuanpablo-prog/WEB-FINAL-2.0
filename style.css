@@ -652,3 +652,8 @@ footer .f-col, footer > div > div {
   top: 50% !important;
   transform: translateY(-50%) !important;
 }
+@media (max-width: 1100px){
+  .barra-flotante-contacto, .contact-float {
+    display: none !important;
+  }
+}
