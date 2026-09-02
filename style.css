@@ -577,3 +577,10 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 @media(max-width:900px){
   #contacto .contenedor-contacto{grid-template-columns:1fr !important}
 }
+
+#contacto .premium-form{ gap:24px !important }
+#contacto .campo-flotante{ margin:0 !important; padding:0 !important; display:flex !important; flex-direction:column !important }
+#contacto .campo-flotante label{ position:static !important; margin:0 0 6px 0 !important; transform:none !important; top:auto !important }
+#contacto .campo-flotante input{ height:38px !important; min-height:auto !important; padding:6px 0 10px 0 !important; margin:0 !important }
+#contacto .campo-flotante textarea{ height:80px !important; min-height:auto !important; padding:6px 0 10px 0 !important; margin:0 !important; resize:none !important }
+#contacto .form-line{ display:none !important }
