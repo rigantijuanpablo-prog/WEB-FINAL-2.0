@@ -215,62 +215,68 @@
   </div>
 </section>
 
-<!-- CONTACTO PREMIUM - VERSIÓN FINAL PULIDA RGMA -->
-<section id="contacto" class="section-contacto">
-  <div class="contacto-header">
-    <span class="eyebrow">CONTACTO ESTRATÉGICO</span>
-    <div class="titulo-con-linea">
-      <div class="linea-decorativa"></div>
-      <h2>Contacto</h2>
-    </div>
+<section class="seccion-contacto">
+  
+  <!-- CABECERA DEL BLOQUE: Todo alineado a la izquierda sobre el mismo eje -->
+  <div class="cabecera-contacto">
+    <span class="tag-estrategico">CONTACTO ESTRATÉGICO</span>
+    <h2 class="titulo-contacto">Contacto</h2>
   </div>
 
-  <div class="contenedor-contacto">
-    <div class="contacto-info">
-      <div class="bloque-dato">
-        <label>SEDE CENTRAL</label>
+  <div class="contenedor-grilla">
+    <!-- COLUMNA IZQUIERDA: Información de la Sede -->
+    <div class="info-sede">
+      <div class="bloque-info">
+        <h3>SEDE CENTRAL</h3>
         <p>Av. Corrientes 450, Piso 10<br>C1043AAR · CABA · Argentina</p>
       </div>
-      <div class="bloque-dato">
-        <label>TELÉFONO</label>
+      <div class="bloque-info">
+        <h3>TELÉFONO</h3>
         <p>+54 (11) 4321-5555</p>
       </div>
-      <div class="bloque-dato">
-        <label>EMAIL DIRECTO</label>
-        <p>contacto@rgmabogados.com.ar</p>
-        <small>Respuesta confidencial en 24h hábiles</small>
-      </div>
-      <div class="contacto-quote">
-        <p>"Cada consulta es tratada con la reserva y estrategia de una boutique."</p>
+      <div class="bloque-info">
+        <h3>EMAIL DIRECTO</h3>
+        <a href="mailto:contacto@rgmabogados.com.ar">contacto@rgmabogados.com.ar</a>
+        <span class="subtexto-mail">Respuesta confidencial en 24h hábiles</span>
       </div>
     </div>
 
-<form class="formulario-contacto">
-  <div class="fila-doble">
-    <div class="grupo-campo">
-      <label for="nombre">Nombre completo</label>
-      <input type="text" id="nombre" required>
-    </div>
-    <div class="grupo-campo">
-      <label for="email">Email</label>
-      <input type="email" id="email" required>
-    </div>
-  </div>
-  <div class="grupo-campo">
-    <label for="empresa">Empresa / Estudio</label>
-    <input type="text" id="empresa">
-  </div>
-  <div class="grupo-campo">
-    <label for="consulta">Describa brevemente su consulta</label>
-    <textarea id="consulta" rows="3" required></textarea>
-  </div>
-  <div class="fila-boton">
-    <button type="submit" class="btn-enviar">ENVIAR</button>
-    <span class="texto-legal">CONFIDENCIALIDAD GARANTIZADA · RGMA</span>
-  </div>
-</form>
+    <!-- COLUMNA DERECHA: Formulario simétrico -->
+    <form class="formulario-contacto" action="https://formsubmit.co" method="POST">
+      
+      <!-- Fila de dos columnas idénticas (50% y 50%) -->
+      <div class="fila-doble">
+        <div class="grupo-campo">
+          <label for="nombre">NOMBRE COMPLETO</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="grupo-campo">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+
+      <!-- Filas de ancho completo -->
+      <div class="grupo-campo">
+        <label for="empresa">EMPRESA / ESTUDIO</label>
+        <input type="text" id="empresa" name="empresa">
+      </div>
+
+      <div class="grupo-campo">
+        <label for="consulta">DESCRIBA BREVEMENTE SU CONSULTA</label>
+        <textarea id="consulta" name="consulta" rows="2" required></textarea>
+      </div>
+
+      <!-- Fila de acción final simplificada -->
+      <div class="fila-accion">
+        <button type="submit" class="btn-enviar">ENVIAR</button>
+      </div>
+    </form>
+
   </div>
 </section>
+
+
 
 <style>
 .section-contacto{max-width:1320px;margin:0 auto;padding:120px 48px;background:#FCFBF9}
