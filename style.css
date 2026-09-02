@@ -657,3 +657,9 @@ footer .f-col, footer > div > div {
     display: none !important;
   }
 }
+.f-bottom-editorial {
+  color: #7a8aaa !important;
+  opacity: 0.6 !important;
+  letter-spacing: 0.02em;
+  font-weight: 300 !important;
+}
