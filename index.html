@@ -9,17 +9,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital@0,400;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+      /* FIX NUCLEAR - No pinta hasta que la fuente está lista */
       #inicio{opacity:0;}
       html.fonts-loaded #inicio{opacity:1; transition: opacity 0.4s ease;}
-      html.fonts-failed #inicio{opacity:1;}
+      html.fonts-failed #inicio{opacity:1;} /* por si falla Google */
     </style>
     <script>
-      document.fonts.ready.then(function(){ document.documentElement.classList.add('fonts-loaded'); });
-      setTimeout(function(){ if(!document.documentElement.classList.contains('fonts-loaded')){ document.documentElement.classList.add('fonts-failed'); } }, 3000);
+      // Espera a que Playfair baje y recién muestra
+      document.fonts.ready.then(function(){
+        document.documentElement.classList.add('fonts-loaded');
+      });
+      // Fallback: si en 3s no carga, muestra igual
+      setTimeout(function(){
+        if(!document.documentElement.classList.contains('fonts-loaded')){
+          document.documentElement.classList.add('fonts-failed');
+        }
+      }, 3000);
     </script>
 </head>
 <body>
 
+<!-- CONTACTO FLOTANTE -->
 <div class="barra-flotante-contacto">
     <a href="#contacto" class="item-flotante"><span>CONTACTO</span><div class="icono-flotante">✉</div></a>
     <a href="tel:+541143215555" class="item-flotante"><span>LLAMAR</span><div class="icono-flotante">☎</div></a>
@@ -29,6 +39,7 @@
 <header id="mainHeader">
     <a href="index.html" class="marca-estudio">
   <div class="logo-lockup" style="display:flex;align-items:center;gap:12px">
+    <!-- CAMBIO CLAVE: archivo que funciona -->
     <img src="logo-final.webp" alt="" style="height:38px;width:auto;display:block;background:transparent!important;mix-blend-mode:normal!important;">
   </div>
   <div class="nombre-estudio">
@@ -36,6 +47,7 @@
     <span class="apellido-secundario"><span style="font-family:'Times New Roman',serif;font-style:italic;font-weight:400;font-size:1.1em;margin-right:5px;color:#C8B090;">&</span> MÁRQUEZ ALLURALDE</span>
   </div>
 </a>
+
     <nav class="nav-desktop">
       <ul>
         <li><a href="#inicio">INICIO</a></li>
@@ -49,6 +61,7 @@
               <div class="mega-line"></div>
               <p>Especialización<br>a medida.</p>
             </div>
+            <!-- UNIFICADO A NOMENCLATURA PREMIUM (regla #2) -->
           <div class="mega-grid-simple">
   <a href="./pymes.html">Empresario y PyMEs <i>→</i></a>
   <a href="./laboral-empresario.html">Laboral Empresario <i>→</i></a>
@@ -64,6 +77,7 @@
         </li>
       </ul>
     </nav>
+
    <div class="right-group">
     <a href="flex.html" class="btn-area-flex">ÁREA FLEX</a>
     <a href="#contacto" class="btn-nav">CONTACTO →</a>
@@ -71,64 +85,58 @@
       <span class="pill-new">NEW 2026</span>
       <span class="pill-text">Investment in Argentina ↗</span>
     </a>
-    <button class="btn-burger" id="btnBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="btn-burger" id="btnBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
    </div>
 </header>
 
 <style>
-/* === FIX REAL PARA TUS 3 ERRORES === */
-#mainHeader img{background:transparent!important;filter:none!important;mix-blend-mode:normal!important;}
-#mainHeader{background:#0A1931;border-bottom:1px solid rgba(200,176,144,.15);position:relative;z-index:100;}
-.marca-estudio{display:flex;align-items:center;gap:16px;text-decoration:none;}
-.nombre-estudio{display:flex;flex-direction:column;border-left:1px solid rgba(200,176,144,.35);padding-left:16px;line-height:1.1;}
+/* BLINDAJE ANTI-CUADRADO BLANCO + ALTA COSTURA */
+#mainHeader img{
+  background:transparent!important;
+  filter:none!important;
+  mix-blend-mode:normal!important;
+}
+#mainHeader{
+  background:#0A1931;
+  border-bottom:1px solid rgba(200,176,144,.15);
+}
+.marca-estudio{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  text-decoration:none;
+  transition:opacity .35s cubic-bezier(0.2,0.8,0.2,1);
+}
+.marca-estudio:hover{opacity:.85}
+.nombre-estudio{
+  display:flex;
+  flex-direction:column;
+  border-left:1px solid rgba(200,176,144,.35);
+  padding-left:16px;
+  line-height:1.1;
+}
 .apellido-principal{font-family:'Playfair Display',serif;color:#fff;font-size:12.5px;letter-spacing:3px}
 .apellido-secundario{font-family:'Playfair Display',serif;color:#fff;font-size:11.5px;letter-spacing:2.5px;margin-top:2px}
-.nav-item-mega{position:static!important;}
-.mega-panel{position:absolute;left:0;top:100%;width:100vw;min-height:360px;background:#FCFBF9;display:grid!important;grid-template-columns:240px 1fr;border-top:1px solid #C8B090;box-shadow:0 30px 60px rgba(10,25,49,.18);opacity:0;visibility:hidden;transform:translateY(12px);pointer-events:none;transition:all .45s cubic-bezier(0.2,0.8,0.2,1);z-index:9999;}
-.nav-item-mega:hover .mega-panel{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-.mega-left{background:#0A1931;padding:32px 28px;color:#fff;}
-.mega-left span{font-size:9px;letter-spacing:3px;color:#C8B090;font-weight:700;display:block;margin-bottom:24px}
-.mega-left b{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;line-height:1.2;display:block}
-.mega-line{width:32px;height:1px;background:#C8B090;margin:20px 0}
-.mega-left p{font-size:12px;color:rgba(255,255,255,.5);font-style:italic;line-height:1.5}
-.mega-grid-simple{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px;padding:28px 36px;align-content:start;}
-.mega-grid-simple a{font-size:11px;font-weight:700;color:#0A1931;text-decoration:none;text-transform:uppercase;letter-spacing:1.2px;display:flex;align-items:center;gap:10px;padding:15px 0;border-bottom:1px solid #F0EBE0;transition:.3s;}
-.mega-grid-simple a::before{content:"";width:6px;height:6px;background:#0A1931;display:block;flex-shrink:0;}
-.mega-grid-simple a:hover{color:#C8B090;padding-left:6px}
-.mega-grid-simple a i{font-style:normal;margin-left:auto;transition:transform .3s}
+
+/* Regla Flechas: → interno / ↗ externo */
+.mega-grid-simple a i{
+  font-style:normal;
+  transition:transform .4s cubic-bezier(0.2,0.8,0.2,1);
+  display:inline-block;
+}
 .mega-grid-simple a:hover i{transform:translateX(4px)}
-.mobile-overlay{position:fixed;inset:0;background:#0A1931;z-index:9999;transform:translateX(100%);transition:transform .5s cubic-bezier(0.2,0.8,0.2,1);overflow-y:auto;padding:0 24px}
-.mobile-overlay.open{transform:translateX(0)}
-.mobile-head{display:flex;justify-content:space-between;align-items:center;height:72px;border-bottom:1px solid rgba(200,176,144,.15);margin-bottom:32px}
-.mobile-head span{font-family:'Playfair Display',serif;color:#fff;letter-spacing:4px;font-size:14px}
-#closeMobile{background:none;border:none;color:#fff;font-size:22px;cursor:pointer}
-.mobile-links{list-style:none;padding:0}
-.mobile-links li{border-bottom:1px solid rgba(255,255,255,.06)}
-.mobile-links a{display:block;padding:18px 0;color:rgba(255,255,255,.7);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase}
-.acc-panel{display:none;padding-bottom:12px}
-.acc-panel.open{display:block}
-.acc-panel a{padding:10px 0 10px 16px;font-size:12px;text-transform:none;letter-spacing:.5px}
-.acc-btn{background:none;border:none;color:rgba(255,255,255,.7);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:18px 0;width:100%;text-align:left;display:flex;justify-content:space-between;cursor:pointer}
-.btn-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
-.btn-burger span{width:22px;height:1px;background:#fff;display:block}
-@media(max-width:1100px){ .nav-desktop,.right-group .btn-area-flex,.right-group .btn-nav,.investment-pill{display:none!important} .btn-burger{display:flex!important} }
-.hero-principal{position:relative;overflow:hidden}
-.hero-principal::after{content:"";position:absolute;bottom:-1px;left:0;width:100%;height:60px;background:#fff;clip-path:polygon(0 100%, 100% 100%, 100% 0);z-index:3;pointer-events:none;}
-.investment-seal-link{position:absolute;right:48px;bottom:68px;z-index:4;text-decoration:none}
-.investment-seal{width:132px;height:132px;border-radius:50%;background:rgba(252,251,249,0.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;position:relative;transition:all .6s cubic-bezier(0.2,0.8,0.2,1);box-shadow:0 20px 40px rgba(0,0,0,.18)}
-.seal-ring{position:absolute;inset:6px;border:1px solid rgba(10,25,49,.15);border-radius:50%}
-.seal-ring-2{position:absolute;inset:12px;border:1px dashed rgba(200,176,144,.4);border-radius:50%;animation:spin 20s linear infinite}
-.seal-content{text-align:center;line-height:1}
-.seal-year{font-size:8px;letter-spacing:3px;color:#C8B090;font-weight:700;display:block;margin-bottom:2px}
-.seal-new{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#0A1931;display:block;line-height:1}
-.seal-text{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#0A1931;line-height:1.3;display:block;margin-top:4px;font-weight:600}
-.investment-seal-link:hover .investment-seal{transform:scale(1.05) rotate(2deg);background:#fff}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:1100px){.investment-seal-link{display:none}}
+.btn-nav{transition:all .35s cubic-bezier(0.2,0.8,0.2,1)!important}
+.investment-pill .pill-text{letter-spacing:1px}
 </style>
 
+<!-- MOBILE OVERLAY PREMIUM -->
 <div class="mobile-overlay" id="mobileMenu">
-  <div class="mobile-head"><span>RGMA</span><button id="closeMobile">✕</button></div>
+  <div class="mobile-head">
+    <span>RGMA</span>
+    <button id="closeMobile">✕</button>
+  </div>
   <ul class="mobile-links">
     <li><a href="#inicio">Inicio</a></li>
     <li><a href="#estudio">El Estudio</a></li>
@@ -151,15 +159,26 @@
 </div>
 
 <section id="inicio" class="hero-principal">
-   <video autoplay muted loop playsinline class="hero-video" id="heroVideo"><source src="hero-acuarela-12s.mp4" type="video/mp4"></video>
+   <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+    <source src="hero-acuarela-12s.mp4" type="video/mp4">
+   </video>
     <div class="hero-overlay"></div>
     <div class="hero-contenedor-texto">
         <span class="hero-eyebrow">RGMA · BOUTIQUE LEGAL · BUENOS AIRES</span>
         <h1>Trayectoria Legal con una<br><i>Perspectiva de Vanguardia</i></h1>
         <a href="#contacto" class="btn-premium-final">Agendar Consulta <span>→</span></a>
     </div>
+    
     <a href="invertirenargentina.html" class="investment-seal-link" id="investmentSeal">
-      <div class="investment-seal"><div class="seal-ring"></div><div class="seal-ring-2"></div><div class="seal-content"><span class="seal-year">2026</span><span class="seal-new">NEW</span><span class="seal-text">Investment<br>in Argentina</span></div></div>
+      <div class="investment-seal">
+        <div class="seal-ring"></div>
+        <div class="seal-ring-2"></div>
+        <div class="seal-content">
+          <span class="seal-year">2026</span>
+          <span class="seal-new">NEW</span>
+          <span class="seal-text">Investment<br>in Argentina</span>
+        </div>
+      </div>
     </a>
 </section>
 
@@ -183,9 +202,11 @@
     </div>
   </div>
 </section>
-
+<!-- CIERRE CARRERA - CORREGIDO RGMA -->
 <section class="seccion-cierre-premium">
-  <div class="capa-fondo-imagen"><img src="oficina-lapiz.png" alt="Boceto Arquitectónico RGMA" class="imagen-boceto-blur"></div>
+  <div class="capa-fondo-imagen">
+    <img src="oficina-lapiz.png" alt="Boceto Arquitectónico RGMA" class="imagen-boceto-blur">
+  </div>
   <div class="contenido-cierre">
     <span class="eyebrow light">CARRERA EN RGMA</span>
     <h2>Unite al Equipo</h2>
@@ -194,26 +215,66 @@
   </div>
 </section>
 
+<!-- CONTACTO PREMIUM - VERSIÓN FINAL PULIDA RGMA -->
 <section id="contacto" class="section-contacto">
   <div class="contacto-header">
     <span class="eyebrow">CONTACTO ESTRATÉGICO</span>
-    <div class="titulo-con-linea"><div class="linea-decorativa"></div><h2>Contacto</h2></div>
+    <div class="titulo-con-linea">
+      <div class="linea-decorativa"></div>
+      <h2>Contacto</h2>
+    </div>
   </div>
+
   <div class="contenedor-contacto">
     <div class="contacto-info">
-      <div class="bloque-dato"><label>SEDE CENTRAL</label><p>Av. Corrientes 450, Piso 10<br>C1043AAR · CABA · Argentina</p></div>
-      <div class="bloque-dato"><label>TELÉFONO</label><p>+54 (11) 4321-5555</p></div>
-      <div class="bloque-dato"><label>EMAIL DIRECTO</label><p>contacto@rgmabogados.com.ar</p><small>Respuesta confidencial en 24h hábiles</small></div>
-      <div class="contacto-quote"><p>"Cada consulta es tratada con la reserva y estrategia de una boutique."</p></div>
+      <div class="bloque-dato">
+        <label>SEDE CENTRAL</label>
+        <p>Av. Corrientes 450, Piso 10<br>C1043AAR · CABA · Argentina</p>
+      </div>
+      <div class="bloque-dato">
+        <label>TELÉFONO</label>
+        <p>+54 (11) 4321-5555</p>
+      </div>
+      <div class="bloque-dato">
+        <label>EMAIL DIRECTO</label>
+        <p>contacto@rgmabogados.com.ar</p>
+        <small>Respuesta confidencial en 24h hábiles</small>
+      </div>
+      <div class="contacto-quote">
+        <p>"Cada consulta es tratada con la reserva y estrategia de una boutique."</p>
+      </div>
     </div>
+
     <form class="formulario-contacto premium-form">
       <div class="form-grid">
-        <div class="campo-flotante"><input type="text" id="f-nombre" placeholder=" " required><label for="f-nombre">Nombre completo</label><span class="form-line"></span></div>
-        <div class="campo-flotante"><input type="email" id="f-email" placeholder=" " required><label for="f-email">Email</label><span class="form-line"></span></div>
+        <div class="campo-flotante">
+          <input type="text" id="f-nombre" placeholder=" " required>
+          <label for="f-nombre">Nombre completo</label>
+          <span class="form-line"></span>
+        </div>
+        <div class="campo-flotante">
+          <input type="email" id="f-email" placeholder=" " required>
+          <label for="f-email">Email</label>
+          <span class="form-line"></span>
+        </div>
       </div>
-      <div class="campo-flotante campo-ancho"><input type="text" id="f-empresa" placeholder=" "><label for="f-empresa">Empresa / Estudio</label><span class="form-line"></span></div>
-      <div class="campo-flotante campo-ancho"><textarea id="f-consulta" placeholder=" " rows="4" required></textarea><label for="f-consulta">Describa brevemente su consulta</label><span class="form-line"></span></div>
-      <div class="form-actions"><button type="submit" class="boton-enviar">ENVIAR</button><span class="form-legal">Confidencialidad garantizada · RGMA 2026</span></div>
+      
+      <div class="campo-flotante campo-ancho">
+        <input type="text" id="f-empresa" placeholder=" ">
+        <label for="f-empresa">Empresa / Estudio</label>
+        <span class="form-line"></span>
+      </div>
+      
+      <div class="campo-flotante campo-ancho">
+        <textarea id="f-consulta" placeholder=" " rows="4" required></textarea>
+        <label for="f-consulta">Describa brevemente su consulta</label>
+        <span class="form-line"></span>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="boton-enviar">ENVIAR</button>
+        <span class="form-legal">Confidencialidad garantizada · RGMA 2026</span>
+      </div>
     </form>
   </div>
 </section>
@@ -224,6 +285,7 @@
 .titulo-con-linea{display:flex;align-items:center;gap:28px;margin-top:32px}
 .linea-decorativa{width:64px;height:1px;background:#C8B090;flex-shrink:0}
 .section-contacto h2{font-family:'Playfair Display';font-size:56px;font-weight:300;color:#0A1931;line-height:1;letter-spacing:-1px}
+
 .contenedor-contacto{margin-top:80px;display:grid;grid-template-columns:320px 1fr;gap:96px}
 .contacto-info{display:flex;flex-direction:column;gap:36px}
 .bloque-dato label{font-size:9px;letter-spacing:2.5px;color:#C8B090;font-weight:700;display:block;margin-bottom:10px}
@@ -231,74 +293,118 @@
 .bloque-dato small{font-size:11px;color:#9CA3AF;display:block;margin-top:6px;font-style:italic}
 .contacto-quote{margin-top:12px;padding-top:28px;border-top:1px solid #E8E2D6}
 .contacto-quote p{font-family:'Playfair Display';font-style:italic;font-size:14px;color:#6B7280;line-height:1.6}
+
+/* FORM PULIDO */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .campo-flotante{position:relative;margin-bottom:36px}
 .campo-ancho{margin-top:12px}
-.campo-flotante input, .campo-flotante textarea{width:100%;border:0;border-bottom:1px solid #E8E2D6;background:transparent;padding:18px 0 10px 0;font-size:14px;font-family:'Inter';color:#0A1931;outline:none;transition:.3s}
+.campo-flotante input, .campo-flotante textarea{
+  width:100%;border:0;border-bottom:1px solid #E8E2D6;background:transparent;
+  padding:18px 0 10px 0;font-size:14px;font-family:'Inter';color:#0A1931;outline:none;transition:.3s
+}
 .campo-flotante textarea{resize:none;height:90px}
-.campo-flotante label{position:absolute;left:0;top:18px;font-size:14px;color:#B8B8B8;pointer-events:none;transition:.25s ease;font-family:'Inter'}
-.campo-flotante input:focus + label, .campo-flotante input:not(:placeholder-shown) + label, .campo-flotante textarea:focus + label, .campo-flotante textarea:not(:placeholder-shown) + label{top:-8px;font-size:10px;letter-spacing:1px;color:#C8B090;font-weight:600;text-transform:uppercase}
+.campo-flotante label{
+  position:absolute;left:0;top:18px;font-size:14px;color:#B8B8B8;
+  pointer-events:none;transition:.25s ease;font-family:'Inter'
+}
+.campo-flotante input:focus + label,
+.campo-flotante input:not(:placeholder-shown) + label,
+.campo-flotante textarea:focus + label,
+.campo-flotante textarea:not(:placeholder-shown) + label{
+  top:-8px;font-size:10px;letter-spacing:1px;color:#C8B090;font-weight:600;text-transform:uppercase
+}
 .form-line{position:absolute;bottom:0;left:0;width:0;height:1px;background:#0A1931;transition:.4s ease}
-.campo-flotante input:focus ~ .form-line, .campo-flotante textarea:focus ~ .form-line{width:100%}
+.campo-flotante input:focus ~ .form-line,
+.campo-flotante textarea:focus ~ .form-line{width:100%}
+
+/* BOTON PULIDO */
 .form-actions{margin-top:24px;display:flex;align-items:center;gap:24px}
-.boton-enviar{background:#0A1931;color:#fff;border:0;padding:15px 38px;font-size:10px;letter-spacing:3px;font-weight:700;cursor:pointer;transition:.3s}
+.boton-enviar{
+  background:#0A1931;color:#fff;border:0;
+  padding:15px 38px;font-size:10px;letter-spacing:3px;font-weight:700;
+  cursor:pointer;transition:.3s
+}
 .boton-enviar:hover{background:#12284E;letter-spacing:3.5px}
 .form-legal{font-size:10px;letter-spacing:1px;color:#9CA3AF}
-.footer-rgm{background:#0A1931;padding:80px 48px 32px}
-.footer-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}
-.f-col{color:rgba(255,255,255,.7)}
-.footer-logo-lockup{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.footer-logo-text{font-family:'Playfair Display',serif;color:#fff;font-size:22px;letter-spacing:3px;font-weight:400}
-.ma-black{color:#C8B090}
-.footer-isologo{height:28px;width:auto;background:transparent!important}
-.f-claim{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;line-height:1.5;color:rgba(255,255,255,.6)}
-.f-line{width:100%;height:1px;background:rgba(200,176,144,.2);margin:24px 0}
-.f-copy-brand span{font-size:10px;letter-spacing:2px;color:#fff;line-height:1.4}
-.f-italic{font-family:'Times New Roman',serif;font-style:italic;color:#C8B090!important}
-.f-title{font-size:9px;letter-spacing:3px;color:#C8B090;font-weight:700;display:block;margin-bottom:20px}
-.f-col a{display:block;color:rgba(255,255,255,.6);text-decoration:none;font-size:12px;padding:6px 0;transition:.3s}
-.f-col a:hover{color:#fff;padding-left:4px}
-.f-col p{font-size:12px;line-height:1.6;color:rgba(255,255,255,.6)}
-.f-contact{margin-top:20px}
-.f-contact p{margin:2px 0}
-.f-consulta-txt{font-family:'Playfair Display',serif;font-style:italic}
-.f-btn{display:inline-block!important;margin-top:16px;border:1px solid rgba(200,176,144,.3);padding:12px 22px!important;font-size:10px!important;letter-spacing:2px!important;color:#C8B090!important;transition:.3s}
-.f-btn:hover{background:#C8B090;color:#0A1931!important}
-.f-bottom{max-width:1320px;margin:56px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;gap:20px}
-.f-bottom p{font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.4)}
-@media(max-width:900px){ .contenedor-contacto{grid-template-columns:1fr;gap:56px} .form-grid{grid-template-columns:1fr;gap:0} .section-contacto{padding:80px 24px} .footer-inner{grid-template-columns:1fr 1fr;gap:32px} .footer-rgm{padding:56px 24px 24px} .f-bottom{flex-direction:column} }
+
+@media(max-width:900px){
+  .contenedor-contacto{grid-template-columns:1fr;gap:56px}
+  .form-grid{grid-template-columns:1fr;gap:0}
+  .section-contacto{padding:80px 24px}
+}
 </style>
 
+<!-- FOOTER PREMIUM RGMA -->
 <footer class="footer-rgm">
   <div class="footer-inner">
     <div class="f-col brand">
-      <div class="footer-logo-lockup"><div class="footer-logo-text">RG<span class="ma-black">MA</span></div><img src="logo-final.webp" alt="RGMA" class="footer-isologo"></div>
+      <div class="footer-logo-lockup">
+        <div class="footer-logo-text">RG<span class="ma-black">MA</span></div>
+        <img src="logo-final.webp" alt="RGMA" class="footer-isologo">
+      </div>
       <p class="f-claim">Trayectoria legal con<br>perspectiva de vanguardia.</p>
       <div class="f-line"></div>
-      <div class="f-copy-brand"><span>RIGANTI, GEILER</span><br><span class="f-italic">& MÁRQUEZ ALLURALDE</span></div>
+      <div class="f-copy-brand">
+        <span>RIGANTI, GEILER</span><br>
+        <span class="f-italic">& MÁRQUEZ ALLURALDE</span>
+      </div>
     </div>
-    <div class="f-col"><span class="f-title">ÁREAS CLAVE</span><a href="derecho-empresarial.html">Empresario y PyMEs</a><a href="derecho-laboral.html">Laboral Empresario</a><a href="derecho-civil-seguros.html">Civil y Seguros</a><a href="derecho-inmobiliario.html">Inmobiliario y PH</a><a href="derecho-consumidor.html">Digital, IP y Consumidor</a><a href="derecho-administrativo.html">Administrativo</a><a href="derecho-deportivo.html">Deportivo</a></div>
-    <div class="f-col"><span class="f-title">MERCOSUR</span><p>Red de corresponsalías en los principales centros del país y la región.</p><div class="f-contact"><p>CABA · Buenos Aires</p><p>+54 11 4321-5555</p><p>contacto@rgmabogados.com.ar</p></div></div>
-    <div class="f-col"><span class="f-title">CONSULTA</span><p class="f-consulta-txt">Atención personalizada,<br>confidencial y estratégica.</p><a href="#contacto" class="f-btn">AGENDAR CONSULTA →</a></div>
+
+    <div class="f-col">
+      <span class="f-title">ÁREAS CLAVE</span>
+      <a href="derecho-empresarial.html">Empresario y PyMEs</a>
+      <a href="derecho-laboral.html">Laboral Empresario</a>
+      <a href="derecho-civil-seguros.html">Civil y Seguros</a>
+      <a href="derecho-inmobiliario.html">Inmobiliario y PH</a>
+      <a href="derecho-consumidor.html">Digital, IP y Consumidor</a>
+      <a href="derecho-administrativo.html">Administrativo</a>
+      <a href="derecho-deportivo.html">Deportivo</a>
+    </div>
+
+    <div class="f-col">
+      <span class="f-title">MERCOSUR</span>
+      <p>Red de corresponsalías en los principales centros del país y la región.</p>
+      <div class="f-contact">
+        <p>CABA · Buenos Aires</p>
+        <p>+54 11 4321-5555</p>
+        <p>contacto@rgmabogados.com.ar</p>
+      </div>
+    </div>
+
+    <div class="f-col">
+      <span class="f-title">CONSULTA</span>
+      <p class="f-consulta-txt">Atención personalizada,<br>confidencial y estratégica.</p>
+      <a href="#contacto" class="f-btn">AGENDAR CONSULTA →</a>
+    </div>
   </div>
-  <div class="f-bottom"><p>© 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — RGMA · CABA · MERCOSUR</p><p class="f-legal-small">Estudio jurídico boutique · Todos los derechos reservados</p></div>
+
+  <div class="f-bottom">
+    <p>© 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — RGMA · CABA · MERCOSUR</p>
+    <p class="f-legal-small">Estudio jurídico boutique · Todos los derechos reservados</p>
+  </div>
 </footer>
 
 <script>
 const header = document.getElementById('mainHeader');
 const hero = document.querySelector('.hero-principal');
 const v = document.getElementById('heroVideo');
+
+// Video fade premium
 v?.addEventListener('loadeddata', ()=> v.classList.add('is-loaded'));
 setTimeout(()=> v?.classList.add('is-loaded'), 800);
+
 window.addEventListener('scroll', () => {
   if (window.scrollY > 80) { header.classList.add('shrink'); } else { header.classList.remove('shrink'); }
   if(hero && window.scrollY > hero.offsetHeight - 150){ document.body.classList.add('pill-visible'); } else { document.body.classList.remove('pill-visible'); }
 }, {passive:true});
+
+// MOBILE MENU + ACCORDION
 const burger = document.getElementById('btnBurger');
 const mobileMenu = document.getElementById('mobileMenu');
 const closeMobile = document.getElementById('closeMobile');
 const accBtn = document.getElementById('accAreas'); 
 const accPanel = document.getElementById('panelAreas');
+
 burger?.addEventListener('click', ()=> { mobileMenu.classList.add('open'); document.body.style.overflow='hidden'; });
 closeMobile?.addEventListener('click', ()=> { mobileMenu.classList.remove('open'); document.body.style.overflow=''; });
 accBtn?.addEventListener('click', ()=> {
