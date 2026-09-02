@@ -663,3 +663,109 @@ footer .f-col, footer > div > div {
   letter-spacing: 0.02em;
   font-weight: 300 !important;
 }
+/* ==========================================
+   PÁGINA DE AGRADECIMIENTO - RGMA ÉLITE
+   ========================================== */
+.body-gracias-premium {
+  background: #070b14 !important; /* Tu azul marino profundo exacto */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.contenedor-graska-editorial {
+  padding: 24px;
+  width: 100%;
+  max-width: 650px;
+}
+
+.tarjeta-gracias-elite {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(200, 176, 144, 0.2); /* Tu dorado perimetral sutil */
+  border-radius: 12px;
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px); /* Efecto vidrio premium si hay fondos */
+}
+
+.gracias-logo-img {
+  height: 44px;
+  width: auto;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.titulo-gracias-serif {
+  font-family: 'Playfair Display', serif !important; /* Tu fuente de élite */
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0 0 24px 0;
+}
+
+.linea-gracias-dorada {
+  width: 35px;
+  height: 1px;
+  background: var(--dorado, #c8b090);
+  margin: 0 auto 28px auto;
+}
+
+.txt-gracias-editorial {
+  font-family: 'Lora', serif !important;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #a4b3cd; /* Gris de lectura de tu versión 2.0 */
+  margin: 0 0 16px 0;
+}
+
+.txt-gracias-tiempo {
+  font-family: 'Arial', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--dorado, #c8b090);
+  text-transform: uppercase;
+  margin: 0 0 40px 0;
+  font-weight: 600;
+}
+
+/* Botón de regreso minimalista */
+.btn-regresar-premium {
+  display: inline-block;
+  border: 1px solid rgba(200, 176, 144, 0.4);
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 14px 28px;
+  border-radius: 4px;
+  transition: all 0.3s var(--ease, ease);
+}
+
+.btn-regresar-premium:hover {
+  border-color: var(--dorado, #c8b090);
+  background: var(--dorado, #c8b090);
+  color: #070b14;
+  box-shadow: 0 4px 20px rgba(200, 176, 144, 0.15);
+}
+
+/* Ajuste móvil */
+@media (max-width: 480px) {
+  .tarjeta-gracias-elite {
+    padding: 40px 24px;
+  }
+  .titulo-gracias-serif {
+    font-size: 22px;
+  }
+}
+
