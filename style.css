@@ -674,28 +674,8 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 .grupo-campo input, .grupo-campo textarea{
   border-bottom: 1px solid #D9D0BE;
 }
-.float-dock{
-  position:absolute;
-  right:22px;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:20;
-  width:56px;
-  background:rgba(10,25,49,.92);
-  backdrop-filter:blur(8px);
-  border:1px solid #B6A088;
-  border-left:3px solid #B6A088; /* el detalle oro grueso de tu foto */
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 15px 35px rgba(0,0,0,.4);
-}
-.float-dock a{
-  display:flex;
-  height:56px;
-  align-items:center;
-  justify-content:center;
-  color:#B6A088;
-  border-bottom:1px solid rgba(182,160,136,.25);
-}
-.float-dock a:last-child{border:0}
-.float-dock a:hover{background:rgba(182,160,136,.12);color:#fff}
+.barra-flotante-contacto{position:fixed;right:12px;top:42%;transform:translateY(-50%);z-index:999;display:flex;flex-direction:column;gap:1px;border-radius:8px;overflow:hidden}
+.item-flotante{display:flex;align-items:center;justify-content:flex-end;background:var(--navy);color:#fff;height:48px;min-width:48px;border-left:2px solid var(--dorado);padding:0 14px;text-decoration:none;transition:all .35s var(--ease)}
+.item-flotante span{font-size:9px;letter-spacing:2px;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;transition:all .35s var(--ease)}
+.item-flotante:hover span{max-width:120px;opacity:1;padding-right:12px}
+.icono-flotante-svg{width:20px;display:flex;align-items:center;justify-content:center;color:var(--dorado-light)}
