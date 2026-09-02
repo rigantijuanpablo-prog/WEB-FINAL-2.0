@@ -215,98 +215,41 @@
   </div>
 </section>
 
-<section style="max-width:1320px;margin:0 auto;padding:80px 48px;background:#FCFBF9;box-sizing:border-box;font-family:Inter,sans-serif">
-  
-  <div style="margin-bottom:64px">
-    <h2 style="font-family:'Playfair Display';font-size:28px;color:#0A1931;font-weight:600;margin:0 0 12px 0">Contacto</h2>
-    <div style="width:48px;height:1px;background:#C8B090"></div>
+<section id="contacto" style="max-width:1320px;margin:0 auto;padding:80px 48px;background:#FCFBF9">
+<style>
+  #contacto *{box-sizing:border-box}
+  #contacto .rg-contact-grid{display:grid;grid-template-columns:220px 1fr;gap:64px}
+  #contacto .rg-label{font-size:9px;letter-spacing:2px;color:#C8B090;font-weight:700;margin-bottom:8px;display:block}
+  #contacto .rg-text{font-size:13px;color:#0A1931;line-height:1.5;font-family:Inter,sans-serif}
+  #contacto .rg-form{display:flex;flex-direction:column;gap:22px !important}
+  #contacto .rg-field{display:flex;flex-direction:column;gap:6px !important;margin:0 !important;padding:0 !important}
+  #contacto .rg-field label{font-size:10px !important;font-weight:700 !important;color:#0A1931 !important;letter-spacing:.8px !important;position:static !important;transform:none !important;margin:0 !important}
+  #contacto .rg-field input{height:32px !important;border:none !important;border-bottom:1px solid #8A95A8 !important;border-radius:0 !important;padding:0 0 8px 0 !important;background:transparent !important;outline:none !important}
+  #contacto .rg-field textarea{height:70px !important;border:none !important;border-bottom:1px solid #8A95A8 !important;border-radius:0 !important;padding:0 !important;background:transparent !important;outline:none !important;resize:none !important}
+  @media(max-width:900px){#contacto .rg-contact-grid{grid-template-columns:1fr}}
+</style>
+
+  <div style="margin-bottom:56px">
+    <h2 style="font-family:'Playfair Display';font-size:28px;color:#0A1931;margin:0 0 10px 0;font-weight:600">Contacto</h2>
+    <div style="width:42px;height:1px;background:#C8B090"></div>
   </div>
 
-  <div style="display:grid;grid-template-columns:220px 1fr;gap:80px">
-    <!-- COL IZQ -->
+  <div class="rg-contact-grid">
     <div>
-      <div style="margin-bottom:32px"><div style="font-size:9px;letter-spacing:2px;color:#C8B090;font-weight:700;margin-bottom:8px">SEDE CENTRAL</div><div style="font-size:13px;color:#0A1931;line-height:1.5">Av. Corrientes 450, Piso 10, CABA</div></div>
-      <div style="margin-bottom:32px"><div style="font-size:9px;letter-spacing:2px;color:#C8B090;font-weight:700;margin-bottom:8px">TELÉFONO</div><div style="font-size:13px;color:#0A1931">+54 (11) 4321-5555</div></div>
-      <div><div style="font-size:9px;letter-spacing:2px;color:#C8B090;font-weight:700;margin-bottom:8px">EMAIL</div><div style="font-size:13px;color:#0A1931">contacto@rigantigeiler.com</div></div>
+      <div style="margin-bottom:28px"><span class="rg-label">SEDE CENTRAL</span><div class="rg-text">Av. Corrientes 450, Piso 10, CABA</div></div>
+      <div style="margin-bottom:28px"><span class="rg-label">TELÉFONO</span><div class="rg-text">+54 (11) 4321-5555</div></div>
+      <div><span class="rg-label">EMAIL</span><div class="rg-text">contacto@rigantigeiler.com</div></div>
     </div>
 
-    <!-- FORM CORREGIDO - SIN ESPACIO GIGANTE -->
-    <div style="display:flex;flex-direction:column;gap:28px;margin-top:4px">
-      <div>
-        <label style="font-size:10px;font-weight:700;letter-spacing:.8px;color:#0A1931;margin-bottom:0;display:block">Nombre completo</label>
-        <input type="text" style="width:100%;border:none;border-bottom:1px solid #6B7A8F;padding:8px 0 10px 0;outline:none;background:transparent;font-size:14px;margin-top:4px">
-      </div>
-      <div>
-        <label style="font-size:10px;font-weight:700;letter-spacing:.8px;color:#0A1931;margin-bottom:0;display:block">Email</label>
-        <input type="email" style="width:100%;border:none;border-bottom:1px solid #6B7A8F;padding:8px 0 10px 0;outline:none;background:transparent;font-size:14px;margin-top:4px">
-      </div>
-      <div>
-        <label style="font-size:10px;font-weight:700;letter-spacing:.8px;color:#0A1931;margin-bottom:0;display:block">Empresa / Estudio</label>
-        <input type="text" style="width:100%;border:none;border-bottom:1px solid #6B7A8F;padding:8px 0 10px 0;outline:none;background:transparent;font-size:14px;margin-top:4px">
-      </div>
-      <div>
-        <label style="font-size:10px;font-weight:700;letter-spacing:.8px;color:#0A1931;margin-bottom:0;display:block">Describa su consulta</label>
-        <textarea style="width:100%;border:none;border-bottom:1px solid #6B7A8F;padding:8px 0 10px 0;outline:none;background:transparent;font-size:14px;margin-top:4px;height:80px;resize:none"></textarea>
-      </div>
-
-      <button style="background:#0A1931;color:#fff;border:none;padding:18px 32px;font-size:10px;letter-spacing:3px;font-weight:700;cursor:pointer;text-align:left;margin-top:8px;width:100%">ENVIAR</button>
+    <div class="rg-form">
+      <div class="rg-field"><label>Nombre completo</label><input type="text"></div>
+      <div class="rg-field"><label>Email</label><input type="email"></div>
+      <div class="rg-field"><label>Empresa / Estudio</label><input type="text"></div>
+      <div class="rg-field"><label>Describa su consulta</label><textarea></textarea></div>
+      <button style="background:#0A1931;color:#fff;border:none;padding:16px 32px;font-size:10px;letter-spacing:2.5px;font-weight:700;cursor:pointer;margin-top:8px;text-align:left">ENVIAR</button>
     </div>
   </div>
 </section>
-<style>
-.section-contacto{max-width:1320px;margin:0 auto;padding:120px 48px;background:#FCFBF9}
-.eyebrow{font-size:9px;letter-spacing:4px;color:#C8B090;font-weight:700;display:block}
-.titulo-con-linea{display:flex;align-items:center;gap:28px;margin-top:32px}
-.linea-decorativa{width:64px;height:1px;background:#C8B090;flex-shrink:0}
-.section-contacto h2{font-family:'Playfair Display';font-size:56px;font-weight:300;color:#0A1931;line-height:1;letter-spacing:-1px}
-
-.contenedor-contacto{margin-top:80px;display:grid;grid-template-columns:320px 1fr;gap:96px}
-.contacto-info{display:flex;flex-direction:column;gap:36px}
-.bloque-dato label{font-size:9px;letter-spacing:2.5px;color:#C8B090;font-weight:700;display:block;margin-bottom:10px}
-.bloque-dato p{font-size:14px;line-height:1.7;color:#111827}
-.bloque-dato small{font-size:11px;color:#9CA3AF;display:block;margin-top:6px;font-style:italic}
-.contacto-quote{margin-top:12px;padding-top:28px;border-top:1px solid #E8E2D6}
-.contacto-quote p{font-family:'Playfair Display';font-style:italic;font-size:14px;color:#6B7280;line-height:1.6}
-
-/* FORM PULIDO */
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.campo-flotante{position:relative;margin-bottom:36px}
-.campo-ancho{margin-top:12px}
-.campo-flotante input, .campo-flotante textarea{
-  width:100%;border:0;border-bottom:1px solid #E8E2D6;background:transparent;
-  padding:18px 0 10px 0;font-size:14px;font-family:'Inter';color:#0A1931;outline:none;transition:.3s
-}
-.campo-flotante textarea{resize:none;height:90px}
-.campo-flotante label{
-  position:absolute;left:0;top:18px;font-size:14px;color:#B8B8B8;
-  pointer-events:none;transition:.25s ease;font-family:'Inter'
-}
-.campo-flotante input:focus + label,
-.campo-flotante input:not(:placeholder-shown) + label,
-.campo-flotante textarea:focus + label,
-.campo-flotante textarea:not(:placeholder-shown) + label{
-  top:-8px;font-size:10px;letter-spacing:1px;color:#C8B090;font-weight:600;text-transform:uppercase
-}
-.form-line{position:absolute;bottom:0;left:0;width:0;height:1px;background:#0A1931;transition:.4s ease}
-.campo-flotante input:focus ~ .form-line,
-.campo-flotante textarea:focus ~ .form-line{width:100%}
-
-/* BOTON PULIDO */
-.form-actions{margin-top:24px;display:flex;align-items:center;gap:24px}
-.boton-enviar{
-  background:#0A1931;color:#fff;border:0;
-  padding:15px 38px;font-size:10px;letter-spacing:3px;font-weight:700;
-  cursor:pointer;transition:.3s
-}
-.boton-enviar:hover{background:#12284E;letter-spacing:3.5px}
-.form-legal{font-size:10px;letter-spacing:1px;color:#9CA3AF}
-
-@media(max-width:900px){
-  .contenedor-contacto{grid-template-columns:1fr;gap:56px}
-  .form-grid{grid-template-columns:1fr;gap:0}
-  .section-contacto{padding:80px 24px}
-}
-</style>
 
 <!-- FOOTER PREMIUM RGMA -->
 <footer class="footer-rgm">
