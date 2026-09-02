@@ -1069,89 +1069,88 @@ nav ul {
     gap: 50px;
   }
 }
-
 /* ==========================================================================
-   === BARRA FLOTANTE PREMIUM - REPRODUCCIÓN EXACTA EFECTO VIDRIO (GLASS) ===
+   === BARRA FLOTANTE PREMIUM - REPRODUCCIÓN EXACTA CON FIX DE CONTRASTE ===
    ========================================================================== */
 .barra-flotante-contacto {
   position: fixed !important;
-  right: 20px !important; /* Separación sutil del borde de la pantalla */
+  right: 20px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
   bottom: auto !important;
   left: auto !important;
-  z-index: 999999 !important; /* Capa superior absoluta sobre el video y fotos */
+  z-index: 999999 !important;
   display: flex !important;
   flex-direction: column !important;
-  width: 50px !important; /* Ancho perfecto para la proporción de tu captura */
-  min-width: 50px !important;
-  max-width: 50px !important;
-  
-  /* EFECTO VIDRIO ESMERILADO (GLASSMORPHISM) OFICIAL */
-  background: rgba(10, 25, 49, 0.45) !important; /* Azul marino translúcido de base */
-  backdrop-filter: blur(16px) saturate(120%) !important; /* Desenfoque de alta fidelidad del fondo */
-  -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
-  
-  /* BORDES DORADOS FINOS PERIMETRALES */
-  border: 1px solid rgba(182, 160, 136, 0.4) !important; /* Tu dorado en baja opacidad */
-  border-left: 2px solid rgba(182, 160, 136, 0.6) !important; /* Línea izquierda levemente más definida */
-  border-radius: 14px !important; /* Curvatura elegante y pronunciada de la foto */
-  overflow: hidden !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important; /* Sombra profunda suave */
-}
-
-/* Celda contenedora (Cuadrado translúcido simétrico) */
-.barra-flotante-contacto .item-flotante {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important; /* Centrado milimétrico del icono */
-  height: 52px !important; /* Altura estilizada proporcional */
   width: 50px !important;
   min-width: 50px !important;
   max-width: 50px !important;
-  background: transparent !important; /* Permite que el vidrio se mantenga continuo */
-  color: #B6A088 !important; /* Tu dorado fino para las líneas del vector */
-  border-bottom: 1px solid rgba(182, 160, 136, 0.25) !important; /* Separadores internos dorados tenues */
+  
+  /* VIDRIO PROTEGIDO CONTRA FONDOS BLANCOS */
+  background: linear-gradient(135deg, rgba(10, 25, 49, 0.65) 0%, rgba(5, 15, 30, 0.8) 100%) !important; 
+  backdrop-filter: blur(20px) saturate(140%) !important; 
+  -webkit-backdrop-filter: blur(20px) saturate(140%) !important;
+  
+  border: 1px solid rgba(182, 160, 136, 0.45) !important;
+  border-left: 2.5px solid rgba(182, 160, 136, 0.7) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1) !important; 
+}
+
+/* Celda contenedora del botón */
+.barra-flotante-contacto .item-flotante {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 52px !important;
+  width: 50px !important;
+  min-width: 50px !important;
+  max-width: 50px !important;
+  background: transparent !important;
+  color: #B6A088 !important;
+  border-bottom: 1px solid rgba(182, 160, 136, 0.25) !important;
   text-decoration: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease !important;
+  outline: none !important; 
+  -webkit-tap-highlight-color: transparent !important; 
+  transition: background 0.3s ease, color 0.3s ease !important;
 }
 
-/* Remueve la línea divisoria del último botón inferior */
 .barra-flotante-contacto .item-flotante:last-child {
   border-bottom: 0 !important;
 }
 
-/* BLINDAJE ABSOLUTO: Oculta los textos para evitar cualquier deformación */
+/* BLINDAJE RADICAL ANTI-TEXTO FANTASMA */
 .barra-flotante-contacto .item-flotante span {
   display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important; 
+  line-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Escalado nítido de tus vectores SVGs finos */
 .barra-flotante-contacto .item-flotante svg {
-  width: 17px !important; /* Tamaño exacto de tu nueva referencia */
+  width: 17px !important;
   height: 17px !important;
   display: block !important;
   flex-shrink: 0 !important;
 }
 
-/* ==========================================================================
-   INTERACCIÓN HOVER (BRILLO INTERNO DE ALTA GAMA)
-   ========================================================================== */
 .barra-flotante-contacto .item-flotante:hover {
-  background: rgba(255, 255, 255, 0.05) !important; /* Sutil reflejo de luz blanca sobre el vidrio */
-  color: #ffffff !important; /* El icono pasa a blanco puro iluminando la celda */
+  background: rgba(255, 255, 255, 0.08) !important; 
+  color: #ffffff !important;
 }
 
-/* COMPORTAMIENTO RESPONSIVO ADAPTATIVO MÓVIL */
 @media (max-width: 1100px) {
-  .barra-flotante-contacto {
-    display: none !important; /* Oculta el widget en teléfonos para mantener la UI limpia */
-  }
+  .barra-flotante-contacto { display: none !important; }
 }
 
-}
 
 /* ==========================================================================
    SECCIÓN CIERRE PREMIUM (UNITE AL EQUIPO)
