@@ -215,12 +215,14 @@
   </div>
 </section>
 
-<!-- CONTACTO PREMIUM -->
+<!-- CONTACTO PREMIUM - VERSIÓN FINAL PULIDA RGMA -->
 <section id="contacto" class="section-contacto">
   <div class="contacto-header">
     <span class="eyebrow">CONTACTO ESTRATÉGICO</span>
-    <h2>Contacto</h2>
-    <div class="linea-decorativa"></div>
+    <div class="titulo-con-linea">
+      <div class="linea-decorativa"></div>
+      <h2>Contacto</h2>
+    </div>
   </div>
 
   <div class="contenedor-contacto">
@@ -244,33 +246,93 @@
     </div>
 
     <form class="formulario-contacto premium-form">
-      <div class="campo-flotante">
-        <input type="text" id="f-nombre" placeholder=" " required>
-        <label for="f-nombre">Nombre completo</label>
-        <span class="form-line"></span>
+      <div class="form-grid">
+        <div class="campo-flotante">
+          <input type="text" id="f-nombre" placeholder=" " required>
+          <label for="f-nombre">Nombre completo</label>
+          <span class="form-line"></span>
+        </div>
+        <div class="campo-flotante">
+          <input type="email" id="f-email" placeholder=" " required>
+          <label for="f-email">Email</label>
+          <span class="form-line"></span>
+        </div>
       </div>
-      <div class="campo-flotante">
-        <input type="email" id="f-email" placeholder=" " required>
-        <label for="f-email">Email corporativo</label>
-        <span class="form-line"></span>
-      </div>
+      
       <div class="campo-flotante campo-ancho">
         <input type="text" id="f-empresa" placeholder=" ">
         <label for="f-empresa">Empresa / Estudio</label>
         <span class="form-line"></span>
       </div>
+      
       <div class="campo-flotante campo-ancho">
-        <textarea id="f-consulta" placeholder=" " rows="4"></textarea>
+        <textarea id="f-consulta" placeholder=" " rows="4" required></textarea>
         <label for="f-consulta">Describa brevemente su consulta</label>
         <span class="form-line"></span>
       </div>
-      <button type="submit" class="boton-enviar">
-        ENVIAR REQUERIMIENTO <i>→</i>
-      </button>
-      <span class="form-legal">Confidencialidad garantizada · RGMA 2026</span>
+
+      <div class="form-actions">
+        <button type="submit" class="boton-enviar">ENVIAR</button>
+        <span class="form-legal">Confidencialidad garantizada · RGMA 2026</span>
+      </div>
     </form>
   </div>
 </section>
+
+<style>
+.section-contacto{max-width:1320px;margin:0 auto;padding:120px 48px;background:#FCFBF9}
+.eyebrow{font-size:9px;letter-spacing:4px;color:#C8B090;font-weight:700;display:block}
+.titulo-con-linea{display:flex;align-items:center;gap:28px;margin-top:32px}
+.linea-decorativa{width:64px;height:1px;background:#C8B090;flex-shrink:0}
+.section-contacto h2{font-family:'Playfair Display';font-size:56px;font-weight:300;color:#0A1931;line-height:1;letter-spacing:-1px}
+
+.contenedor-contacto{margin-top:80px;display:grid;grid-template-columns:320px 1fr;gap:96px}
+.contacto-info{display:flex;flex-direction:column;gap:36px}
+.bloque-dato label{font-size:9px;letter-spacing:2.5px;color:#C8B090;font-weight:700;display:block;margin-bottom:10px}
+.bloque-dato p{font-size:14px;line-height:1.7;color:#111827}
+.bloque-dato small{font-size:11px;color:#9CA3AF;display:block;margin-top:6px;font-style:italic}
+.contacto-quote{margin-top:12px;padding-top:28px;border-top:1px solid #E8E2D6}
+.contacto-quote p{font-family:'Playfair Display';font-style:italic;font-size:14px;color:#6B7280;line-height:1.6}
+
+/* FORM PULIDO */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.campo-flotante{position:relative;margin-bottom:36px}
+.campo-ancho{margin-top:12px}
+.campo-flotante input, .campo-flotante textarea{
+  width:100%;border:0;border-bottom:1px solid #E8E2D6;background:transparent;
+  padding:18px 0 10px 0;font-size:14px;font-family:'Inter';color:#0A1931;outline:none;transition:.3s
+}
+.campo-flotante textarea{resize:none;height:90px}
+.campo-flotante label{
+  position:absolute;left:0;top:18px;font-size:14px;color:#B8B8B8;
+  pointer-events:none;transition:.25s ease;font-family:'Inter'
+}
+.campo-flotante input:focus + label,
+.campo-flotante input:not(:placeholder-shown) + label,
+.campo-flotante textarea:focus + label,
+.campo-flotante textarea:not(:placeholder-shown) + label{
+  top:-8px;font-size:10px;letter-spacing:1px;color:#C8B090;font-weight:600;text-transform:uppercase
+}
+.form-line{position:absolute;bottom:0;left:0;width:0;height:1px;background:#0A1931;transition:.4s ease}
+.campo-flotante input:focus ~ .form-line,
+.campo-flotante textarea:focus ~ .form-line{width:100%}
+
+/* BOTON PULIDO */
+.form-actions{margin-top:24px;display:flex;align-items:center;gap:24px}
+.boton-enviar{
+  background:#0A1931;color:#fff;border:0;
+  padding:15px 38px;font-size:10px;letter-spacing:3px;font-weight:700;
+  cursor:pointer;transition:.3s
+}
+.boton-enviar:hover{background:#12284E;letter-spacing:3.5px}
+.form-legal{font-size:10px;letter-spacing:1px;color:#9CA3AF}
+
+@media(max-width:900px){
+  .contenedor-contacto{grid-template-columns:1fr;gap:56px}
+  .form-grid{grid-template-columns:1fr;gap:0}
+  .section-contacto{padding:80px 24px}
+}
+</style>
 
 <!-- FOOTER PREMIUM RGMA -->
 <footer class="footer-rgm">
