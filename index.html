@@ -242,6 +242,16 @@
     <!-- COLUMNA DERECHA: Formulario simétrico -->
     <form class="formulario-contacto" action="https://formsubmit.co" method="POST">
       
+      <!-- CONFIGURACIÓN INTERNA DE FORMSUBMIT -->
+      <!-- 1. Redirección automática a tu página de agradecimiento de élite -->
+      <input type="hidden" name="_next" value="https://tu-dominio-aqui.com">
+      
+      <!-- 2. Desactiva el Captcha molesto de FormSubmit para no romper la estética premium -->
+      <input type="hidden" name="_captcha" value="false">
+      
+      <!-- 3. Define el asunto del correo que te va a llegar a tu bandeja -->
+      <input type="hidden" name="_subject" value="Nueva Consulta Estratégica Corporativa — RGMA 2.0">
+
       <!-- Fila de dos columnas idénticas (50% y 50%) -->
       <div class="fila-doble">
         <div class="grupo-campo">
@@ -273,7 +283,6 @@
 
   </div>
 </section>
-
 
 
 <style>
