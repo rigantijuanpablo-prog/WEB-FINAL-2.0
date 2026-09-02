@@ -300,3 +300,15 @@ body.pill-visible .investment-pill{opacity:1;transform:translateX(0);pointer-eve
   .nav-desktop,.right-group .btn-area-flex,.right-group .btn-nav,.investment-pill{display:none!important}
   .btn-burger{display:flex!important}
 }
+/* INVESTMENT SEAL - PULIDO FINAL */
+.investment-seal-link{position:absolute;right:48px;bottom:48px;z-index:4;text-decoration:none}
+.investment-seal{width:132px;height:132px;border-radius:50%;background:rgba(252,251,249,0.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;position:relative;transition:all .6s cubic-bezier(0.2,0.8,0.2,1);box-shadow:0 20px 40px rgba(0,0,0,.18)}
+.seal-ring{position:absolute;inset:6px;border:1px solid rgba(10,25,49,.15);border-radius:50%}
+.seal-ring-2{position:absolute;inset:12px;border:1px dashed rgba(200,176,144,.4);border-radius:50%;animation:spin 20s linear infinite}
+.seal-content{text-align:center;line-height:1}
+.seal-year{font-size:8px;letter-spacing:3px;color:var(--dorado);font-weight:700;display:block;margin-bottom:2px}
+.seal-new{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);display:block;line-height:1}
+.seal-text{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);line-height:1.3;display:block;margin-top:4px;font-weight:600}
+.investment-seal-link:hover .investment-seal{transform:scale(1.05) rotate(2deg);background:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:1100px){.investment-seal-link{display:none}}
