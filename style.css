@@ -675,93 +675,89 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   border-bottom: 1px solid #D9D0BE;
 }
 /* ==========================================================================
-   BARRA FLOTANTE FIJA - RGMA ELITE (CÓDIGO INTEGRADO Y CONSOLIDADO)
-   ========================================================================== */
+   BARRA FLOTANTE PREMIUM - COMPORTAMIENTO E INTERFAZ DE ÉLITE (RGMA 2.0)
+   ========================================================================= */
 
-/* Contenedor principal de la barra */
 .barra-flotante-contacto {
   position: fixed !important;
-  right: 24px !important;
+  right: 20px !important; /* Despegado sutil del borde de la pantalla */
   top: 50% !important;
   transform: translateY(-50%) !important;
   display: flex !important;
   flex-direction: column !important;
-  background: #070b14 !important; /* Azul marino profundo institucional de la 2.0 */
-  border: 1px solid rgba(200, 176, 144, 0.25) !important; /* Tu dorado fino */
+  background: #070b14 !important; /* El azul marino profundo exacto de tu UI */
+  border: 1px solid rgba(200, 176, 144, 0.25) !important; /* Tu dorado perimetral */
   border-radius: 8px !important;
-  z-index: 999999 !important; /* Capa superior absoluta sobre el Hero y fotos */
-  overflow: hidden !important; /* Recorta el texto para que no se desborde al colapsar */
+  z-index: 999999 !important; /* Forzar al frente sobre fotos aéreas y sliders */
+  overflow: hidden !important; /* Clave para que los bordes redondeados corten limpio */
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Estructura base de cada celda de enlace (Usa tu clase real) */
-.barra-flotante-contacto .item-flotante {
+/* Celda de enlace interactiva */
+.item-flotante {
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-end !important; /* Alinea el icono estrictamente a la derecha */
-  position: relative !important;
-  height: 52px !important;
-  width: 52px !important; /* Ancho inicial colapsado exacto */
-  padding: 0 16px 0 0 !important; /* Espacio para que el icono respire a la derecha */
+  justify-content: flex-end !important; /* El icono se queda siempre clavado a la derecha */
+  background: #070b14 !important;
   color: #ffffff !important;
+  height: 48px !important;
+  width: 48px !important; /* Arranca como un cuadrado perfecto */
+  padding: 0 !important; /* Sin paddings fijos para que no se deforme */
   text-decoration: none !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  /* Animación fluida de estiramiento horizontal usando tu variable --ease */
+  transition: width 0.35s var(--ease), background 0.3s ease !important;
   box-sizing: border-box !important;
-  /* Animación cúbica fluida para simular el estiramiento elástico de la foto */
-  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease !important;
 }
 
-/* Remueve la línea divisoria del último botón */
-.barra-flotante-contacto .item-flotante:last-child {
+/* Remueve la línea del fondo del último ítem */
+.item-flotante:last-child {
   border-bottom: none !important;
 }
 
-/* Tipografía Sans-Serif Fina y espaciada de la captura */
-.barra-flotante-contacto .item-flotante span {
-  font-family: 'Arial', 'Helvetica', sans-serif !important; 
-  font-size: 10px !important;
-  letter-spacing: 2.5px !important; /* Espaciado premium entre caracteres */
-  font-weight: 500 !important;
-  color: #ffffff !important; /* Texto blanco idéntico a tu referencia */
+/* Texto interno oculto con tu técnica de max-width optimizada */
+.item-flotante span {
+  font-family: 'Arial', sans-serif !important;
+  font-size: 9px !important;
+  letter-spacing: 2px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
   text-transform: uppercase !important;
+  max-width: 0 !important;
   opacity: 0 !important;
-  visibility: hidden !important;
+  overflow: hidden !important;
   white-space: nowrap !important;
-  transition: opacity 0.2s ease !important;
-  margin-right: 12px !important; /* Separación milimétrica con el icono */
+  transition: max-width 0.35s var(--ease), opacity 0.2s ease !important;
 }
 
-/* Contenedor de tu icono vectorial (Usa tu clase real) */
-.barra-flotante-contacto .icono-flotante {
+/* Contenedor del icono fino */
+.icono-flotante {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 20px !important; /* Restringido para que no flote suelto ni descentrado */
-  height: 52px !important;
+  width: 48px !important; /* Ancho idéntico a la celda para centrado simétrico */
+  height: 48px !important;
   flex-shrink: 0 !important;
-  color: #ffffff !important;
-  font-size: 16px !important;
 }
 
-/* Ajuste preventivo si tus iconos son imágenes SVG o PNG externos */
-.barra-flotante-contacto .icono-flotante img,
-.barra-flotante-contacto .icono-flotante svg {
-  height: 18px !important;
+/* Ajuste por si usas SVGs o imágenes finas dentro del contenedor */
+.icono-flotante img,
+.icono-flotante svg {
+  height: 16px !important;
   width: auto !important;
 }
 
 /* ==========================================================================
-   ESTADOS HOVER (ESTIRAMIENTO INTERNO EXACTO)
+   INTERACCIÓN HOVER (ESTIRAMIENTO ELÁSTICO INTERNO)
    ========================================================================== */
 
-.barra-flotante-contacto .item-flotante:hover {
-  width: 165px !important; /* Se estira hacia la izquierda dando lugar al texto */
-  background: rgba(200, 176, 144, 0.08) !important; /* Sutil destello dorado translúcido */
+.item-flotante:hover {
+  width: 150px !important; /* La caja se estira de forma limpia hacia la izquierda */
+  background: rgba(200, 176, 144, 0.06) !important; /* Sutil destello dorado de fondo */
 }
 
-.barra-flotante-contacto .item-flotante:hover span {
+.item-flotante:hover span {
+  max-width: 90px !important; /* Despliega el texto de corrido */
   opacity: 1 !important;
-  visibility: visible !important;
-  transition-delay: 0.12s !important; /* Retardo para que el texto aparezca suave tras estirar */
+  margin-right: 4px !important; /* Empuja elegantemente el texto separándolo del icono */
 }
-
