@@ -215,18 +215,17 @@
   </div>
 </section>
 
-<!-- CONTACTO PREMIUM - VERSIÓN FINAL PULIDA RGMA -->
 <section id="contacto" class="section-contacto">
   <div class="contacto-header">
     <span class="eyebrow">CONTACTO ESTRATÉGICO</span>
     <div class="titulo-con-linea">
-      <div class="linea-decorativa"></div>
+      <span class="linea-decorativa"></span>
       <h2>Contacto</h2>
     </div>
   </div>
 
   <div class="contenedor-contacto">
-    <div class="contacto-info">
+    <div>
       <div class="bloque-dato">
         <label>SEDE CENTRAL</label>
         <p>Av. Corrientes 450, Piso 10<br>C1043AAR · CABA · Argentina</p>
@@ -237,42 +236,20 @@
       </div>
       <div class="bloque-dato">
         <label>EMAIL DIRECTO</label>
-        <p>contacto@rgmabogados.com.ar</p>
+        <p style="font-weight:600">contacto@rgmabogados.com.ar</p>
         <small>Respuesta confidencial en 24h hábiles</small>
-      </div>
-      <div class="contacto-quote">
-        <p>"Cada consulta es tratada con la reserva y estrategia de una boutique."</p>
       </div>
     </div>
 
-    <form class="formulario-contacto premium-form">
+    <form class="premium-form">
       <div class="form-grid">
-        <div class="campo-flotante">
-          <input type="text" id="f-nombre" placeholder=" " required>
-          <label for="f-nombre">Nombre completo</label>
-          <span class="form-line"></span>
-        </div>
-        <div class="campo-flotante">
-          <input type="email" id="f-email" placeholder=" " required>
-          <label for="f-email">Email</label>
-          <span class="form-line"></span>
-        </div>
+        <div class="campo-flotante"><label>NOMBRE COMPLETO</label><input type="text"></div>
+        <div class="campo-flotante"><label>EMAIL</label><input type="email"></div>
       </div>
+      <div class="campo-flotante campo-ancho"><label>EMPRESA / ESTUDIO</label><input type="text"></div>
+      <div class="campo-flotante campo-ancho"><label>DESCRIBA BREVEMENTE SU CONSULTA</label><textarea rows="4"></textarea></div>
       
-      <div class="campo-flotante campo-ancho">
-        <input type="text" id="f-empresa" placeholder=" ">
-        <label for="f-empresa">Empresa / Estudio</label>
-        <span class="form-line"></span>
-      </div>
-      <div class="campo-flotante campo-ancho textarea-fix">
-  <textarea id="f-consulta" placeholder=" " rows="3" required></textarea>
-  <label for="f-consulta">Describa brevemente su consulta</label>
-  <span class="form-line"></span>
-</div>
-      <div class="form-actions">
-        <button type="submit" class="boton-enviar">ENVIAR</button>
-        <span class="form-legal">Confidencialidad garantizada · RGMA 2026</span>
-      </div>
+      <button class="boton-enviar">ENVIAR <i>→</i></button>
     </form>
   </div>
 </section>
