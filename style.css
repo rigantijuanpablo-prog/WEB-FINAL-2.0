@@ -521,161 +521,55 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 }
 .texto-legal{ font-size:9px; letter-spacing:1.5px; color:#B6A088; text-transform:uppercase; }
 @media(max-width:600px){ .fila-doble{ grid-template-columns:1fr; } }
-.barra-flotante-contacto{ display:none !important; }
-/* Estilos para encapsular la sección y alinear la cabecera */
-.seccion-contacto {
-    max-width: 1100px; /* Ancho máximo total de la sección */
-    margin: 60px auto;
-    padding: 0 20px;
-    font-family: 'Montserrat', sans-serif; /* O la sans-serif que uses */
-}
 
-/* Alineación limpia de los títulos */
-.cabecera-contacto {
-    margin-bottom: 40px;
-    text-align: left; /* Alineado al inicio de la grilla */
-}
+/* === CONTACTO RGMA - REEMPLAZO LIMPIO === */
+.seccion-contacto{max-width:1200px;padding:100px 48px;margin:0 auto}
+.contenedor-grilla{display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:start}
+.tag-estrategico{color:#B6A088;font-size:9px;letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:8px}
+.titulo-contacto{font-family:'Cormorant Garamond',serif;font-size:52px;color:#0A1931;margin:0;line-height:1}
+.fila-doble{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.grupo-campo{display:flex;flex-direction:column;margin-bottom:28px}
+.grupo-campo label{font-size:11px;letter-spacing:1.5px;color:#B6A088;margin-bottom:10px;text-transform:uppercase}
+.grupo-campo input,.grupo-campo textarea{border:0;border-bottom:1px solid #D9D0BE;background:transparent;padding:8px 0;font-size:15px;color:#333;outline:none;width:100%}
+.grupo-campo textarea{resize:none;height:64px}
+.grupo-campo input:focus,.grupo-campo textarea:focus{border-bottom:1px solid #0A1931}
+.fila-accion{display:flex;justify-content:flex-start;margin-top:10px}
+.btn-enviar{background:#0A1931;color:#fff;border:0;padding:14px 45px;font-size:13px;letter-spacing:2px;cursor:pointer}
+.bloque-info{margin-bottom:30px}
+.bloque-info h3{font-size:11px;letter-spacing:1.5px;color:#B6A088;margin-bottom:8px;text-transform:uppercase}
+.bloque-info p,.bloque-info a{font-size:14px;color:#333;line-height:1.6;text-decoration:none}
 
-.tag-estrategico {
-    display: block;
-    font-size: 12px;
-    letter-spacing: 3px;
-    color: #b5a286; /* Dorado corporativo */
-    margin-bottom: 8px;
-    text-transform: uppercase;
+/* === BARRA FLOTANTE - REEMPLAZO LIMPIO (CON ESTO APARECE) === */
+.barra-flotante-contacto{
+  position:fixed !important;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:9999 !important;
+  display:flex !important;
+  flex-direction:column;
+  width:54px;
+  background:#0A1931;
+  border:1px solid #B6A088;
+  border-left:3px solid #B6A088;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
 }
-
-.titulo-contacto {
-    font-family: 'Playfair Display', serif; /* Tu fuente clásica elegante */
-    font-size: 42px;
-    color: #0e1929;
-    margin: 0;
+.barra-flotante-contacto .item-flotante{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:54px;
+  background:#0A1931;
+  color:#B6A088;
+  border-bottom:1px solid rgba(182,160,136,.25);
+  text-decoration:none;
+  min-width:0;
+  padding:0;
+  border-left:0;
 }
-
-/* Disposición en dos columnas principales */
-.contenedor-grilla {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* Columna de info más angosta, formulario más ancho */
-    gap: 60px;
-    align-items: start;
-}
-
-/* Formulario simétrico */
-.formulario-contacto {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Fuerza a que Nombre y Email midan exactamente lo mismo */
-.fila-doble {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.grupo-campo {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 35px;
-}
-
-.grupo-campo label {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: #b5a286;
-    margin-bottom: 10px;
-}
-
-.grupo-campo input,
-.grupo-campo textarea {
-    border: none;
-    border-bottom: 1px solid #dbdbdb;
-    background: transparent;
-    padding: 8px 0;
-    font-size: 15px;
-    color: #333;
-    outline: none;
-    width: 100%;
-}
-
-/* Desactiva el manejador de tamaño en la consulta */
-.grupo-campo textarea {
-    resize: none;
-}
-
-.grupo-campo input:focus,
-.grupo-campo textarea:focus {
-    border-bottom: 1px solid #0e1929;
-}
-
-/* Botón simplificado y sin textos desproporcionados al lado */
-.fila-accion {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 10px;
-}
-
-.btn-enviar {
-    background-color: #0e1929;
-    color: #ffffff;
-    border: none;
-    padding: 14px 45px;
-    font-size: 13px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.btn-enviar:hover {
-    background-color: #172942;
-}
-
-/* Estilos básicos para la columna de información */
-.bloque-info {
-    margin-bottom: 30px;
-}
-.bloque-info h3 {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: #b5a286;
-    margin-bottom: 8px;
-}
-.bloque-info p, .bloque-info a {
-    font-size: 14px;
-    color: #333;
-    line-height: 1.6;
-    text-decoration: none;
-}
-.subtexto-mail {
-    display: block;
-    font-size: 12px;
-    font-style: italic;
-    color: #8c8c8c;
-    margin-top: 4px;
-}
-/* MANTENÉ SU CSS, SOLO CAMBIÁ ESTO: */
-.seccion-contacto { max-width: 1200px; padding: 100px 48px; margin: 0 auto; }
-
-.contenedor-grilla{
-  grid-template-columns: 380px 1fr; /* este ratio es más RGMA que 1fr 2fr */
-  gap: 80px;
-}
-
-.titulo-contacto{
-  font-family: 'Cormorant Garamond', serif; /* no Playfair */
-  font-size: 52px;
-  color: #0A1931;
-}
-
-.tag-estrategico, .grupo-campo label, .bloque-info h3{
-  color: #B6A088; /* tu dorado real */
-}
-
-.grupo-campo input, .grupo-campo textarea{
-  border-bottom: 1px solid #D9D0BE;
-}
-.barra-flotante-contacto{position:fixed;right:12px;top:42%;transform:translateY(-50%);z-index:999;display:flex;flex-direction:column;gap:1px;border-radius:8px;overflow:hidden}
-.item-flotante{display:flex;align-items:center;justify-content:flex-end;background:var(--navy);color:#fff;height:48px;min-width:48px;border-left:2px solid var(--dorado);padding:0 14px;text-decoration:none;transition:all .35s var(--ease)}
-.item-flotante span{font-size:9px;letter-spacing:2px;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;transition:all .35s var(--ease)}
-.item-flotante:hover span{max-width:120px;opacity:1;padding-right:12px}
-.icono-flotante-svg{width:20px;display:flex;align-items:center;justify-content:center;color:var(--dorado-light)}
+.barra-flotante-contacto .item-flotante:last-child{border-bottom:0}
+.barra-flotante-contacto .item-flotante:hover{background:rgba(182,160,136,.12);color:#fff}
+.barra-flotante-contacto .item-flotante span{display:none !important}
+.barra-flotante-contacto .item-flotante svg{width:18px;height:18px}
