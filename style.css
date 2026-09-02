@@ -522,3 +522,135 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 .texto-legal{ font-size:9px; letter-spacing:1.5px; color:#B6A088; text-transform:uppercase; }
 @media(max-width:600px){ .fila-doble{ grid-template-columns:1fr; } }
 .barra-flotante-contacto{ display:none !important; }
+/* Estilos para encapsular la sección y alinear la cabecera */
+.seccion-contacto {
+    max-width: 1100px; /* Ancho máximo total de la sección */
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: 'Montserrat', sans-serif; /* O la sans-serif que uses */
+}
+
+/* Alineación limpia de los títulos */
+.cabecera-contacto {
+    margin-bottom: 40px;
+    text-align: left; /* Alineado al inicio de la grilla */
+}
+
+.tag-estrategico {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #b5a286; /* Dorado corporativo */
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.titulo-contacto {
+    font-family: 'Playfair Display', serif; /* Tu fuente clásica elegante */
+    font-size: 42px;
+    color: #0e1929;
+    margin: 0;
+}
+
+/* Disposición en dos columnas principales */
+.contenedor-grilla {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Columna de info más angosta, formulario más ancho */
+    gap: 60px;
+    align-items: start;
+}
+
+/* Formulario simétrico */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fuerza a que Nombre y Email midan exactamente lo mismo */
+.fila-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+}
+
+.grupo-campo label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #b5a286;
+    margin-bottom: 10px;
+}
+
+.grupo-campo input,
+.grupo-campo textarea {
+    border: none;
+    border-bottom: 1px solid #dbdbdb;
+    background: transparent;
+    padding: 8px 0;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    width: 100%;
+}
+
+/* Desactiva el manejador de tamaño en la consulta */
+.grupo-campo textarea {
+    resize: none;
+}
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+    border-bottom: 1px solid #0e1929;
+}
+
+/* Botón simplificado y sin textos desproporcionados al lado */
+.fila-accion {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.btn-enviar {
+    background-color: #0e1929;
+    color: #ffffff;
+    border: none;
+    padding: 14px 45px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #172942;
+}
+
+/* Estilos básicos para la columna de información */
+.bloque-info {
+    margin-bottom: 30px;
+}
+.bloque-info h3 {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #b5a286;
+    margin-bottom: 8px;
+}
+.bloque-info p, .bloque-info a {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+    text-decoration: none;
+}
+.subtexto-mail {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    color: #8c8c8c;
+    margin-top: 4px;
+}
+
