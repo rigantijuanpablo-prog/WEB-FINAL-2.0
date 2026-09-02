@@ -627,3 +627,28 @@ html{scroll-behavior:smooth;}
   left: auto !important;
   transform: translateY(-50%) !important;
 }
+/* 1. ALINEAR LAS 4 COLUMNAS ARRIBA */
+footer .f-col, footer > div > div {
+  align-items: flex-start !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.f-title, .footer-titulo {
+  margin-top: 0 !important;
+  line-height: 1 !important;
+}
+
+/* 2. DARLE PESO A LA MARCA IZQUIERDA */
+.f-col:first-child p {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  opacity: 0.85 !important;
+  max-width: 260px;
+}
+
+/* 3. DESPEGAR BARRA CONTACTO - ESTE SI */
+.barra-flotante-contacto, .contact-float {
+  right: 18px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
