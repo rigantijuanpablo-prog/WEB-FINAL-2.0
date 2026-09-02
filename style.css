@@ -715,3 +715,47 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 .barra-flotante-contacto .icon-f {
   font-size: 18px;
 }
+/* ==========================================
+   BARRA FLOTANTE FIJA - INTERFAZ PREMIUM
+   ========================================== */
+.barra-flotante-contacto {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  background: #070b14; /* Azul oscuro de la 2.0 */
+  border: 1px solid rgba(200, 176, 144, 0.25); /* Dorado sutil */
+  border-radius: 6px;
+  z-index: 99999; /* Forzamos a que flote sobre la imagen del Hero */
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.barra-flotante-contacto a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 48px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+
+.barra-flotante-contacto a:last-child {
+  border-bottom: none;
+}
+
+/* Efecto hover dorado institucional */
+.barra-flotante-contacto a:hover {
+  background: #c8b090; /* Tu color dorado de base */
+  color: #070b14;
+}
+
+.barra-flotante-contacto .icon-f {
+  font-size: 16px;
+}
+
