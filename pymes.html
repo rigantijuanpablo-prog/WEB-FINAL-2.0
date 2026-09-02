@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derecho Corporativo y Asesoramiento Empresarial (PyMEs) | RGMA</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1931;--ink:#111827;--muted:#6B7280;--line:#E8E2D6;--paper:#FCFBF9;--gold:#C8B090}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+.header{max-width:1320px;margin:0 auto;padding:22px 48px 24px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--line)}
+.header-left .eyebrow{font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.header-left h1{font-family:'Playfair Display';font-size:36px;font-weight:300;color:var(--navy);margin-top:10px;line-height:.95}
+.header-right{display:flex;flex-direction:column;align-items:center;gap:0;min-width:120px}
+.top-utils{display:flex;align-items:center;gap:18px;margin-bottom:16px;align-self:flex-end}
+.lang{display:flex;border:1px solid var(--line);padding:2px;background:#fff}
+.lang button{border:0;background:transparent;font-size:9px;letter-spacing:2px;font-weight:700;padding:6px 10px;cursor:pointer;color:var(--muted)}
+.lang button.active{background:var(--navy);color:#fff}
+.header-right .logo{font-family:'Playfair Display';font-size:20px;letter-spacing:5px;font-weight:600;color:var(--navy)}
+.header-right .logo-icon{margin-top:12px;width:58px;height:auto;display:block;mix-blend-mode:multiply;opacity:.95}
+.tabs-wrap{background:var(--navy)}
+.tabs{max-width:1320px;margin:0 auto;padding:0 48px;display:flex;gap:40px}
+.tabs a{color:rgba(255,255,255,.55);text-decoration:none;font-size:10px;letter-spacing:2.2px;font-weight:600;padding:18px 0;border-bottom:1px solid transparent}
+.tabs a.active{color:#fff;border-bottom-color:var(--gold)}
+.layout{max-width:1320px;margin:0 auto;padding:56px 48px 80px;display:grid;grid-template-columns:1.35fr .65fr;gap:88px}
+.lead{font-family:'Playfair Display';font-size:21px;line-height:1.5;color:var(--navy);font-style:italic;font-weight:300;border-left:2px solid var(--gold);padding-left:24px;margin-bottom:36px}
+.copy{font-size:14.5px;line-height:1.85;color:#374151;margin-bottom:8px}
+.services-title{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-top:48px;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.services-title::after{content:"";height:1px;flex:1;background:var(--line)}
+.list{list-style:none}
+.list li{padding:18px 0;border-bottom:1px solid #F0EBE0;display:grid;grid-template-columns:24px 1fr;gap:12px}
+.list .l{font-size:10px;color:var(--gold);font-weight:700;margin-top:4px}
+.list .t{font-family:'Playfair Display';font-size:14.5px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.list .d{font-size:13px;line-height:1.7;color:var(--muted)}
+.side{position:sticky;top:40px}
+.contact-card{background:#fff;border:1px solid var(--line)}
+.contact-head{padding:20px 26px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.contact-head span{font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--navy)}
+.contact-head i{font-size:9px;letter-spacing:2px;color:var(--gold);font-style:normal;font-weight:700}
+.socio{padding:26px;display:flex;gap:18px}
+.socio-photo{width:84px;height:84px;background:#F3F1ED;border:1px solid var(--line);overflow:hidden;flex-shrink:0}
+.socio-photo img{width:100%;height:100%;object-fit:cover}
+.socio-name{font-family:'Playfair Display';font-size:17px;font-weight:600;color:var(--navy)}
+.socio-role{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:6px}
+.socio-meta{margin-top:14px}
+.socio-meta a{color:var(--navy);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line);font-size:12.5px}
+.socio-meta .muted{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.5}
+.contact-foot{padding:18px 26px;background:#FCFBF9;border-top:1px solid var(--line)}
+.btn{display:block;text-align:center;padding:13px;font-size:9.5px;letter-spacing:2.5px;text-decoration:none;font-weight:700;background:var(--navy);color:#fff}
+@media(max-width:980px){.header,.tabs,.layout{padding-left:24px;padding-right:24px}.layout{grid-template-columns:1fr}.header{flex-direction:column;gap:18px}.side{position:relative}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-left">
+    <div class="eyebrow" data-es="Área de Práctica · 01" data-en="Practice Area · 01">Área de Práctica · 01</div>
+    <h1 data-es="Derecho Corporativo y<br>Asesoramiento Empresarial (PyMEs)" data-en="Corporate Law &<br>Business Advisory (SMEs)">Derecho Corporativo y<br>Asesoramiento Empresarial (PyMEs)</h1>
+  </div>
+  <div class="header-right">
+    <div class="top-utils">
+      <div class="lang"><button id="btn-es" class="active" onclick="setLang('es')">ES</button><button id="btn-en" onclick="setLang('en')">EN</button></div>
+      <div class="logo">RGMA</div>
+    </div>
+    <img src="logo-negro-parafondosclaros.webp" alt="" class="logo-icon">
+  </div>
+</header>
+<div class="tabs-wrap"><nav class="tabs"><a href="#info" class="active" data-es="INFORMACIÓN GENERAL" data-en="OVERVIEW">INFORMACIÓN GENERAL</a><a href="#contacto" data-es="CONTACTO" data-en="CONTACT">CONTACTO</a></nav></div>
+<main class="layout">
+<div id="info">
+<div class="lead" data-es="Abogacía de precisión para el ciclo completo del negocio: desde la constitución y la inversión hasta la crisis, la venta o la expansión internacional. Actuamos como departamento legal externo de PyMEs." data-en="Precision counsel for the full business lifecycle: from incorporation and investment to crisis, sale or international expansion. We act as an external legal department for SMEs.">Abogacía de precisión para el ciclo completo del negocio...</div>
+<div class="copy"><p data-es="El departamento de <b>Derecho Corporativo y Asesoramiento Empresarial</b> brinda soluciones integrales para el nacimiento, desarrollo, protección y reestructuración de los negocios." data-en="The <b>Corporate and Business Advisory</b> department provides comprehensive solutions for the creation, development, protection and restructuring of businesses.">El departamento...</p></div>
+<div class="services-title" data-es="Servicios destacados" data-en="Key Services">Servicios destacados</div>
+<ul class="list">
+<li><span class="l">a.</span><div><div class="t" data-es="Constitución, transformación y disolución de sociedades" data-en="Formation, reorganization and dissolution">Constitución...</div><div class="d" data-es="SAS, SRL, SA, SAU, SCA. Inscripciones IGJ / DPPJ, aumento y reducción de capital, escisión, fusión, transformación, disolución y liquidación." data-en="SAS, SRL, SA, SAU. IGJ / DPPJ registration, capital increase/reduction, spin-offs, mergers, transformation, dissolution and liquidation.">SAS...</div></div></li>
+<li><span class="l">b.</span><div><div class="t" data-es="Acuerdos de socios y gobierno corporativo" data-en="Shareholders' agreements & corporate governance">Acuerdos de socios...</div><div class="d" data-es="Acuerdo de accionistas, vesting, drag/tag along, protocolo de familia, responsabilidad de directores art. 59 y 274 LGS, actas de directorio y asambleas." data-en="Shareholders' agreements, vesting, drag/tag along, family protocol, directors' liability under art. 59 and 274 LGS, board and shareholders minutes.">Acuerdo...</div></div></li>
+<li><span class="l">c.</span><div><div class="t" data-es="Due Diligence y auditoría legal PyME" data-en="Legal Due Diligence for SMEs">Due Diligence...</div><div class="d" data-es="Relevamiento integral societario, laboral, contractual, tributario, ambiental y de propiedad intelectual previo a compra, inversión o financiamiento bancario." data-en="Full corporate, labor, contractual, tax, environmental and IP review prior to acquisition, investment or bank financing.">Relevamiento...</div></div></li>
+<li><span class="l">d.</span><div><div class="t" data-es="Contratos comerciales complejos" data-en="Complex commercial contracts">Contratos comerciales...</div><div class="d" data-es="Distribución, franquicia, agencia, suministro, joint venture, UTE, escrow, fideicomiso, leasing, factoring, locación de obra y servicios empresariales." data-en="Distribution, franchise, agency, supply, joint venture, consortium, escrow, trust, leasing, factoring and business services agreements.">Distribución...</div></div></li>
+<li><span class="l">e.</span><div><div class="t" data-es="M&A y transferencia de fondo de comercio" data-en="M&A and transfer of going concern">M&A y transferencia...</div><div class="d" data-es="Compraventa de paquetes accionarios, SPA, compraventa de activos, transferencia fondo comercio Ley 11.867, art. 11 LCT, pasivos ocultos y ajuste de precio." data-en="Share deals, SPA, asset deals, transfer of going concern under Law 11.867, art. 11 LCT, hidden liabilities and price adjustment.">Compraventa...</div></div></li>
+<li><span class="l">f.</span><div><div class="t" data-es="Planificación fiscal, aduanera y tributaria" data-en="Tax, customs and fiscal planning">Planificación fiscal...</div><div class="d" data-es="Estructuración eficiente, precios de transferencia, regímenes de promoción, defensa ante AFIP, Aduana, ARBA y AGIP." data-en="Efficient structuring, transfer pricing, promotional regimes, defense before AFIP, Customs, ARBA and AGIP.">Estructuración...</div></div></li>
+<li><span class="l">g.</span><div><div class="t" data-es="Concursos, quiebras y reestructuración de deuda" data-en="Insolvency and debt restructuring">Concursos...</div><div class="d" data-es="APE, concursos preventivos, verificación créditos, privilegios, salvataje cramdown, continuidad operativa." data-en="Out-of-court restructuring APE, reorganization proceedings, proof of claims, cramdown, business continuity.">APE...</div></div></li>
+<li><span class="l">h.</span><div><div class="t" data-es="Financiamiento y sistema de garantías" data-en="Financing and collateral">Financiamiento...</div><div class="d" data-es="Prenda, hipoteca, aval, fianza, fideicomiso de garantía, SGR, obligaciones negociables PyME CNV Garantizada." data-en="Pledge, mortgage, guarantee, surety, collateral trust, SGR, SME corporate bonds CNV Garantizada.">Prenda...</div></div></li>
+<li><span class="l">i.</span><div><div class="t" data-es="Programa de Integridad y Compliance" data-en="Integrity Program & Compliance">Programa de Integridad...</div><div class="d" data-es="Ley 27.401 Responsabilidad Penal Persona Jurídica, código ética, canal denuncias, matriz riesgos, debida diligencia terceros." data-en="Law 27.401 Corporate Criminal Liability, code of ethics, whistleblowing channel, risk matrix, third-party due diligence.">Ley 27.401...</div></div></li>
+<li><span class="l">j.</span><div><div class="t" data-es="Asesoría mensual - Abogado in house externo" data-en="Monthly retainer - External in-house counsel">Asesoría mensual...</div><div class="d" data-es="Retainer mensual, revisión diaria contratos, consultas, asistencia directorio, asambleas, cartas documento y estrategia preventiva." data-en="Monthly retainer, daily contract review, day-to-day counseling, board assistance, demand letters and preventive strategy.">Retainer...</div></div></li>
+<li><span class="l">k.</span><div><div class="t" data-es="Resolución de conflictos societarios" data-en="Shareholder disputes">Resolución de conflictos...</div><div class="d" data-es="Conflictos entre socios, exclusión art. 91 LGS, impugnación asambleas art. 251, intervención judicial art. 113/114, remoción directores." data-en="Partner disputes, exclusion art. 91 LGS, challenge of shareholders meetings art. 251, judicial intervention art. 113/114, removal of directors.">Conflictos...</div></div></li>
+<li><span class="l">l.</span><div><div class="t" data-es="Startups, venture capital y negocios digitales" data-en="Startups, venture capital & digital business">Startups...</div><div class="d" data-es="SAFE, convertible notes, rondas seed / Series A, cap table, ESOP, T&C y privacidad para producto digital." data-en="SAFE, convertible notes, seed / Series A rounds, cap table, ESOP, T&C and privacy for digital products.">SAFE...</div></div></li>
+</ul>
+</div>
+<aside class="side" id="contacto"><div class="contact-card"><div class="contact-head"><span data-es="CONTACTO" data-en="CONTACT">CONTACTO</span><i data-es="SOCIO" data-en="PARTNER">SOCIO</i></div><div class="socio"><div class="socio-photo"><img src="socio-corporativo.jpg"></div><div><div class="socio-name">Dr. Juan Pablo Riganti</div><div class="socio-role" data-es="Socio · Corporativo y PyMEs" data-en="Partner · Corporate & SMEs">Socio · Corporativo</div><div class="socio-meta"><a href="mailto:corporativo@rgma.com.ar">corporativo@rgma.com.ar</a></div></div></div><div class="contact-foot"><a href="#" class="btn" data-es="CONTACTAR AL SOCIO" data-en="CONTACT PARTNER">CONTACTAR AL SOCIO</a></div></div></aside>
+</main>
+<script>function setLang(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const h=el.getAttribute('data-'+lang);if(h)el.innerHTML=h});document.getElementById('btn-es').classList.toggle('active',lang==='es');document.getElementById('btn-en').classList.toggle('active',lang==='en');localStorage.setItem('rgma_lang',lang)}const saved=localStorage.getItem('rgma_lang');if(saved)setLang(saved);</script>
+</body>
+</html>
