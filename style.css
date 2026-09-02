@@ -720,4 +720,86 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 .barra-flotante-contacto .icon-f {
   font-size: 16px;
 }
+/* ==========================================================================
+   BARRA FLOTANTE FIJA - RGMA 2.0 (CORRECCIÓN DE ANCHO Y DESPLIEGUE)
+   ========================================================================== */
+
+.barra-flotante-contacto {
+  position: fixed !important;
+  right: 20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: #070b14 !important; /* Tu azul oscuro institucional */
+  border: 1px solid rgba(200, 176, 144, 0.25) !important; /* Tu dorado */
+  border-radius: 8px !important;
+  z-index: 999999 !important; /* Fuerza a ir al frente de la foto */
+  overflow: visible !important; /* Importante para que el texto se despliegue hacia la izquierda */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.barra-flotante-contacto .item-flotante {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  position: relative !important;
+  height: 52px !important;
+  width: 52px !important; /* Ancho fijo inicial: solo se ve el icono */
+  color: #ffffff !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  transition: background 0.3s ease !important;
+}
+
+.barra-flotante-contacto .item-flotante:last-child {
+  border-bottom: none !important;
+}
+
+/* El contenedor del icono en sí */
+.barra-flotante-contacto .icono-flotante {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 52px !important;
+  height: 52px !important;
+  font-size: 16px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* EFECTO INTERACTIVO PREMIUM: El texto se oculta por defecto y aparece al pasar el cursor */
+.barra-flotante-contacto .item-flotante span {
+  position: absolute !important;
+  right: 56px !important; /* Se despliega hacia la izquierda de los iconos */
+  background: #070b14 !important;
+  color: var(--dorado, #c8b090) !important;
+  font-size: 10px !important;
+  letter-spacing: 2px !important;
+  font-weight: 600 !important;
+  padding: 6px 12px !important;
+  border: 1px solid rgba(200, 176, 144, 0.2) !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 0.3s ease !important;
+  transform: translateX(10px) !important;
+}
+
+/* HOVER EFFECT: Al pasar el puntero, cambia el fondo del icono y se revela el texto explicativo */
+.barra-flotante-contacto .item-flotante:hover {
+  background: #c8b090 !important; /* Fondo dorado */
+  color: #070b14 !important;
+}
+
+.barra-flotante-contacto .item-flotante:hover .icono-flotante {
+  color: #070b14 !important;
+}
+
+.barra-flotante-contacto .item-flotante:hover span {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(0) !important;
+}
 
