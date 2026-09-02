@@ -245,37 +245,30 @@
       </div>
     </div>
 
-    <form class="formulario-contacto premium-form">
-      <div class="form-grid">
-        <div class="campo-flotante">
-          <input type="text" id="f-nombre" placeholder=" " required>
-          <label for="f-nombre">Nombre completo</label>
-          <span class="form-line"></span>
-        </div>
-        <div class="campo-flotante">
-          <input type="email" id="f-email" placeholder=" " required>
-          <label for="f-email">Email</label>
-          <span class="form-line"></span>
-        </div>
-      </div>
-      
-      <div class="campo-flotante campo-ancho">
-        <input type="text" id="f-empresa" placeholder=" ">
-        <label for="f-empresa">Empresa / Estudio</label>
-        <span class="form-line"></span>
-      </div>
-      
-      <div class="campo-flotante campo-ancho">
-        <textarea id="f-consulta" placeholder=" " rows="4" required></textarea>
-        <label for="f-consulta">Describa brevemente su consulta</label>
-        <span class="form-line"></span>
-      </div>
-
-      <div class="form-actions">
-        <button type="submit" class="boton-enviar">ENVIAR</button>
-        <span class="form-legal">Confidencialidad garantizada · RGMA 2026</span>
-      </div>
-    </form>
+<form class="formulario-contacto">
+  <div class="fila-doble">
+    <div class="grupo-campo">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" required>
+    </div>
+    <div class="grupo-campo">
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+    </div>
+  </div>
+  <div class="grupo-campo">
+    <label for="empresa">Empresa / Estudio</label>
+    <input type="text" id="empresa">
+  </div>
+  <div class="grupo-campo">
+    <label for="consulta">Describa brevemente su consulta</label>
+    <textarea id="consulta" rows="3" required></textarea>
+  </div>
+  <div class="fila-boton">
+    <button type="submit" class="btn-enviar">ENVIAR</button>
+    <span class="texto-legal">CONFIDENCIALIDAD GARANTIZADA · RGMA</span>
+  </div>
+</form>
   </div>
 </section>
 
