@@ -15,31 +15,40 @@ body{font-family:'Inter',sans-serif;background:var(--beige);-webkit-font-smoothi
 </head>
 <body class="bg-[#faf9f6] text-[#1a1a1a]">
 
-<!-- HERO FINAL CORREGIDO -->
-<section class="relative w-full h-[780px] bg-[#0A1931] overflow-hidden">
+<!-- HERO CORREGIDO - FOTO PURA OFICINA-RGMA -->
+<section class="relative w-full h-[780px] overflow-hidden bg-[#0A1931]">
+
+  <!-- FOTO DE FONDO REAL 100% -->
+  <div class="absolute inset-0">
+    <img src="oficina-rgma.webp" alt="Oficina RGMA Puerto Madero" class="w-full h-full object-cover object-[center_60%]">
+  </div>
+
+  <!-- OVERLAY - AZUL SOLO 22% IZQUIERDA, RETIRADO -->
+  <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(10,25,49,0.92) 0%, rgba(10,25,49,0.78) 22%, rgba(10,25,49,0.15) 42%, rgba(10,25,49,0) 60%);"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-[#0A1931]/30 via-transparent to-transparent lg:hidden"></div>
 
   <!-- NAV TOP -->
-  <div class="absolute top-0 left-0 right-0 z-30 border-b border-white/10 bg-[#0A1931]/90 backdrop-blur-sm">
+  <div class="absolute top-0 left-0 right-0 z-30 border-b border-white/10 bg-[#0A1931]/40 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-5 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-3">
         <span class="font-serif text-white text-[20px] tracking-[5px] font-light">RGMA</span>
         <span class="text-[8px] tracking-[4px] uppercase text-[#C8B090] border-l border-white/20 pl-3">ABOGADOS</span>
       </a>
       <div class="flex items-center gap-6">
-        <span class="hidden md:block text-[10px] tracking-[3px] uppercase text-white/40">#MODORGMA</span>
+        <span class="hidden md:block text-[10px] tracking-[3px] uppercase text-white/60">#MODORGMA</span>
         <a href="index.html" class="border border-white/20 text-white text-[10px] tracking-[3px] uppercase px-6 py-2 hover:bg-white hover:text-[#0A1931] transition-all">INICIO</a>
       </div>
     </div>
   </div>
 
-  <div class="relative z-10 flex w-full h-full">
-    <!-- IZQUIERDA TEXTO -->
-    <div class="w-full lg:w-[52%] h-full flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-16">
-      <p class="text-[11px] tracking-[5px] uppercase text-white/60 mb-4 font-mono">Sumate a nuestro</p>
+  <!-- CONTENIDO IZQUIERDA -->
+  <div class="relative z-20 flex w-full h-full">
+    <div class="w-full lg:w-[50%] h-full flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-16">
+      <p class="text-[11px] tracking-[5px] uppercase text-white/70 mb-4 font-mono">Sumate a nuestro</p>
       <h1 class="font-serif text-6xl md:text-[84px] text-white font-light tracking-tight leading-[0.9] mb-6">
         #<span class="italic font-light">ModoRGMA</span>
       </h1>
-      <p class="text-[15px] text-white/70 font-light max-w-[420px] leading-relaxed mb-10">
+      <p class="text-[15px] text-white/80 font-light max-w-[420px] leading-relaxed mb-10">
         Abogacía de precisión, no de volumen. Mentoría real de socios, ecosistema flexible y proyección internacional.
       </p>
       <div class="flex flex-wrap gap-4">
@@ -47,26 +56,7 @@ body{font-family:'Inter',sans-serif;background:var(--beige);-webkit-font-smoothi
         <a href="#filosofia" class="inline-block border border-white/20 text-white/60 text-[10px] tracking-[3px] uppercase px-8 py-3.5 hover:text-white hover:border-white/40 transition">Nuestra filosofía ↓</a>
       </div>
     </div>
-
-    <!-- DERECHA FOTO REAL -->
-    <div class="hidden lg:block w-[48%] h-full relative">
-      <img src="rgma-oficina.jpg" alt="Equipo RGMA" class="absolute inset-0 w-full h-full object-cover object-center">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#0A1931] via-[#0A1931]/30 to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0A1931]/40 via-transparent to-transparent"></div>
-    </div>
-    <!-- MOBILE -->
-    <div class="lg:hidden absolute inset-0 z-0">
-      <img src="rgma-oficina.jpg" alt="Equipo RGMA Mobile" class="w-full h-full object-cover opacity-35">
-      <div class="absolute inset-0 bg-[#0A1931]/70"></div>
-    </div>
-  </div>
-
-  <!-- ABAJO DERECHA - TEXTO + ISOLOGO BLANCO TRANSPARENTE CORREGIDO -->
-  <div class="absolute bottom-10 md:bottom-12 right-6 md:right-12 z-30 flex items-end gap-4 pb-2">
-    <p class="text-white text-right italic font-light leading-[1.05] text-[26px] md:text-[36px] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]" style="font-family:'Playfair Display', serif; transform: rotate(-6deg);">
-      Aquí comienza<br>tú camino...
-    </p>
-    <img src="isologo-rgma-blanco.webp" alt="RGMA Isologo Blanco" class="w-[78px] md:w-[96px] h-auto object-contain shrink-0 mix-blend-screen" style="filter: drop-shadow(0 0 12px rgba(255,255,255,0.7));">
+    <div class="hidden lg:block w-[50%]"></div>
   </div>
 </section>
 
