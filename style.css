@@ -674,132 +674,94 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 .grupo-campo input, .grupo-campo textarea{
   border-bottom: 1px solid #D9D0BE;
 }
-.barra-flotante-contacto {
-  position: fixed;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  background: #070b14; /* El azul-negro premium de tu sitio */
-  border: 1px solid rgba(200, 176, 144, 0.2); /* Borde dorado sutil */
-  border-radius: 8px;
-  z-index: 999;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-}
-
-.barra-flotante-contacto a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.3s ease;
-}
-
-/* Evita que el último botón tenga borde abajo */
-.barra-flotante-contacto a:last-child {
-  border-bottom: none;
-}
-
-/* Efecto hover premium alineado a tu marca */
-.barra-flotante-contacto a:hover {
-  background: var(--dorado, #c8b090);
-  color: #070b14;
-}
-
-.barra-flotante-contacto .icon-f {
-  font-size: 18px;
-}
-
-
-.barra-flotante-contacto .icon-f {
-  font-size: 16px;
-}
 /* ==========================================================================
-   BARRA FLOTANTE FIJA - RGMA 2.0 (CORRECCIÓN DE ANCHO Y DESPLIEGUE)
+   BARRA FLOTANTE FIJA - RGMA ELITE (CÓDIGO INTEGRADO Y CONSOLIDADO)
    ========================================================================== */
 
+/* Contenedor principal de la barra */
 .barra-flotante-contacto {
   position: fixed !important;
-  right: 20px !important;
+  right: 24px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
   display: flex !important;
   flex-direction: column !important;
-  background: #070b14 !important; /* Tu azul oscuro institucional */
-  border: 1px solid rgba(200, 176, 144, 0.25) !important; /* Tu dorado */
+  background: #070b14 !important; /* Azul marino profundo institucional de la 2.0 */
+  border: 1px solid rgba(200, 176, 144, 0.25) !important; /* Tu dorado fino */
   border-radius: 8px !important;
-  z-index: 999999 !important; /* Fuerza a ir al frente de la foto */
-  overflow: visible !important; /* Importante para que el texto se despliegue hacia la izquierda */
+  z-index: 999999 !important; /* Capa superior absoluta sobre el Hero y fotos */
+  overflow: hidden !important; /* Recorta el texto para que no se desborde al colapsar */
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
+/* Estructura base de cada celda de enlace (Usa tu clase real) */
 .barra-flotante-contacto .item-flotante {
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-end !important;
+  justify-content: flex-end !important; /* Alinea el icono estrictamente a la derecha */
   position: relative !important;
   height: 52px !important;
-  width: 52px !important; /* Ancho fijo inicial: solo se ve el icono */
+  width: 52px !important; /* Ancho inicial colapsado exacto */
+  padding: 0 16px 0 0 !important; /* Espacio para que el icono respire a la derecha */
   color: #ffffff !important;
   text-decoration: none !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-  transition: background 0.3s ease !important;
+  box-sizing: border-box !important;
+  /* Animación cúbica fluida para simular el estiramiento elástico de la foto */
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease !important;
 }
 
+/* Remueve la línea divisoria del último botón */
 .barra-flotante-contacto .item-flotante:last-child {
   border-bottom: none !important;
 }
 
-/* El contenedor del icono en sí */
+/* Tipografía Sans-Serif Fina y espaciada de la captura */
+.barra-flotante-contacto .item-flotante span {
+  font-family: 'Arial', 'Helvetica', sans-serif !important; 
+  font-size: 10px !important;
+  letter-spacing: 2.5px !important; /* Espaciado premium entre caracteres */
+  font-weight: 500 !important;
+  color: #ffffff !important; /* Texto blanco idéntico a tu referencia */
+  text-transform: uppercase !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  white-space: nowrap !important;
+  transition: opacity 0.2s ease !important;
+  margin-right: 12px !important; /* Separación milimétrica con el icono */
+}
+
+/* Contenedor de tu icono vectorial (Usa tu clase real) */
 .barra-flotante-contacto .icono-flotante {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 52px !important;
+  width: 20px !important; /* Restringido para que no flote suelto ni descentrado */
   height: 52px !important;
-  font-size: 16px !important;
-  text-align: center !important;
   flex-shrink: 0 !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
 }
 
-/* EFECTO INTERACTIVO PREMIUM: El texto se oculta por defecto y aparece al pasar el cursor */
-.barra-flotante-contacto .item-flotante span {
-  position: absolute !important;
-  right: 56px !important; /* Se despliega hacia la izquierda de los iconos */
-  background: #070b14 !important;
-  color: var(--dorado, #c8b090) !important;
-  font-size: 10px !important;
-  letter-spacing: 2px !important;
-  font-weight: 600 !important;
-  padding: 6px 12px !important;
-  border: 1px solid rgba(200, 176, 144, 0.2) !important;
-  border-radius: 4px !important;
-  white-space: nowrap !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: all 0.3s ease !important;
-  transform: translateX(10px) !important;
+/* Ajuste preventivo si tus iconos son imágenes SVG o PNG externos */
+.barra-flotante-contacto .icono-flotante img,
+.barra-flotante-contacto .icono-flotante svg {
+  height: 18px !important;
+  width: auto !important;
 }
 
-/* HOVER EFFECT: Al pasar el puntero, cambia el fondo del icono y se revela el texto explicativo */
+/* ==========================================================================
+   ESTADOS HOVER (ESTIRAMIENTO INTERNO EXACTO)
+   ========================================================================== */
+
 .barra-flotante-contacto .item-flotante:hover {
-  background: #c8b090 !important; /* Fondo dorado */
-  color: #070b14 !important;
-}
-
-.barra-flotante-contacto .item-flotante:hover .icono-flotante {
-  color: #070b14 !important;
+  width: 165px !important; /* Se estira hacia la izquierda dando lugar al texto */
+  background: rgba(200, 176, 144, 0.08) !important; /* Sutil destello dorado translúcido */
 }
 
 .barra-flotante-contacto .item-flotante:hover span {
   opacity: 1 !important;
   visibility: visible !important;
-  transform: translateX(0) !important;
+  transition-delay: 0.12s !important; /* Retardo para que el texto aparezca suave tras estirar */
 }
 
