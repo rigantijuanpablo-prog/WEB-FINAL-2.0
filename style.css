@@ -616,3 +616,6 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   width:16px !important;
   height:16px !important;
 }
+.footer-areas a{display:block; cursor:pointer; pointer-events:auto !important;}
+html{scroll-behavior:smooth;}
+.area-bloque{scroll-margin-top:100px;}
