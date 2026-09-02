@@ -489,3 +489,42 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   color: #0A1931;
   border-color: #C8B090;
 }
+/* === PARCHE FINAL CONTACTO - REEMPLAZA TODO LO ANTERIOR === */
+.section-contacto{padding:120px 48px;background:#FCFBF9;max-width:1320px;margin:0 auto;box-sizing:border-box}
+.contacto-header{text-align:center;margin:0 auto 80px;max-width:780px}
+.contacto-header .eyebrow{font-size:9px;letter-spacing:4px;color:#C8B090;font-weight:700;display:block;margin-bottom:24px}
+.titulo-con-linea{display:flex;align-items:center;justify-content:center;gap:24px;margin:0}
+.titulo-con-linea .linea-decorativa{width:64px;height:1px;background:#C8B090;display:block;flex-shrink:0}
+.titulo-con-linea h2{font-family:'Playfair Display',serif;font-size:56px;font-weight:300;color:#0A1931;margin:0;line-height:1}
+.contenedor-contacto{display:grid;grid-template-columns:300px 1fr;gap:80px}
+.premium-form{display:flex;flex-direction:column;gap:32px}
+.premium-form .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+
+/* FIX INPUTS INVISIBLES - ANTES ESTABAN EN #E8E2D6 con opacity .45 */
+.campo-flotante label{
+  display:block !important;
+  position:relative !important;
+  top:0 !important;
+  left:0 !important;
+  opacity:1 !important;
+  font-size:10px !important;
+  letter-spacing:1.5px !important;
+  color:#0A1931 !important;
+  font-weight:700 !important;
+  margin-bottom:8px !important;
+}
+.campo-flotante input,
+.campo-flotante textarea{
+  width:100% !important;
+  border:none !important;
+  border-bottom:1.5px solid #0A1931 !important;
+  background:transparent !important;
+  padding:12px 0 !important;
+  font-size:14px !important;
+  color:#111827 !important;
+  opacity:1 !important;
+  height:auto !important;
+}
+.campo-flotante textarea{height:120px !important;resize:none !important}
+.campo-flotante .form-line{display:none !important}
+.boton-enviar{width:auto !important}
