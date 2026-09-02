@@ -674,3 +674,44 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 .grupo-campo input, .grupo-campo textarea{
   border-bottom: 1px solid #D9D0BE;
 }
+.barra-flotante-contacto {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  background: #070b14; /* El azul-negro premium de tu sitio */
+  border: 1px solid rgba(200, 176, 144, 0.2); /* Borde dorado sutil */
+  border-radius: 8px;
+  z-index: 999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.barra-flotante-contacto a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* Evita que el último botón tenga borde abajo */
+.barra-flotante-contacto a:last-child {
+  border-bottom: none;
+}
+
+/* Efecto hover premium alineado a tu marca */
+.barra-flotante-contacto a:hover {
+  background: var(--dorado, #c8b090);
+  color: #070b14;
+}
+
+.barra-flotante-contacto .icon-f {
+  font-size: 18px;
+}
