@@ -653,4 +653,24 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
     color: #8c8c8c;
     margin-top: 4px;
 }
+/* MANTENÉ SU CSS, SOLO CAMBIÁ ESTO: */
+.seccion-contacto { max-width: 1200px; padding: 100px 48px; margin: 0 auto; }
 
+.contenedor-grilla{
+  grid-template-columns: 380px 1fr; /* este ratio es más RGMA que 1fr 2fr */
+  gap: 80px;
+}
+
+.titulo-contacto{
+  font-family: 'Cormorant Garamond', serif; /* no Playfair */
+  font-size: 52px;
+  color: #0A1931;
+}
+
+.tag-estrategico, .grupo-campo label, .bloque-info h3{
+  color: #B6A088; /* tu dorado real */
+}
+
+.grupo-campo input, .grupo-campo textarea{
+  border-bottom: 1px solid #D9D0BE;
+}
