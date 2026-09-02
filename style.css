@@ -621,7 +621,7 @@ html{scroll-behavior:smooth;}
 .area-bloque{scroll-margin-top:100px;}
 /* VUELVE ARRIBA + CORRE A LA IZQUIERDA */
 .barra-flotante-contacto{
-  top: 50% !important;
+  top: 45% !important;
   bottom: auto !important;
   right: 14px !important;
   left: auto !important;
