@@ -619,14 +619,11 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 .footer-areas a{display:block; cursor:pointer; pointer-events:auto !important;}
 html{scroll-behavior:smooth;}
 .area-bloque{scroll-margin-top:100px;}
-/* CORRECCION CORTE BORDE DERECHO */
+/* VUELVE ARRIBA + CORRE A LA IZQUIERDA */
 .barra-flotante-contacto{
-  right: 12px !important; /* antes estaba en 0 o 4px */
-  transform: translateX(0) !important;
-  box-shadow: -4px 8px 24px rgba(0,0,0,0.18) !important;
-}
-
-/* Si tu barra está dentro de un contenedor con overflow hidden */
-body, html{
-  overflow-x: clip !important;
+  top: 50% !important;
+  bottom: auto !important;
+  right: 14px !important;
+  left: auto !important;
+  transform: translateY(-50%) !important;
 }
