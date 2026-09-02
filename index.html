@@ -9,17 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital@0,400;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-      /* FIX NUCLEAR - No pinta hasta que la fuente está lista */
-      #inicio{opacity:0;}
-      html.fonts-loaded #inicio{opacity:1; transition: opacity 0.4s ease;}
-      html.fonts-failed #inicio{opacity:1;} /* por si falla Google */
+      /* FIX NUCLEAR - Evita el parpadeo visual antes de que la tipografía cargue */
+      #inicio { opacity: 0; }
+      html.fonts-loaded #inicio { opacity: 1; transition: opacity 0.4s ease; }
+      html.fonts-failed #inicio { opacity: 1; }
     </style>
     <script>
-      // Espera a que Playfair baje y recién muestra
+      // Control de renderizado de fuentes optimizado
       document.fonts.ready.then(function(){
         document.documentElement.classList.add('fonts-loaded');
       });
-      // Fallback: si en 3s no carga, muestra igual
+      // Fallback de seguridad a los 3 segundos
       setTimeout(function(){
         if(!document.documentElement.classList.contains('fonts-loaded')){
           document.documentElement.classList.add('fonts-failed');
@@ -31,155 +31,135 @@
 
 <!-- CONTACTO FLOTANTE PREMIUM -->
 <div class="barra-flotante-contacto">
-    <a href="#contacto" class="item-flotante"><span>CONTACTO</span><div class="icono-flotante-svg"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></div></a>
-    <a href="tel:+541143215555" class="item-flotante"><span>LLAMAR</span><div class="icono-flotante-svg"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div></a>
-    <a href="#contacto" class="item-flotante"><span>UBICACIÓN</span><div class="icono-flotante-svg"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div></a>
+    <a href="#contacto" class="item-flotante">
+      <span>CONTACTO</span>
+      <div class="icono-flotante">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+      </div>
+    </a>
+    <a href="tel:+541143215555" class="item-flotante">
+      <span>LLAMAR</span>
+      <div class="icono-flotante">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+    </a>
+    <a href="#contacto" class="item-flotante">
+      <span>UBICACIÓN</span>
+      <div class="icono-flotante">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+    </a>
 </div>
+
+<!-- CABECERA INSTITUCIONAL -->
 <header id="mainHeader">
-    <a href="index.html" class="marca-estudio">
-  <div class="logo-lockup" style="display:flex;align-items:center;gap:12px">
-    <!-- CAMBIO CLAVE: archivo que funciona -->
-    <img src="logo-final.webp" alt="" style="height:38px;width:auto;display:block;background:transparent!important;mix-blend-mode:normal!important;">
-  </div>
-  <div class="nombre-estudio">
-    <span class="apellido-principal">RIGANTI, GEILER</span>
-    <span class="apellido-secundario"><span style="font-family:'Times New Roman',serif;font-style:italic;font-weight:400;font-size:1.1em;margin-right:5px;color:#C8B090;">&</span> MÁRQUEZ ALLURALDE</span>
-  </div>
-</a>
+  <a href="index.html" class="marca-estudio">
+    <div class="logo-lockup">
+      <img src="logo-final.webp" alt="RGMA Isologo" class="header-logo-img">
+    </div>
+    <div class="nombre-estudio">
+      <span class="apellido-principal">RIGANTI, GEILER</span>
+      <span class="apellido-secundario"><span class="ampersand-editorial">&</span> MÁRQUEZ ALLURALDE</span>
+    </div>
+  </a>
 
-    <nav class="nav-desktop">
-      <ul>
-                <li><a href="#estudio">EL ESTUDIO</a></li>
-        <li class="nav-item-mega">
-          <a href="#" id="triggerMega">ÁREAS DE PRÁCTICA</a>
-          <div class="mega-panel">
-            <div class="mega-left">
-              <span>RGMA / 2026</span>
-              <b>Áreas de<br>Práctica</b>
-              <div class="mega-line"></div>
-              <p>Especialización<br>a medida.</p>
-            </div>
-            <!-- UNIFICADO A NOMENCLATURA PREMIUM (regla #2) -->
+  <!-- NAVEGACIÓN DESKTOP -->
+  <nav class="nav-desktop">
+    <ul>
+      <li><a href="#estudio">EL ESTUDIO</a></li>
+      <li class="nav-item-mega">
+        <a href="#" id="triggerMega">ÁREAS DE PRÁCTICA</a>
+        <div class="mega-panel">
+          <div class="mega-left">
+            <span>RGMA / 2026</span>
+            <b>Áreas de<br>Práctica</b>
+            <div class="mega-line"></div>
+            <p>Especialización<br>a medida.</p>
+          </div>
           <div class="mega-grid-simple">
-  <a href="./pymes.html">Empresario y PyMEs <i>→</i></a>
-  <a href="./laboral-empresario.html">Laboral Empresario <i>→</i></a>
-  <a href="./derechofamiliaysucesiones.html">Derecho de Familia y Sucesiones <i>→</i></a>
-  <a href="./inmobiliario-ph.html">Inmobiliario y PH <i>→</i></a>
-  <a href="./digital-ip-consumidor.html">Digital, IP y Consumidor <i>→</i></a>
-  <a href="./derecho-administrativo.html">Administrativo <i>→</i></a>
-  <a href="./deportivo.html">Deportivo <i>→</i></a>
-  <a href="./contratos-preventivo.html">Contratos Preventivo <i>→</i></a>
-  <a href="./litigio.html">Litigios <i>→</i></a>
-</div>
-          </div> 
-        </li>
-      </ul>
-    </nav>
+            <a href="./pymes.html">Empresario y PyMEs <i>→</i></a>
+            <a href="./laboral-empresario.html">Laboral Empresario <i>→</i></a>
+            <a href="./derechofamiliaysucesiones.html">Derecho de Familia y Sucesiones <i>→</i></a>
+            <a href="./inmobiliario-ph.html">Inmobiliario y PH <i>→</i></a>
+            <a href="./digital-ip-consumidor.html">Digital, IP y Consumidor <i>→</i></a>
+            <a href="./derecho-administrativo.html">Administrativo <i>→</i></a>
+            <a href="./deportivo.html">Deportivo <i>→</i></a>
+            <a href="./contratos-preventivo.html">Contratos Preventivo <i>→</i></a>
+            <a href="./litigio.html">Litigios <i>→</i></a>
+          </div>
+        </div> 
+      </li>
+    </ul>
+  </nav>
 
-   <div class="right-group">
+  <!-- GRUPO DE ACCIONES DERECHA -->
+  <div class="right-group">
     <a href="flex.html" class="btn-area-flex">ÁREA FLEX</a>
     <a href="#contacto" class="btn-nav">CONTACTO →</a>
     <a href="invertirenargentina.html" class="investment-pill" id="investmentPill">
       <span class="pill-new">NEW 2026</span>
       <span class="pill-text">Investment in Argentina ↗</span>
     </a>
-    <button class="btn-burger" id="btnBurger" aria-label="Menu">
+    <button class="btn-burger" id="btnBurger" aria-label="Abrir Menú">
       <span></span><span></span><span></span>
     </button>
-   </div>
+  </div>
 </header>
-
-<style>
-/* BLINDAJE ANTI-CUADRADO BLANCO + ALTA COSTURA */
-#mainHeader img{
-  background:transparent!important;
-  filter:none!important;
-  mix-blend-mode:normal!important;
-}
-#mainHeader{
-  background:#0A1931;
-  border-bottom:1px solid rgba(200,176,144,.15);
-}
-.marca-estudio{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  text-decoration:none;
-  transition:opacity .35s cubic-bezier(0.2,0.8,0.2,1);
-}
-.marca-estudio:hover{opacity:.85}
-.nombre-estudio{
-  display:flex;
-  flex-direction:column;
-  border-left:1px solid rgba(200,176,144,.35);
-  padding-left:16px;
-  line-height:1.1;
-}
-.apellido-principal{font-family:'Playfair Display',serif;color:#fff;font-size:12.5px;letter-spacing:3px}
-.apellido-secundario{font-family:'Playfair Display',serif;color:#fff;font-size:11.5px;letter-spacing:2.5px;margin-top:2px}
-
-/* Regla Flechas: → interno / ↗ externo */
-.mega-grid-simple a i{
-  font-style:normal;
-  transition:transform .4s cubic-bezier(0.2,0.8,0.2,1);
-  display:inline-block;
-}
-.mega-grid-simple a:hover i{transform:translateX(4px)}
-.btn-nav{transition:all .35s cubic-bezier(0.2,0.8,0.2,1)!important}
-.investment-pill .pill-text{letter-spacing:1px}
-</style>
-
-<!-- MOBILE OVERLAY PREMIUM -->
+<!-- MOBILE OVERLAY PREMIUM (MENÚ ADAPTATIVO MOVIL) -->
 <div class="mobile-overlay" id="mobileMenu">
   <div class="mobile-head">
-    <span>RGMA</span>
-    <button id="closeMobile">✕</button>
+    <span class="mobile-brand-editorial">RGMA</span>
+    <button id="closeMobile" aria-label="Cerrar Menú">✕</button>
   </div>
   <ul class="mobile-links">
     <li><a href="#inicio">Inicio</a></li>
     <li><a href="#estudio">El Estudio</a></li>
     <li class="mobile-accordion">
-      <button class="acc-btn" id="accAreas">Áreas de Práctica <i>▾</i></button>
+      <button class="acc-btn-editorial" id="accAreas" aria-expanded="false">Áreas de Práctica</button>
       <div class="acc-panel" id="panelAreas">
-        <a href="corporativo-pymes.html">Corporativo y PyMEs</a>
-        <a href="laboral-empresario.html">Laboral Empresario</a>
-        <a href="civil-patrimonial-seguros.html">Civil, Patrimonial y Seguros</a>
-        <a href="inmobiliario-ph.html">Inmobiliario y PH</a>
-        <a href="digital-ip-consumidor.html">Digital, IP y Consumidor</a>
-        <a href="administrativo-regulacion.html">Administrativo y Regulación</a>
-        <a href="deportivo-entretenimiento.html">Deportivo y Entretenimiento</a>
+        <a href="./pymes.html">Corporativo y PyMEs</a>
+        <a href="./laboral-empresario.html">Laboral Empresario</a>
+        <a href="./civil-patrimonial-seguros.html">Civil, Patrimonial y Seguros</a>
+        <a href="./inmobiliario-ph.html">Inmobiliario y PH</a>
+        <a href="./digital-ip-consumidor.html">Digital, IP y Consumidor</a>
+        <a href="./derecho-administrativo.html">Administrativo y Regulación</a>
+        <a href="./deportivo.html">Deportivo y Entretenimiento</a>
       </div>
-</li>
-        <li><a href="invertirenargentina.html">Investment in Argentina — NEW</a></li>
+    </li>
+    <li><a href="invertirenargentina.html">Investment in Argentina — NEW</a></li>
     <li><a href="#contacto">Contacto</a></li>
-    <li class="mobile-cta"><a href="#contacto">AGENDAR CONSULTA →</a></li>
+    <li class="mobile-cta">
+      <a href="#contacto" class="btn-action-premium">AGENDAR CONSULTA →</a>
+    </li>
   </ul>
 </div>
 
+<!-- SECCIÓN HERO PRINCIPAL -->
 <section id="inicio" class="hero-principal">
-   <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+  <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
     <source src="hero-acuarela-12s.mp4" type="video/mp4">
-   </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-contenedor-texto">
-        <span class="hero-eyebrow">RGMA · BOUTIQUE LEGAL · BUENOS AIRES</span>
-        <h1>Trayectoria Legal con una<br><i>Perspectiva de Vanguardia</i></h1>
-        <a href="#contacto" class="btn-premium-final">Agendar Consulta <span>→</span></a>
-    </div>
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-contenedor-texto">
+    <span class="hero-eyebrow">RGMA · BOUTIQUE LEGAL · BUENOS AIRES</span>
+    <h1 class="hero-title-editorial">Trayectoria Legal con una<br><i>Perspectiva de Vanguardia</i></h1>
+    <a href="#contacto" class="f-btn-premium">AGENDAR CONSULTA →</a>
+  </div>
     
-    <a href="invertirenargentina.html" class="investment-seal-link" id="investmentSeal">
-      <div class="investment-seal">
-        <div class="seal-ring"></div>
-        <div class="seal-ring-2"></div>
-        <div class="seal-content">
-          <span class="seal-year">2026</span>
-          <span class="seal-new">NEW</span>
-          <span class="seal-text">Investment<br>in Argentina</span>
-        </div>
+  <!-- SELLO DE INVERSIÓN FLOTANTE REGIONAL -->
+  <a href="invertirenargentina.html" class="investment-seal-link" id="investmentSeal">
+    <div class="investment-seal">
+      <div class="seal-ring"></div>
+      <div class="seal-ring-2"></div>
+      <div class="seal-content">
+        <span class="seal-year">2026</span>
+        <span class="seal-new">NEW</span>
+        <span class="seal-text">Investment<br>in Argentina</span>
       </div>
-    </a>
+    </div>
+  </a>
 </section>
-
+<!-- SECCIÓN EL ESTUDIO & MANIFIESTO EDITORIAL -->
 <section id="estudio" class="section-estudio">
   <div class="estudio-grid">
     <div class="texto-estudio">
@@ -200,7 +180,8 @@
     </div>
   </div>
 </section>
-<!-- CIERRE CARRERA - CORREGIDO RGMA -->
+
+<!-- SECCIÓN CARRERA (UNITE AL EQUIPO) -->
 <section class="seccion-cierre-premium">
   <div class="capa-fondo-imagen">
     <img src="oficina-lapiz.png" alt="Boceto Arquitectónico RGMA" class="imagen-boceto-blur">
@@ -209,20 +190,21 @@
     <span class="eyebrow light">CARRERA EN RGMA</span>
     <h2>Unite al Equipo</h2>
     <p>Buscamos profesionales que desafíen los límites de la práctica tradicional. Abogacía de precisión, no volumen.</p>
-    <a href="carrerargma.html" class="btn-premium-borde">VER OPORTUNIDADES <span>→</span></a>
+    <a href="carrerargma.html" class="f-btn-premium">VER OPORTUNIDADES →</a>
   </div>
 </section>
 
-<section class="seccion-contacto">
+<!-- SECCIÓN CONTACTO ESTRATÉGICO -->
+<section id="contacto" class="seccion-contacto">
   
-  <!-- CABECERA DEL BLOQUE: Todo alineado a la izquierda sobre el mismo eje -->
+  <!-- CABECERA DEL BLOQUE: Alineado milimétrico sobre el eje izquierdo -->
   <div class="cabecera-contacto">
     <span class="tag-estrategico">CONTACTO ESTRATÉGICO</span>
     <h2 class="titulo-contacto">Contacto</h2>
   </div>
 
   <div class="contenedor-grilla">
-    <!-- COLUMNA IZQUIERDA: Información de la Sede -->
+    <!-- COLUMNA IZQUIERDA: Información de la Sede Central -->
     <div class="info-sede">
       <div class="bloque-info">
         <h3>SEDE CENTRAL</h3>
@@ -234,22 +216,22 @@
       </div>
       <div class="bloque-info">
         <h3>EMAIL DIRECTO</h3>
-        <a href="mailto:contacto@rgmabogados.com.ar">contacto@rgmabogados.com.ar</a>
+        <p><a href="mailto:contacto@rgmabogados.com.ar" class="f-email-protagonist">contacto@rgmabogados.com.ar</a></p>
         <span class="subtexto-mail">Respuesta confidencial en 24h hábiles</span>
       </div>
     </div>
 
-    <!-- COLUMNA DERECHA: Formulario simétrico -->
+    <!-- COLUMNA DERECHA: Formulario simétrico de captura -->
     <form class="formulario-contacto" action="https://formsubmit.co/rigantijuanpablo@gmail.com" method="POST">
       
       <!-- CONFIGURACIÓN INTERNA DE FORMSUBMIT -->
-      <!-- 1. Redirección automática a tu página de agradecimiento de élite -->
-      <input type="hidden" name="_next" value="https://tu-dominio-aqui.com">
+      <!-- 1. Redirección automática integrada para registrar conversiones en Google -->
+      <input type="hidden" name="_next" value="https://github.io">
       
-      <!-- 2. Desactiva el Captcha molesto de FormSubmit para no romper la estética premium -->
+      <!-- 2. Desactiva el Captcha de FormSubmit para conservar la estética limpia -->
       <input type="hidden" name="_captcha" value="false">
       
-      <!-- 3. Define el asunto del correo que te va a llegar a tu bandeja -->
+      <!-- 3. Asunto personalizado para tu bandeja de correo -->
       <input type="hidden" name="_subject" value="Nueva Consulta Estratégica Corporativa — RGMA 2.0">
 
       <!-- Fila de dos columnas idénticas (50% y 50%) -->
@@ -283,141 +265,137 @@
 
   </div>
 </section>
-
-
-<style>
-.section-contacto{max-width:1320px;margin:0 auto;padding:120px 48px;background:#FCFBF9}
-.eyebrow{font-size:9px;letter-spacing:4px;color:#C8B090;font-weight:700;display:block}
-.titulo-con-linea{display:flex;align-items:center;gap:28px;margin-top:32px}
-.linea-decorativa{width:64px;height:1px;background:#C8B090;flex-shrink:0}
-.section-contacto h2{font-family:'Playfair Display';font-size:56px;font-weight:300;color:#0A1931;line-height:1;letter-spacing:-1px}
-
-.contenedor-contacto{margin-top:80px;display:grid;grid-template-columns:320px 1fr;gap:96px}
-.contacto-info{display:flex;flex-direction:column;gap:36px}
-.bloque-dato label{font-size:9px;letter-spacing:2.5px;color:#C8B090;font-weight:700;display:block;margin-bottom:10px}
-.bloque-dato p{font-size:14px;line-height:1.7;color:#111827}
-.bloque-dato small{font-size:11px;color:#9CA3AF;display:block;margin-top:6px;font-style:italic}
-.contacto-quote{margin-top:12px;padding-top:28px;border-top:1px solid #E8E2D6}
-.contacto-quote p{font-family:'Playfair Display';font-style:italic;font-size:14px;color:#6B7280;line-height:1.6}
-
-/* FORM PULIDO */
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.campo-flotante{position:relative;margin-bottom:36px}
-.campo-ancho{margin-top:12px}
-.campo-flotante input, .campo-flotante textarea{
-  width:100%;border:0;border-bottom:1px solid #E8E2D6;background:transparent;
-  padding:18px 0 10px 0;font-size:14px;font-family:'Inter';color:#0A1931;outline:none;transition:.3s
-}
-.campo-flotante textarea{resize:none;height:90px}
-.campo-flotante label{
-  position:absolute;left:0;top:18px;font-size:14px;color:#B8B8B8;
-  pointer-events:none;transition:.25s ease;font-family:'Inter'
-}
-.campo-flotante input:focus + label,
-.campo-flotante input:not(:placeholder-shown) + label,
-.campo-flotante textarea:focus + label,
-.campo-flotante textarea:not(:placeholder-shown) + label{
-  top:-8px;font-size:10px;letter-spacing:1px;color:#C8B090;font-weight:600;text-transform:uppercase
-}
-.form-line{position:absolute;bottom:0;left:0;width:0;height:1px;background:#0A1931;transition:.4s ease}
-.campo-flotante input:focus ~ .form-line,
-.campo-flotante textarea:focus ~ .form-line{width:100%}
-/* BOTON PULIDO */
-.form-actions{margin-top:24px;display:flex;align-items:center;gap:24px}
-.boton-enviar{
-  background:#0A1931;color:#fff;border:0;
-  padding:15px 38px;font-size:10px;letter-spacing:3px;font-weight:700;
-  cursor:pointer;transition:.3s
-}
-.boton-enviar:hover{background:#12284E;letter-spacing:3.5px}
-.form-legal{font-size:10px;letter-spacing:1px;color:#9CA3AF}
-
-@media(max-width:900px){
-  .contenedor-contacto{grid-template-columns:1fr;gap:56px}
-  .form-grid{grid-template-columns:1fr;gap:0}
-  .section-contacto{padding:80px 24px}
-}
-</style>
-
-
-<!-- FOOTER PREMIUM RGMA -->
-<footer class="footer-rgm">
-  <div class="footer-inner">
-    <div class="f-col brand">
-      <div class="footer-logo-lockup">
-        <div class="footer-logo-text">RG<span class="ma-black">MA</span></div>
-        <img src="logo-final.webp" alt="RGMA" class="footer-isologo">
+<!-- FOOTER PREMIUM RGMA (VERSIÓN INTEGRADA ÉLITE 2.0) -->
+<footer class="footer-rgm-premium">
+  <div class="footer-inner-editorial">
+    
+    <!-- Columna 1: Branding e Identidad Boutique -->
+    <div class="f-col brand-premium">
+      <div class="footer-logo-lockup-premium">
+        <div class="footer-logo-text-premium">RG<span class="ma-gold">MA</span></div>
+        <img src="logo-final.webp" alt="RGMA Isologo" class="footer-isologo-premium">
       </div>
-      <p class="f-claim">Trayectoria legal con<br>perspectiva de vanguardia.</p>
-      <div class="f-line"></div>
-      <div class="f-copy-brand">
+      <p class="f-claim-editorial">Trayectoria legal con<br>perspectiva de vanguardia.</p>
+      <div class="f-line-premium"></div>
+      <div class="f-copy-brand-editorial">
         <span>RIGANTI, GEILER</span><br>
-        <span class="f-italic">& MÁRQUEZ ALLURALDE</span>
+        <span class="f-italic-editorial">& MÁRQUEZ ALLURALDE</span>
       </div>
     </div>
 
-<div class="f-col">
-  <span class="f-title">ÁREAS CLAVE</span>
-  <a href="./pymes.html">Empresario y PyMEs</a>
-  <a href="./laboral-empresario.html">Laboral Empresario</a>
-  <a href="./derechofamiliaysucesiones.html">Civil y Seguros</a>
-  <a href="./inmobiliario-ph.html">Inmobiliario y PH</a>
-  <a href="./digital-ip-consumidor.html">Digital, IP y Consumidor</a>
-  <a href="./derecho-administrativo.html">Administrativo</a>
-  <a href="./deportivo.html">Deportivo</a>
-</div>
-    <div class="f-col">
-      <span class="f-title">MERCOSUR</span>
-      <p>Red de corresponsalías en los principales centros del país y la región.</p>
-      <div class="f-contact">
-        <p>CABA · Buenos Aires</p>
-        <p>+54 11 4321-5555</p>
-        <p>contacto@rgmabogados.com.ar</p>
+    <!-- Columna 2: Áreas Clave Unificadas -->
+    <div class="f-col-editorial">
+      <span class="f-title-editorial">ÁREAS CLAVE</span>
+      <a href="./pymes.html" class="f-link-editorial">Empresario y PyMEs</a>
+      <a href="./laboral-empresario.html" class="f-link-editorial">Laboral Empresario</a>
+      <a href="./civil-patrimonial-seguros.html" class="f-link-editorial">Civil, Patrimonial y Seguros</a>
+      <a href="./inmobiliario-ph.html" class="f-link-editorial">Inmobiliario y PH</a>
+      <a href="./digital-ip-consumidor.html" class="f-link-editorial">Digital, IP y Consumidor</a>
+      <a href="./derecho-administrativo.html" class="f-link-editorial">Administrativo y Regulación</a>
+      <a href="./deportivo.html" class="f-link-editorial">Deportivo y Entretenimiento</a>
+    </div>
+
+    <!-- Columna 3: Alcance Regional MERCOSUR -->
+    <div class="f-col-editorial">
+      <span class="f-title-editorial">MERCOSUR</span>
+      <p class="f-address-protagonist">Red de corresponsalías en los principales centros del país y la región.</p>
+      <div class="f-contact-premium">
+        <p class="f-phone-premium">CABA · Buenos Aires</p>
+        <p class="f-phone-premium">+54 11 4321-5555</p>
+        <p><a href="mailto:contacto@rgmabogados.com.ar" class="f-email-protagonist">contacto@rgmabogados.com.ar</a></p>
       </div>
     </div>
 
-    <div class="f-col">
-      <span class="f-title">CONSULTA</span>
-      <p class="f-consulta-txt">Atención personalizada,<br>confidencial y estratégica.</p>
-      <a href="#contacto" class="f-btn">AGENDAR CONSULTA →</a>
+    <!-- Columna 4: Consulta Estratégica Directa -->
+    <div class="f-col-editorial">
+      <span class="f-title-editorial">CONSULTA</span>
+      <p class="f-consulta-txt-editorial">Atención personalizada,<br>confidencial y estratégica.</p>
+      <a href="#contacto" class="f-btn-premium">AGENDAR CONSULTA →</a>
     </div>
+
   </div>
-
-  <div class="f-bottom">
+  <!-- BLOQUE INFERIOR: COPYRIGHT Y ARQUITECTURA DE MARCA -->
+  <div class="f-bottom-editorial">
     <p>© 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — RGMA · CABA · MERCOSUR</p>
-    <p class="f-legal-small">Estudio jurídico boutique · Todos los derechos reservados</p>
+    <p class="f-legal-small-editorial">Estudio jurídico boutique · Todos los derechos reservados</p>
   </div>
 </footer>
 
+<!-- BANNER DE COOKIES PREMIUM (COMPLIANCE GOOGLE ADS 2026) -->
+<div id="cookieBanner" class="cookie-banner-premium">
+  <div class="cookie-content-editorial">
+    <p>Utilizamos cookies propias y de terceros para analizar la navegación con fines estadísticos y de optimización. Al continuar navegando, acepta nuestra <a href="./politica-privacidad.html" class="cookie-link-editorial">Política de Privacidad</a>.</p>
+    <button id="acceptCookies" class="cookie-btn-premium">ACEPTAR</button>
+  </div>
+</div>
+
+<!-- SISTEMA SCRIPT: INTERACCIONES PREMIUM Y NAVEGACIÓN -->
 <script>
 const header = document.getElementById('mainHeader');
 const hero = document.querySelector('.hero-principal');
 const v = document.getElementById('heroVideo');
 
 // Video fade premium
-v?.addEventListener('loadeddata', ()=> v.classList.add('is-loaded'));
-setTimeout(()=> v?.classList.add('is-loaded'), 800);
+v?.addEventListener('loadeddata', () => v.classList.add('is-loaded'));
+setTimeout(() => v?.classList.add('is-loaded'), 800);
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 80) { header.classList.add('shrink'); } else { header.classList.remove('shrink'); }
-  if(hero && window.scrollY > hero.offsetHeight - 150){ document.body.classList.add('pill-visible'); } else { document.body.classList.remove('pill-visible'); }
+  if (window.scrollY > 80) { 
+    header.classList.add('shrink'); 
+  } else { 
+    header.classList.remove('shrink'); 
+  }
+  if(hero && window.scrollY > hero.offsetHeight - 150){ 
+    document.body.classList.add('pill-visible'); 
+  } else { 
+    document.body.classList.remove('pill-visible'); 
+  }
 }, {passive:true});
 
-// MOBILE MENU + ACCORDION
+// MOBILE MENU + ACCORDION (RESPONSIVE NATIVE REFINEMENT)
 const burger = document.getElementById('btnBurger');
 const mobileMenu = document.getElementById('mobileMenu');
 const closeMobile = document.getElementById('closeMobile');
 const accBtn = document.getElementById('accAreas'); 
 const accPanel = document.getElementById('panelAreas');
 
-burger?.addEventListener('click', ()=> { mobileMenu.classList.add('open'); document.body.style.overflow='hidden'; });
-closeMobile?.addEventListener('click', ()=> { mobileMenu.classList.remove('open'); document.body.style.overflow=''; });
-accBtn?.addEventListener('click', ()=> {
+burger?.addEventListener('click', () => { 
+  mobileMenu.classList.add('open'); 
+  document.body.style.overflow='hidden'; 
+});
+
+closeMobile?.addEventListener('click', () => { 
+  mobileMenu.classList.remove('open'); 
+  document.body.style.overflow=''; 
+});
+
+accBtn?.addEventListener('click', () => {
   accPanel.classList.toggle('open');
   const i = accBtn.querySelector('i');
   if(i) i.style.transform = accPanel.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
 });
-mobileMenu?.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> { mobileMenu.classList.remove('open'); document.body.style.overflow=''; }));
+
+mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { 
+  mobileMenu.classList.remove('open'); 
+  document.body.style.overflow=''; 
+}));
+
+// LÓGICA DE CONSENTIMIENTO DE COOKIES INTELIGENTE
+window.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('cookieBanner');
+  const acceptBtn = document.getElementById('acceptCookies');
+
+  if (!localStorage.getItem('rgma_cookies_accepted')) {
+    setTimeout(() => {
+      banner.classList.add('is-visible');
+    }, 1500);
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem('rgma_cookies_accepted', 'true');
+    banner.classList.remove('is-visible');
+  });
+});
 </script>
 
 </body>
