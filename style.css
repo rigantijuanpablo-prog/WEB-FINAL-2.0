@@ -547,3 +547,50 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   margin-top:8px !important;
   font-size:9px !important;
 }
+/* FIX CONTACTO HEADER + BOTON */
+.contacto-header{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:18px !important;
+  margin:0 auto 56px !important;
+  text-align:left !important;
+}
+.contacto-header::before{
+  content:"" !important;
+  width:42px !important;
+  height:1px !important;
+  background:var(--dorado) !important;
+  flex-shrink:0 !important;
+}
+.contacto-header h2{
+  font-size:42px !important; /* baja de 56 a 42 para proporción */
+  margin:0 !important;
+  line-height:1 !important;
+  letter-spacing:-0.5px !important;
+}
+
+/* Quita la rayita suelta que tenias antes */
+.section-contacto .linea-decorativa,
+#contacto .linea-decorativa{ display:none !important; }
+
+/* Achica espacio gigante entre consulta y enviar */
+.premium-form{
+  gap:24px 24px !important;
+}
+.campo-flotante textarea{
+  height:64px !important; /* baja de 90 a 64 */
+  min-height:64px !important;
+}
+.campo-ancho:has(textarea),
+.campo-flotante:has(textarea){
+  margin-bottom:0 !important;
+}
+.boton-enviar{
+  margin-top:4px !important;
+  padding:16px 28px !important;
+}
+.form-legal{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
