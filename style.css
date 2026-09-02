@@ -761,3 +761,8 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   opacity: 1 !important;
   margin-right: 4px !important; /* Empuja elegantemente el texto separándolo del icono */
 }
+  .fila-doble-premium { grid-template-columns: 1fr; }
+  .barra-flotante-contacto { display: none; }
+  .hero-principal::after { height: 100px; }
+  .hero-principal::before { bottom: 98px; }
+}
