@@ -489,3 +489,28 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   color: #0A1931;
   border-color: #C8B090;
 }
+/* FIX TEXTAREA CONSULTA */
+.campo-flotante.textarea-fix{
+  margin-top: 8px !important;
+  grid-column: 1 / -1 !important;
+}
+.campo-flotante.textarea-fix textarea{
+  height: 110px !important;
+  resize: none !important;
+  line-height: 1.6 !important;
+  padding-top: 20px !important;
+  border-bottom: 1.5px solid #C9C5BC !important;
+}
+.campo-flotante.textarea-fix label{
+  top: 20px !important;
+  background: #FCFBF9 !important;
+  padding-right: 8px !important;
+}
+.campo-flotante.textarea-fix textarea:focus + label,
+.campo-flotante.textarea-fix textarea:not(:placeholder-shown) + label{
+  top: -10px !important;
+  background: transparent !important;
+}
+.campo-flotante.textarea-fix .form-line{
+  display: none !important; /* usamos border-bottom, no línea extra */
+}
