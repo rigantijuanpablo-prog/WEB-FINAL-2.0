@@ -19,9 +19,9 @@ img{display:block;max-width:100%}
 .lang-switch button.active,.lang-switch button:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
 .hero-pesca{position:relative;min-height:680px;background:var(--navy);display:flex;overflow:hidden}
 .h-left{width:46%;display:flex;flex-direction:column;justify-content:center;padding:150px 5% 60px 6%;background:var(--navy);z-index:2}
-.h-right{width:54%;position:relative;overflow:hidden}
-.h-right img{width:100%;height:100%;object-fit:cover}
-.h-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, var(--navy) 0%, transparent 30%)}
+.h-right{width:54%;position:relative;overflow:hidden;background:#0A1931;min-height:680px;}
+.h-right img{width:100%;height:100%;object-fit:cover;display:block;}
+.h-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, var(--navy) 0%, transparent 35%);pointer-events:none}
 .eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;font-weight:700}
 .title{font-family:'Playfair Display';font-size:clamp(34px,4vw,56px);line-height:.95;font-weight:300;color:#fff;margin-bottom:22px}
 .desc{font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.65);max-width:430px;margin-bottom:30px}
@@ -38,7 +38,8 @@ img{display:block;max-width:100%}
 .dropdown{position:relative;padding:24px 0}
 .dropdown-trigger{color:var(--gold)!important;font-weight:700;cursor:pointer}
 .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);display:none;min-width:350px;background:#0A1931;border-top:2px solid #C8B090;box-shadow:0 25px 50px rgba(10,25,49,.4);z-index:200}
-.dropdown:hover.dropdown-menu,.dropdown:focus-within.dropdown-menu{display:block}
+.dropdown:hover.dropdown-menu,
+.dropdown:focus-within.dropdown-menu{display:block}
 .dropdown-menu a{display:flex;justify-content:space-between;padding:18px 24px;color:rgba(255,255,255,.75);font-size:11px;letter-spacing:2.2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07)}
 .dropdown-menu a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
 .btn-home{background:var(--gold);color:var(--navy);padding:8px 16px;font-size:9px;letter-spacing:2px;font-weight:700;text-decoration:none;border:1px solid var(--gold)}
@@ -54,7 +55,7 @@ img{display:block;max-width:100%}
 .nda-header{background:var(--navy);padding:28px 32px;display:flex;justify-content:space-between;align-items:center}
 .nda-body{padding:28px 32px}
 .nda-check{display:flex;gap:12px;background:#FAFAF8;border:1px solid #eee;padding:16px;margin:20px 0}
-@media(max-width:1024px){.hero-pesca{flex-direction:column;height:auto}.h-left{width:100%;padding:120px 24px 40px}.h-right{width:100%;height:380px}.content{grid-template-columns:1fr;padding:40px 24px}.top-bar{padding:12px 16px;flex-wrap:wrap}.menu{display:none}}
+@media(max-width:1024px){.hero-pesca{flex-direction:column;height:auto}.h-left{width:100%;padding:120px 24px 40px}.h-right{width:100%;height:380px;min-height:380px}.content{grid-template-columns:1fr;padding:40px 24px}.top-bar{padding:12px 16px;flex-wrap:wrap}.menu{display:none}}
 </style>
 </head>
 <body>
@@ -72,16 +73,12 @@ img{display:block;max-width:100%}
     <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="cta" href="#solicitar" data-i18n="cta1">SOLICITAR TEASER LOGÍSTICA →</a><a class="cta" href="index.html" data-i18n="cta2">VER TODAS LAS ÁREAS</a></div>
     <div class="kpi"><div><b>USD 80%</b><span data-i18n="k1">Comercio por Hidrovía</span></div><div><b>30 AÑOS</b><span data-i18n="k2">Concesión</span></div><div><b>USD</b><span data-i18n="k3">Tarifa</span></div></div>
   </div>
- <div class="h-right">
-  <img src="puerto-rosario-a.webp" 
-       alt="Logística Puerto Hidrovía" 
-       loading="lazy" 
-       decoding="async"
-       onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(180deg, #0A1931, #132a50)'">
-</div> 
+  <div class="h-right">
+    <img src="./purto-rosario-a.webp" alt="Logística Puerto Hidrovía Rosario" loading="lazy" decoding="async" onerror="if(this.src.includes('purto')){this.src='./puerto-rosario-a.webp'}else{this.style.display='none'}">
+  </div>
+</div>
 
-
-<nav class="sticky-nav"><div class="nav-inner"><a href="index.html" class="logo"><img src="logo-final.webp" alt="RGMA" style="height:26px"> RGMA — LOGÍSTICA</a><div class="menu"><a class="m-link" href="index.html" style="color:var(--gold);font-weight:700" data-i18n="btn_inicio">INICIO</a><div class="dropdown"><span class="m-link dropdown-trigger">AREAS ▾</span><div class="dropdown-menu"><a href="energia.html"><span>01 — ENERGÍA</span><span>→</span></a><a href="agronegocios.html"><span>02 — AGRONEGOCIOS</span><span>→</span></a><a href="mineria.html"><span>03 — MINERÍA</span><span>→</span></a><a href="pesca.html"><span>04 — PESCA</span><span>→</span></a><a href="logistica.html"><span>05 — LOGÍSTICA ★</span><span>→</span></a></div></div><a class="m-link" href="logistica.html" style="color:var(--gold);font-weight:700">Logística ★</a></div></div></nav>
+<nav class="sticky-nav"><div class="nav-inner"><a href="index.html" class="logo"><img src="logo-final.webp" alt="RGMA" style="height:26px"> RGMA — LOGÍSTICA</a><div class="menu"><a class="m-link" href="index.html" style="color:var(--gold);font-weight:700" data-i18n="btn_inicio">INICIO</a><div class="dropdown"><span class="m-link dropdown-trigger">AREAS ▾</span><div class="dropdown-menu"><a href="energia.html"><span>01 — ENERGÍA</span><span>→</span></a><a href="agronegocios.html"><span>02 — AGRONEGOCIOS</span><span>→</span></a><a href="agronegocios.html"><span>02 — AGRONEGOCIOS</span><span>→</span></a><a href="mineria.html"><span>03 — MINERÍA</span><span>→</span></a><a href="pesca.html"><span>04 — PESCA</span><span>→</span></a><a href="logistica.html"><span>05 — LOGÍSTICA ★</span><span>→</span></a></div></div><a class="m-link" href="logistica.html" style="color:var(--gold);font-weight:700">Logística ★</a></div></div></nav>
 
 <div class="content">
   <div>
