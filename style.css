@@ -489,108 +489,36 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   color: #0A1931;
   border-color: #C8B090;
 }
-/* FIX PROPORCIONES CONTACTO */
+/* CONTACTO FINAL RGMA - FIX DEFINITIVO */
 #contacto{ scroll-margin-top:100px; }
-.section-contacto{ padding:120px 48px 80px !important; }
-
-.contenedor-contacto{
-  grid-template-columns: 380px 1fr !important;
-  gap:80px !important;
-  max-width:1200px !important;
-  align-items:start !important;
-}
-
 .contacto-header{
-  margin-bottom:64px !important;
-}
-.contacto-header h2{
-  font-size:48px !important;
-}
-
-.bloque-dato{ margin-bottom:32px !important; }
-.bloque-dato p{ font-size:14px !important; }
-
-.premium-form{
-  gap:28px 24px !important;
-  grid-template-columns: 1fr 1fr !important;
-}
-.campo-flotante input,
-.campo-flotante textarea{
-  padding:18px 0 10px 0 !important;
-  font-size:14px !important;
-  color:var(--navy) !important;
-  border-bottom-color:#D9D0BE !important;
-}
-.campo-flotante label{
-  opacity:1 !important;
-  color:#8A94A6 !important;
-  font-size:13px !important;
-  font-weight:400 !important;
-  top:18px !important;
-}
-
-.campo-flotante input::placeholder,
-.campo-flotante textarea::placeholder{
-  opacity:1 !important;
-  color:#9AA0A8 !important;
-}
-
-/* Boton enviar proporcionado */
-.boton-enviar{
-  grid-column: span 2 !important;
-  width:100% !important;
-  max-width:100% !important;
-  padding:18px 28px !important;
-  margin-top:8px !important;
-}
-.form-legal{
-  margin-top:8px !important;
-  font-size:9px !important;
-}
-/* FIX CONTACTO HEADER + BOTON */
-.contacto-header{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:18px !important;
-  margin:0 auto 56px !important;
-  text-align:left !important;
+  display:flex !important; align-items:center; justify-content:center;
+  gap:18px; margin:0 auto 56px !important;
 }
 .contacto-header::before{
-  content:"" !important;
-  width:42px !important;
-  height:1px !important;
-  background:var(--dorado) !important;
-  flex-shrink:0 !important;
+  content:""; width:42px; height:1px; background:var(--dorado); flex-shrink:0;
 }
-.contacto-header h2{
-  font-size:42px !important; /* baja de 56 a 42 para proporción */
-  margin:0 !important;
-  line-height:1 !important;
-  letter-spacing:-0.5px !important;
-}
-
-/* Quita la rayita suelta que tenias antes */
-.section-contacto .linea-decorativa,
+.contacto-header h2{ font-size:42px !important; margin:0 !important; }
 #contacto .linea-decorativa{ display:none !important; }
 
-/* Achica espacio gigante entre consulta y enviar */
-.premium-form{
-  gap:24px 24px !important;
+.formulario-contacto{ max-width:100%; }
+.fila-doble{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.grupo-campo{ display:flex; flex-direction:column; margin-bottom:28px; }
+.grupo-campo label{
+  font-size:10px; letter-spacing:1.6px; text-transform:uppercase;
+  color:var(--dorado); font-weight:600; margin-bottom:8px;
 }
-.campo-flotante textarea{
-  height:64px !important; /* baja de 90 a 64 */
-  min-height:64px !important;
+.grupo-campo input, .grupo-campo textarea{
+  border:0; border-bottom:1px solid #D9D0BE; background:transparent;
+  padding:10px 0; font-size:15px; color:var(--navy); outline:none; width:100%;
 }
-.campo-ancho:has(textarea),
-.campo-flotante:has(textarea){
-  margin-bottom:0 !important;
+.grupo-campo input:focus, .grupo-campo textarea:focus{ border-bottom-color:var(--navy); }
+.grupo-campo textarea{ height:64px; min-height:64px; resize:vertical; }
+.fila-boton{ display:flex; align-items:center; gap:24px; margin-top:12px; }
+.btn-enviar{
+  background:#0A1931; color:#fff; border:0; padding:16px 36px;
+  font-size:11px; letter-spacing:2.5px; font-weight:700; cursor:pointer;
 }
-.boton-enviar{
-  margin-top:4px !important;
-  padding:16px 28px !important;
-}
-.form-legal{
-  margin-top:0 !important;
-  padding-top:0 !important;
-}
+.texto-legal{ font-size:9px; letter-spacing:1.5px; color:#B6A088; text-transform:uppercase; }
+@media(max-width:600px){ .fila-doble{ grid-template-columns:1fr; } }
+.barra-flotante-contacto{ display:none !important; }
