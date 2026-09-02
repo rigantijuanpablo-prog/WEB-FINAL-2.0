@@ -600,5 +600,5 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
   border-bottom:1px solid rgba(182,160,136,.2);
 }
 .barra-flotante-contacto .item-flotante:last-child{border-bottom:0 !important}
-.barra-flotante-contacto .item-flotante svg{width:14px !important;height:14px !important}
+.barra-flotante-contacto .item-flotante svg{width:15.5px !important;height:15.5px !important}
 .barra-flotante-contacto .item-flotante span{display:none !important}
