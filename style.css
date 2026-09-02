@@ -1071,83 +1071,86 @@ nav ul {
 }
 
 /* ==========================================================================
-   BARRA FLOTANTE FIJA - INTERFAZ PREMIUM RGMA EXCLUSIVA
+   === BARRA FLOTANTE PREMIUM - REPRODUCCIÓN EXACTA EFECTO VIDRIO (GLASS) ===
    ========================================================================== */
 .barra-flotante-contacto {
   position: fixed !important;
-  right: 24px !important;
+  right: 20px !important; /* Separación sutil del borde de la pantalla */
   top: 50% !important;
   transform: translateY(-50%) !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 999999 !important; /* Capa superior absoluta sobre el video y fotos */
   display: flex !important;
   flex-direction: column !important;
-  background: #070b14 !important; /* Tu azul profundo institucional */
-  border: 1px solid rgba(200, 176, 144, 0.25) !important; /* Borde dorado perimetral */
-  border-radius: 8px !important;
-  z-index: 999999 !important; /* Forzar al frente sobre fotos aéreas */
-  overflow: hidden !important; /* Mantiene las esquinas redondeadas limpias */
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+  width: 50px !important; /* Ancho perfecto para la proporción de tu captura */
+  min-width: 50px !important;
+  max-width: 50px !important;
+  
+  /* EFECTO VIDRIO ESMERILADO (GLASSMORPHISM) OFICIAL */
+  background: rgba(10, 25, 49, 0.45) !important; /* Azul marino translúcido de base */
+  backdrop-filter: blur(16px) saturate(120%) !important; /* Desenfoque de alta fidelidad del fondo */
+  -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+  
+  /* BORDES DORADOS FINOS PERIMETRALES */
+  border: 1px solid rgba(182, 160, 136, 0.4) !important; /* Tu dorado en baja opacidad */
+  border-left: 2px solid rgba(182, 160, 136, 0.6) !important; /* Línea izquierda levemente más definida */
+  border-radius: 14px !important; /* Curvatura elegante y pronunciada de la foto */
+  overflow: hidden !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important; /* Sombra profunda suave */
 }
 
-/* Celda de enlace interactiva */
+/* Celda contenedora (Cuadrado translúcido simétrico) */
 .barra-flotante-contacto .item-flotante {
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-end !important; /* El icono se queda clavado a la derecha */
-  height: 52px !important;
-  width: 52px !important; /* Arranca como un cuadrado perfecto */
-  padding: 0 !important; /* Sin paddings fijos para que no se deforme */
-  color: #ffffff !important;
+  justify-content: center !important; /* Centrado milimétrico del icono */
+  height: 52px !important; /* Altura estilizada proporcional */
+  width: 50px !important;
+  min-width: 50px !important;
+  max-width: 50px !important;
+  background: transparent !important; /* Permite que el vidrio se mantenga continuo */
+  color: #B6A088 !important; /* Tu dorado fino para las líneas del vector */
+  border-bottom: 1px solid rgba(182, 160, 136, 0.25) !important; /* Separadores internos dorados tenues */
   text-decoration: none !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-  /* Animación fluida de estiramiento horizontal usando tu variable --ease */
-  transition: width 0.35s var(--ease), background 0.3s ease !important;
-  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease !important;
 }
 
+/* Remueve la línea divisoria del último botón inferior */
 .barra-flotante-contacto .item-flotante:last-child {
-  border-bottom: none !important;
+  border-bottom: 0 !important;
 }
 
-/* Texto interno oculto que se despliega elásticamente */
+/* BLINDAJE ABSOLUTO: Oculta los textos para evitar cualquier deformación */
 .barra-flotante-contacto .item-flotante span {
-  font-family: 'Arial', sans-serif !important;
-  font-size: 9px !important;
-  letter-spacing: 2.5px !important; /* Espaciado premium entre letras */
-  font-weight: 600 !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  max-width: 0 !important;
-  opacity: 0 !important;
-  overflow: hidden !important;
-  white-space: nowrap !important;
-  transition: max-width 0.35s var(--ease), opacity 0.2s ease !important;
+  display: none !important;
 }
 
-/* Contenedor del icono fino */
-.barra-flotante-contacto .icono-flotante {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 52px !important; /* Ancho idéntico a la celda para centrado simétrico */
-  height: 52px !important;
+/* Escalado nítido de tus vectores SVGs finos */
+.barra-flotante-contacto .item-flotante svg {
+  width: 17px !important; /* Tamaño exacto de tu nueva referencia */
+  height: 17px !important;
+  display: block !important;
   flex-shrink: 0 !important;
 }
 
-.barra-flotante-contacto .icono-flotante svg {
-  height: 16px !important;
-  width: auto !important;
-}
-
-/* HOVER: Comportamiento de estiramiento horizontal interno */
+/* ==========================================================================
+   INTERACCIÓN HOVER (BRILLO INTERNO DE ALTA GAMA)
+   ========================================================================== */
 .barra-flotante-contacto .item-flotante:hover {
-  width: 155px !important; /* La caja se estira de forma limpia hacia la izquierda */
-  background: rgba(200, 176, 144, 0.06) !important; /* Sutil destello dorado de fondo */
+  background: rgba(255, 255, 255, 0.05) !important; /* Sutil reflejo de luz blanca sobre el vidrio */
+  color: #ffffff !important; /* El icono pasa a blanco puro iluminando la celda */
 }
 
-.barra-flotante-contacto .item-flotante:hover span {
-  max-width: 90px !important; /* Despliega el texto de corrido */
-  opacity: 1 !important;
-  margin-right: 4px !important; /* Empuja el texto separándolo del icono */
+/* COMPORTAMIENTO RESPONSIVO ADAPTATIVO MÓVIL */
+@media (max-width: 1100px) {
+  .barra-flotante-contacto {
+    display: none !important; /* Oculta el widget en teléfonos para mantener la UI limpia */
+  }
+}
+
 }
 
 /* ==========================================================================
