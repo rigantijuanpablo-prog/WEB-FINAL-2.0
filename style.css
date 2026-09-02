@@ -500,3 +500,80 @@ a[target="_blank"]::after{ content:" ↗"; font-size:10px; opacity:.6; }
 .premium-form{display:flex;flex-direction:column;gap:32px}
 .premium-form .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 
+/* === FIX CONTACTO RGMA - ALTA VISIBILIDAD === */
+#contacto.section-contacto{
+  max-width:1320px !important;
+  margin:0 auto !important;
+  padding:100px 48px !important;
+  background:#FCFBF9 !important;
+}
+#contacto .contacto-header{
+  text-align:left !important;
+  max-width:100% !important;
+  margin-bottom:80px !important;
+}
+#contacto .contacto-header h2{
+  font-family:'Playfair Display',serif !important;
+  font-size:56px !important;
+  font-weight:300 !important;
+  color:#0A1931 !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:24px !important;
+}
+#contacto .contacto-header h2::before{
+  content:'' !important;
+  width:64px !important;
+  height:1px !important;
+  background:#C8B090 !important;
+  display:block !important;
+}
+#contacto .contenedor-contacto{
+  display:grid !important;
+  grid-template-columns: 300px 1fr !important;
+  gap:80px !important;
+}
+#contacto .bloque-dato label{
+  color:#C8B090 !important;
+  font-size:9px !important;
+  letter-spacing:2.5px !important;
+  font-weight:700 !important;
+  opacity:1 !important;
+}
+#contacto .bloque-dato p{
+  color:#111827 !important;
+  opacity:1 !important;
+}
+
+/* AQUI ESTABA EL ERROR */
+#contacto .campo-flotante input,
+#contacto .campo-flotante textarea{
+  border-bottom:1.5px solid #0A1931 !important;
+  color:#0A1931 !important;
+  opacity:1 !important;
+  font-size:14px !important;
+  padding:18px 0 12px 0 !important;
+  background:transparent !important;
+}
+#contacto .campo-flotante label{
+  color:#0A1931 !important;
+  opacity:1 !important;
+  font-size:10px !important;
+  font-weight:700 !important;
+  letter-spacing:1px !important;
+  top:-8px !important;
+}
+#contacto .campo-flotante input::placeholder,
+#contacto .campo-flotante textarea::placeholder{
+  color:#6B7280 !important;
+  opacity:1 !important;
+}
+#contacto .form-line{display:none !important}
+#contacto .boton-enviar{
+  background:#0A1931 !important;
+  opacity:1 !important;
+}
+
+@media(max-width:900px){
+  #contacto .contenedor-contacto{grid-template-columns:1fr !important}
+}
