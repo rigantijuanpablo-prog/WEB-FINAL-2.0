@@ -3,50 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGMA APP</title>
+<title>RGMA Argentina Desk</title>
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#0A1931">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="./icon-192.png">
 <style>
 :root{--blue:#0A1931;--gold:#C8B090;--red:#E53E3E;--green:#38A169}
-*{box-sizing:border-box} body{margin:0;background:var(--blue);color:#fff;font-family:Inter,sans-serif;padding-bottom:90px}
-header{padding:16px;text-align:center;position:sticky;top:0;background:var(--blue);z-index:10;border-bottom:1px solid rgba(200,176,144,.2);display:flex;align-items:center;justify-content:space-between}
+*{box-sizing:border-box} body{margin:0;background:var(--blue);color:#fff;font-family:-apple-system,Inter,sans-serif;padding-bottom:95px}
+header{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--blue);z-index:20;border-bottom:1px solid rgba(200,176,144,.2)}
 header.left{display:flex;align-items:center;gap:10px}
-header img{width:50px;height:50px;border-radius:50%;background:#fff;padding:2px}
-.tabs{display:flex;gap:5px;overflow:auto;padding:10px;background:var(--blue);position:sticky;top:78px;z-index:5}
-.tab{white-space:nowrap;padding:6px 10px;border-radius:20px;border:1px solid var(--gold);color:var(--gold);background:transparent;font-size:10px;font-weight:700}
+header img{width:52px;height:52px;border-radius:50%;background:#fff;padding:2px;object-fit:contain}
+header h1{margin:0;font-size:13px;letter-spacing:2px;color:var(--gold)} header small{font-size:10px;opacity:.7;color:#fff}
+.tabs{display:flex;gap:6px;overflow:auto;padding:10px;background:var(--blue);position:sticky;top:78px;z-index:10}
+.tab{white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid var(--gold);color:var(--gold);background:transparent;font-size:11px;font-weight:700}
 .tab.active{background:var(--gold);color:var(--blue)}
-.panel{display:none;max-width:600px;margin:0 auto;padding:12px}
-.panel.active{display:block}
-.box{background:#fff;color:#111;border-radius:12px;padding:12px;margin:8px 0;font-size:12px}
-.box.jud{border-left:5px solid var(--blue)}.box.adm{border-left:5px solid var(--gold)}.box.urg{border-left:5px solid var(--red);background:#FFF5F5}
-.btn{background:var(--gold);color:var(--blue);display:block;padding:11px;border-radius:10px;text-align:center;text-decoration:none;font-weight:800;margin:6px 0;font-size:12px;border:0;width:100%}
+.panel{display:none;max-width:620px;margin:0 auto;padding:12px}.panel.active{display:block}
+.box{background:#fff;color:#111;border-radius:12px;padding:12px;margin:8px 0;font-size:12px;line-height:1.4}
+.box.jud{border-left:5px solid var(--blue)}.box.adm{border-left:5px solid var(--gold)}.box.urg{border-left:5px solid var(--red);background:#FFF5F5}.box.ok{border-left:5px solid var(--green)}
+.btn{background:var(--gold);color:var(--blue);display:block;padding:11px;border-radius:10px;text-align:center;text-decoration:none;font-weight:800;margin:6px 0;font-size:12px;border:0;width:100%;cursor:pointer}
 .btn.wa{background:#25D366;color:#fff}.btn.red{background:var(--red);color:#fff}.btn.dark{background:var(--blue);color:var(--gold);border:1px solid var(--gold)}
-.input, select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;margin:5px 0;font-size:12px}
-.loginBox{max-width:400px;margin:40px auto;padding:20px;background:#fff;color:#111;border-radius:16px}
-.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:8px 0;z-index:20}
-.nav div{color:#111;font-size:9px;text-align:center;font-weight:700}
-.tag{display:inline-block;padding:2px 6px;border-radius:10px;font-size:9px;font-weight:800;color:#fff}
-.tag.jud{background:var(--blue)}.tag.adm{background:var(--gold);color:var(--blue)}
+.input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;margin:5px 0;font-size:12px}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:8px 0;z-index:30;border-top:1px solid #ddd}
+.nav div{color:#111;font-size:9px;text-align:center;font-weight:700;cursor:pointer}
+.tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:9px;font-weight:800;color:#fff}.tag.jud{background:var(--blue)}.tag.adm{background:var(--gold);color:var(--blue)}
+.loginBox{max-width:400px;margin:30px auto;padding:20px;background:#fff;color:#111;border-radius:16px}
+.statGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.stat{background:#fff;color:#111;border-radius:10px;padding:10px;text-align:center}
+.stat b{font-size:18px;display:block}
 </style>
 </head>
 <body>
 
 <header>
-<div class="left"><img src="./logo-dorado-circulo-blanco.jpg"><div style="text-align:left"><div style="color:var(--gold);letter-spacing:2px;font-size:13px;font-weight:800">RGMA</div><div style="font-size:9px;opacity:.6" id="userLabel">ARGENTINA DESK</div></div></div>
-<div onclick="logout()" style="font-size:11px;color:var(--gold)">Salir</div>
+<div class="left">
+<img src="./logo-dorado-circulo-blanco.jpg" onerror="this.src='./icon-192.png'">
+<div><h1>RGMA</h1><small id="userLabel">ARGENTINA DESK</small></div>
+</div>
+<div onclick="logout()" style="font-size:11px;color:var(--gold);cursor:pointer">Salir</div>
 </header>
 
 <!-- LOGIN -->
 <div id="login" class="panel active">
 <div class="loginBox">
-<h3 style="margin:0;color:var(--blue)">Ingresar a RGMA APP</h3>
-<p style="font-size:11px;opacity:.7">Clientes: DNI + clave personal. Admin: clave maestra.</p>
-<input id="dni" class="input" placeholder="DNI / CUIT (ej: 30123456)">
+<h3 style="margin:0;color:var(--blue)">Ingresar RGMA APP</h3>
+<p style="font-size:11px;opacity:.7">Cliente: DNI + clave. Admin: 35565078 / rgma2026</p>
+<input id="dni" class="input" placeholder="DNI / CUIT">
 <input id="pass" type="password" class="input" placeholder="Clave">
 <button class="btn dark" onclick="doLogin()">Ingresar</button>
-<button class="btn" onclick="doRegister()">Registrarme por primera vez</button>
-<small style="font-size:10px">Admin: DNI 35565078 / clave: rgma2026<br>Demo cliente: 30123456 / 1234</small>
+<button class="btn" onclick="doRegister()">Registrarme primera vez</button>
+<small style="font-size:10px">Demo: 30123456 / 1234</small>
 </div>
-<div style="max-width:400px;margin:0 auto;text-align:center">
-<p style="font-size:11px;opacity:.6">Modo invitado:</p>
+<div style="max-width:400px;margin:10px auto;text-align:center">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
 <button class="btn dark" onclick="guest('exterior')">🌍 Exterior</button>
 <button class="btn dark" onclick="guest('argentina')">🇦🇷 Argentina</button>
@@ -54,147 +62,141 @@ header img{width:50px;height:50px;border-radius:50%;background:#fff;padding:2px}
 </div>
 </div>
 
-<!-- APP -->
+<!-- APP CLIENTE -->
 <div id="app" class="panel">
 <div class="tabs">
-<button class="tab active" onclick="showTab('exps')">📁 Mis Trámites</button>
+<button class="tab active" onclick="showTab('exps')">📁 Trámites</button>
 <button class="tab" onclick="showTab('auds')">⚖️ Audiencias</button>
 <button class="tab" onclick="showTab('docs')">📂 Docs</button>
+<button class="tab" onclick="showTab('facs')">💰 Facturas</button>
 <button class="tab" onclick="showTab('alert')">🚨 Alertar</button>
 </div>
 
 <div id="exps" class="tabC">
-<div style="display:flex;gap:6px;margin:10px 0">
+<div style="display:flex;gap:6px;margin:8px 0">
 <button class="btn dark" style="flex:1" onclick="filterExp('all')">Todos</button>
-<button class="btn dark" style="flex:1" onclick="filterExp('jud')">⚖️ Judiciales</button>
-<button class="btn dark" style="flex:1" onclick="filterExp('adm')">📋 Administrativos</button>
+<button class="btn dark" style="flex:1" onclick="filterExp('jud')">Judiciales</button>
+<button class="btn dark" style="flex:1" onclick="filterExp('adm')">Administrativos</button>
 </div>
 <div id="listExps"></div>
 <div class="box">
 <b>+ Nuevo trámite / expediente</b>
 <select id="expTipo" class="input"><option value="jud">⚖️ Judicial</option><option value="adm">📋 Administrativo</option></select>
-<select id="expOrganismo" class="input"><option>Poder Judicial Nación</option><option>PJN Comercial</option><option>PJN Civil</option><option>IGJ</option><option>AFIP</option><option>BCRA</option><option>CNV</option><option>Migraciones</option><option>Marcas / INPI</option><option>Otro</option></select>
-<input id="expId" class="input" placeholder="Nro Exp: 12345/2024 o Tramite IGJ 123">
+<select id="expOrganismo" class="input"><option>Poder Judicial Nación</option><option>PJN Comercial</option><option>PJN Civil</option><option>IGJ</option><option>AFIP</option><option>BCRA</option><option>CNV</option><option>Migraciones</option><option>INPI Marcas</option><option>Otro</option></select>
+<input id="expId" class="input" placeholder="Nro: 12345/2024 o IGJ 123">
 <textarea id="expTxt" class="input" placeholder="Detalle / último movimiento"></textarea>
 <button class="btn" onclick="addExp()">Crear + Notificar a RGMA</button>
 </div>
 </div>
 
 <div id="auds" class="tabC" style="display:none">
-<h3 style="color:var(--gold);font-size:13px">Audiencias</h3>
 <div id="listAuds"></div>
-<div class="box"><input id="audFecha" type="date" class="input"><input id="audDesc" class="input" placeholder="Detalle"><select id="audExp" class="input"></select><button class="btn" onclick="addAud()">Agendar</button></div>
+<div class="box"><input id="audFecha" type="date" class="input"><input id="audDesc" class="input" placeholder="Detalle audiencia"><select id="audExp" class="input"></select><button class="btn" onclick="addAud()">Agendar + Push</button></div>
 </div>
 
 <div id="docs" class="tabC" style="display:none">
-<h3 style="color:var(--gold);font-size:13px">Repositorio Personal</h3>
 <div class="box">
-<input type="file" id="fileInput" class="input" accept=".pdf,.jpg,.png" onchange="uploadDoc(event)">
-<select id="docTipo" class="input"><option>DNI / Pasaporte</option><option>Poder</option><option>Contrato</option><option>Demanda / Escrito</option><option>Resolución / Sentencia</option><option>Comprobante / Factura</option></select>
+<b>📂 Repositorio Personal</b><br><small>DNI, Poder, Contrato. Queda encriptado en tu celular.</small>
+<input type="file" id="fileInput" class="input" accept=".pdf,.jpg,.png,.jpeg" onchange="uploadDoc(event)">
+<select id="docTipo" class="input"><option>DNI / Pasaporte</option><option>Poder</option><option>Contrato</option><option>Demanda / Escrito</option><option>Resolución / Sentencia</option><option>Factura / Comprobante</option></select>
 <select id="docExp" class="input"></select>
 </div>
 <div id="listDocs"></div>
 </div>
 
+<div id="facs" class="tabC" style="display:none">
+<h3 style="color:var(--gold);font-size:13px">💰 Mis Facturas Emitidas</h3>
+<div id="listFacs"></div>
+</div>
+
 <div id="alert" class="tabC" style="display:none">
-<div class="box urg"><textarea id="alertMsg" class="input" placeholder="Mensaje para RGMA..."></textarea><select id="alertPrio" class="input"><option value="normal">Normal</option><option value="urgente">🚨 URGENTE 24hs</option><option value="audiencia">⚖️ Audiencia</option></select><button class="btn red" onclick="sendAlert()">Enviar a RGMA (WhatsApp + Panel)</button><a class="btn wa" href="https://wa.me/5491135565078">WhatsApp directo</a></div>
+<div class="box urg"><textarea id="alertMsg" class="input" placeholder="Mensaje para RGMA..."></textarea><select id="alertPrio" class="input"><option value="normal">Normal</option><option value="urgente">🚨 URGENTE 24hs</option><option value="audiencia">⚖️ Audiencia</option></select><button class="btn red" onclick="sendAlert()">Enviar a RGMA (WhatsApp + Panel)</button><a class="btn wa" href="https://wa.me/5491135565078">WhatsApp directo 11 3556 5078</a></div>
 <div id="perfilExtra"></div>
 </div>
-
 </div>
 
-<!-- ADMIN -->
+<!-- ADMIN RGMA -->
 <div id="admin" class="panel">
-<h3 style="color:var(--gold)">🔐 Admin RGMA</h3>
-<div class="box"><b>Usuarios registrados:</b><div id="adminUsers"></div></div>
-<div class="box"><b>Alertas de clientes:</b><div id="adminAlerts"></div></div>
-<div class="box"><b>Trámites totales:</b><div id="adminExps"></div></div>
-<div class="box"><b>Docs subidos:</b><div id="adminDocs"></div></div>
-<span class="back" onclick="logout()" style="color:var(--gold);display:block;text-align:center;margin:10px">Cerrar sesión</span>
+<h3 style="color:var(--gold);margin:5px 0">🔐 Panel RGMA</h3>
+<div class="statGrid">
+<div class="stat"><b id="statAlert">0</b><small>Alertas</small></div>
+<div class="stat"><b id="statExp">0</b><small>Trámites</small></div>
+<div class="stat"><b id="statDoc">0</b><small>Docs</small></div>
+<div class="stat" style="background:var(--gold)"><b id="statFac">0</b><small>Facturas</small></div>
+</div>
+<div class="tabs" style="position:static;top:0">
+<button class="tab active" onclick="showAdminTab('adminAlertsTab')">🚨 Alertas</button>
+<button class="tab" onclick="showAdminTab('adminExpsTab')">📁 Trámites</button>
+<button class="tab" onclick="showAdminTab('adminDocsTab')">📂 Docs</button>
+<button class="tab" onclick="showAdminTab('adminFacTab')">💰 Facturas</button>
+</div>
+<div id="adminAlertsTab" class="adminTabC"><div id="adminAlerts"></div></div>
+<div id="adminExpsTab" class="adminTabC" style="display:none"><div id="adminExps"></div></div>
+<div id="adminDocsTab" class="adminTabC" style="display:none"><div id="adminDocs"></div></div>
+<div id="adminFacTab" class="adminTabC" style="display:none">
+<div class="box" style="border-left:5px solid var(--gold)">
+<b>💰 Emitir Factura</b>
+<input id="facDni" class="input" placeholder="DNI Cliente">
+<input id="facNum" class="input" placeholder="Nro: 00001-00000123">
+<input id="facConcepto" class="input" placeholder="Concepto: RIGI, SA, etc">
+<input id="facMonto" type="number" class="input" placeholder="Monto">
+<select id="facEstado" class="input"><option>Pendiente</option><option>Pagada</option><option>Vencida</option></select>
+<input id="facVto" type="date" class="input">
+<button class="btn" onclick="addFactura()">Emitir factura</button>
+</div>
+<div id="adminFacs"></div>
+</div>
+<div class="box"><b>Usuarios:</b><div id="adminUsers" style="font-size:11px"></div></div>
 </div>
 
 <div class="nav" id="nav" style="display:none">
 <div onclick="showTab('exps')">📁<br>Trámites</div>
 <div onclick="showTab('auds')">⚖️<br>Aud</div>
 <div onclick="showTab('docs')">📂<br>Docs</div>
+<div onclick="showTab('facs')">💰<br>Fact</div>
 <div onclick="showTab('alert')">🚨<br>Alertar</div>
-<div onclick="logout()">🚪<br>Salir</div>
 </div>
 
 <script>
-let db = JSON.parse(localStorage.getItem('rgma_db')||'{"users":[{"dni":"30123456","pass":"1234","nombre":"Cliente Demo"},{"dni":"35565078","pass":"rgma2026","nombre":"Admin RGMA","admin":true}],"data":{}}');
+let db = JSON.parse(localStorage.getItem('rgma_db')||'{"users":[{"dni":"30123456","pass":"1234","nombre":"Cliente Demo"},{"dni":"35565078","pass":"rgma2026","nombre":"Admin RGMA","admin":true}],"data":{"30123456":{"exps":[{"id":"12345/2024","tipo":"jud","organismo":"PJN Comercial","fecha":"02/09/2026","movs":[{"fecha":"02/09/2026","txt":"Demanda presentada"}]}],"auds":[{"fecha":"2026-09-05","desc":"Audiencia preliminar Juzgado 5","exp":"12345/2024"}],"docs":[],"alerts":[]}}}');
+let facturas = JSON.parse(localStorage.getItem('rgma_facturas')||'[]');
 let currentUser=null; let currentFilter='all';
-function saveDB(){localStorage.setItem('rgma_db',JSON.stringify(db));}
-function doLogin(){
-let dni=document.getElementById('dni').value.trim(); let pass=document.getElementById('pass').value.trim();
-let u=db.users.find(x=>x.dni===dni && x.pass===pass);
-if(!u) return alert('DNI o clave incorrecta');
-currentUser=u; if(u.admin){document.getElementById('login').classList.remove('active');document.getElementById('admin').classList.add('active');renderAdmin();return;}
-openApp('argentina');
-}
-function doRegister(){
-let dni=document.getElementById('dni').value.trim(); let pass=document.getElementById('pass').value.trim();
-if(!dni||!pass) return alert('Completa DNI y clave'); if(db.users.find(x=>x.dni===dni)) return alert('Ya registrado, ingresá');
-db.users.push({dni:dni,pass:pass,nombre:'Cliente '+dni}); db.data[dni]={exps:[],auds:[],docs:[],alerts:[]}; saveDB(); alert('Registrado! Ingresá ahora');}
-function guest(tipo){currentUser={dni:'invitado',nombre:'Invitado '+tipo,guest:true}; openApp(tipo);}
-function openApp(tipo){
-document.getElementById('login').classList.remove('active'); document.getElementById('app').classList.add('active'); document.getElementById('nav').style.display='flex';
-document.getElementById('userLabel').innerText=currentUser.nombre+' - '+tipo.toUpperCase();
-if(!db.data[currentUser.dni]) db.data[currentUser.dni]={exps:[],auds:[],docs:[],alerts:[]};
-let extra=document.getElementById('perfilExtra');
-if(tipo==='exterior') extra.innerHTML='<div class="box"><b>🌍 Exterior</b><br><a class="btn" href="./RGMA-RIGI.png" target="_blank">Guía RIGI</a></div>';
-else extra.innerHTML='<div class="box"><b>🇦🇷 Argentina</b><br><a class="btn" href="./RGMA-Exportar.png" target="_blank">Checklist Exportar</a></div>';
-render();
-}
-function logout(){currentUser=null; document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active')); document.getElementById('login').classList.add('active'); document.getElementById('nav').style.display='none'; document.getElementById('userLabel').innerText='ARGENTINA DESK';}
+function save(){localStorage.setItem('rgma_db',JSON.stringify(db));localStorage.setItem('rgma_facturas',JSON.stringify(facturas));}
+function doLogin(){let dni=document.getElementById('dni').value.trim();let p=document.getElementById('pass').value.trim();let u=db.users.find(x=>x.dni===dni&&x.pass===p);if(!u)return alert('DNI o clave mal');currentUser=u;if(u.admin){document.getElementById('login').classList.remove('active');document.getElementById('admin').classList.add('active');renderAdmin();return;}openApp('argentina');}
+function doRegister(){let dni=document.getElementById('dni').value.trim();let p=document.getElementById('pass').value.trim();if(!dni||!p)return alert('Completa');if(db.users.find(x=>x.dni===dni))return alert('Ya existe');db.users.push({dni:dni,pass:p,nombre:'Cliente '+dni});db.data[dni]={exps:[],auds:[],docs:[],alerts:[]};save();alert('Registrado, ingresá ahora');}
+function guest(t){currentUser={dni:'invitado',nombre:'Invitado '+t,guest:true};openApp(t);}
+function openApp(t){document.getElementById('login').classList.remove('active');document.getElementById('app').classList.add('active');document.getElementById('nav').style.display='flex';document.getElementById('userLabel').innerText=currentUser.nombre+' - '+t.toUpperCase();if(!db.data[currentUser.dni])db.data[currentUser.dni]={exps:[],auds:[],docs:[],alerts:[]};let extra=document.getElementById('perfilExtra');extra.innerHTML=t==='exterior'?'<div class="box ok"><b>🌍 Exterior - RIGI</b><br><a class="btn" href="./RGMA-RIGI.png" target="_blank">Guía RIGI</a></div>':'<div class="box ok"><b>🇦🇷 Argentina</b><br><a class="btn" href="./RGMA-Exportar.png" target="_blank">Checklist Exportar</a></div>';render();}
+function logout(){currentUser=null;document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById('login').classList.add('active');document.getElementById('nav').style.display='none';document.getElementById('userLabel').innerText='ARGENTINA DESK';}
 function showTab(id){document.querySelectorAll('.tabC').forEach(c=>c.style.display='none');document.getElementById(id).style.display='block';}
+function showAdminTab(id){document.querySelectorAll('.adminTabC').forEach(c=>c.style.display='none');document.getElementById(id).style.display='block';}
 function getData(){return db.data[currentUser.dni];}
-function render(){renderExps();renderAuds();renderDocs();fillSelects();}
-function fillSelects(){
-let d=getData(); let h=''; d.exps.forEach(e=>{h+=`<option value="${e.id}">${e.id} - ${e.organismo}</option>`}); document.getElementById('audExp').innerHTML=h; document.getElementById('docExp').innerHTML='<option value="">Sin vincular</option>'+h;
-}
-function renderExps(){
-let d=getData(); let list=d.exps; if(currentFilter!=='all') list=list.filter(x=>x.tipo===currentFilter);
-let h=''; list.forEach((e,i)=>{
-h+=`<div class="box ${e.tipo==='jud'?'jud':'adm'}"><span class="tag ${e.tipo}">${e.tipo==='jud'?'JUDICIAL':'ADMIN'}</span> <b>${e.id}</b> - ${e.organismo}<br><small>${e.fecha}</small><br>`;
-e.movs.forEach(m=>{h+=`<div style="border-top:1px solid #eee;margin-top:6px;padding-top:4px"><small>${m.fecha}</small><br>${m.txt}</div>`});
-h+=`<button class="btn dark" style="margin-top:6px" onclick="addMovTo('${e.id}')">+ Movimiento</button></div>`;
-}); document.getElementById('listExps').innerHTML=h||'<div class="box">Sin trámites aún. Creá el primero arriba.</div>';
-}
-function filterExp(t){currentFilter=t; renderExps();}
-function addExp(){
-let tipo=document.getElementById('expTipo').value; let org=document.getElementById('expOrganismo').value; let id=document.getElementById('expId').value; let txt=document.getElementById('expTxt').value;
-if(!id) return alert('Nro requerido'); let d=getData();
-d.exps.push({id:id,tipo:tipo,organismo:org,fecha:new Date().toLocaleDateString(),movs:[{fecha:new Date().toLocaleString(),txt:txt||'Trámite creado'}]});
-d.alerts.push({fecha:new Date().toLocaleString(),msg:'Nuevo '+tipo+': '+id+' - '+org+' - '+txt,prio:'normal'}); saveDB(); render(); fillSelects();
-window.open('https://wa.me/5491135565078?text='+encodeURIComponent('📁 Nuevo trámite cliente '+currentUser.dni+' - '+tipo.toUpperCase()+' '+id+' - '+org+' - '+txt));
-}
-function addMovTo(id){
-let txt=prompt('Nuevo movimiento para '+id+':'); if(!txt) return; let d=getData(); let e=d.exps.find(x=>x.id===id); e.movs.push({fecha:new Date().toLocaleString(),txt:txt}); d.alerts.push({fecha:new Date().toLocaleString(),msg:'Mov en '+id+': '+txt,prio:'normal'}); saveDB(); render();
-window.open('https://wa.me/5491135565078?text='+encodeURIComponent('🔔 Movimiento '+id+': '+txt+' - Cliente '+currentUser.dni));
-}
-function renderAuds(){let d=getData(); let h=''; d.auds.forEach(a=>{h+=`<div class="box"><b>📅 ${a.fecha}</b> - ${a.exp||''}<br>${a.desc}</div>`}); document.getElementById('listAuds').innerHTML=h||'<div class="box">Sin audiencias</div>';}
-function addAud(){let f=document.getElementById('audFecha').value; let desc=document.getElementById('audDesc').value; let exp=document.getElementById('audExp').value; if(!f||!desc) return; let d=getData(); d.auds.push({fecha:f,desc:desc,exp:exp}); d.alerts.push({fecha:new Date().toLocaleString(),msg:'Audiencia '+f+': '+desc,prio:'audiencia'}); saveDB(); render(); window.open('https://wa.me/5491135565078?text='+encodeURIComponent('⚖️ Audiencia '+f+' '+desc+' - Cliente '+currentUser.dni));}
-function renderDocs(){let d=getData(); let h=''; d.docs.forEach((doc,i)=>{h+=`<div class="box" style="display:flex;justify-content:space-between"><div><b>${doc.tipo}</b><br><small>${doc.name} - ${doc.exp||'sin exp'} - ${doc.fecha}</small></div><div><a href="${doc.data}" download="${doc.name}" style="color:var(--gold)">⬇️</a> <span onclick="getData().docs.splice(${i},1);saveDB();render()" style="color:red;cursor:pointer">✕</span></div></div>`}); document.getElementById('listDocs').innerHTML=h||'<div class="box">Sin documentos</div>';}
-function uploadDoc(e){
-let file=e.target.files[0]; if(!file) return; let reader=new FileReader();
-reader.onload=function(ev){
-let tipo=document.getElementById('docTipo').value; let exp=document.getElementById('docExp').value;
-let d=getData(); d.docs.push({name:file.name,tipo:tipo,exp:exp,fecha:new Date().toLocaleDateString(),data:ev.target.result});
-d.alerts.push({fecha:new Date().toLocaleString(),msg:'Doc subido: '+file.name+' ('+tipo+')',prio:'normal'}); saveDB(); render(); renderAdmin();
-window.open('https://wa.me/5491135565078?text='+encodeURIComponent('📎 Doc cliente '+currentUser.dni+': '+file.name+' - '+tipo));
-}; reader.readAsDataURL(file);
-}
-function sendAlert(){
-let msg=document.getElementById('alertMsg').value; let prio=document.getElementById('alertPrio').value; if(!msg) return; let d=getData(); d.alerts.push({fecha:new Date().toLocaleString(),msg:msg,prio:prio}); saveDB(); renderAdmin();
-window.open('https://wa.me/5491135565078?text='+encodeURIComponent('🚨 ['+prio.toUpperCase()+'] Cliente '+currentUser.dni+': '+msg)); alert('Enviado a RGMA');
-}
+function render(){renderExps();renderAuds();renderDocs();renderFacsCliente();fillSelects();}
+function fillSelects(){let d=getData();let h='';d.exps.forEach(e=>{h+=`<option value="${e.id}">${e.id} - ${e.organismo}</option>`});document.getElementById('audExp').innerHTML=h;document.getElementById('docExp').innerHTML='<option value="">Sin vincular</option>'+h;}
+function renderExps(){let d=getData();let list=d.exps;if(currentFilter!=='all')list=list.filter(x=>x.tipo===currentFilter);let h='';list.forEach(e=>{h+=`<div class="box ${e.tipo==='jud'?'jud':'adm'}"><span class="tag ${e.tipo}">${e.tipo==='jud'?'JUDICIAL':'ADMIN'}</span> <b>${e.id}</b> - ${e.organismo}<br><small>${e.fecha}</small>`;e.movs.forEach(m=>{h+=`<div style="border-top:1px solid #eee;margin-top:6px;padding-top:4px"><small>${m.fecha}</small><br>${m.txt}</div>`});h+=`<button class="btn dark" style="margin-top:6px" onclick="addMovTo('${e.id}')">+ Movimiento</button></div>`});document.getElementById('listExps').innerHTML=h||'<div class="box">Sin trámites</div>';}
+function filterExp(t){currentFilter=t;renderExps();}
+function addExp(){let tipo=document.getElementById('expTipo').value;let org=document.getElementById('expOrganismo').value;let id=document.getElementById('expId').value.trim();let txt=document.getElementById('expTxt').value.trim();if(!id)return alert('Nro requerido');let d=getData();d.exps.push({id:id,tipo:tipo,organismo:org,fecha:new Date().toLocaleDateString(),movs:[{fecha:new Date().toLocaleString(),txt:txt||'Trámite creado'}]});d.alerts.push({fecha:new Date().toLocaleString(),msg:'Nuevo '+tipo+': '+id+' - '+org,prio:'normal'});save();render();fillSelects();window.open('https://wa.me/5491135565078?text='+encodeURIComponent('📁 Nuevo '+tipo+' cliente '+currentUser.dni+' - '+id+' - '+org+' - '+txt));}
+function addMovTo(id){let txt=prompt('Movimiento para '+id+':');if(!txt)return;let d=getData();let e=d.exps.find(x=>x.id===id);e.movs.push({fecha:new Date().toLocaleString(),txt:txt});d.alerts.push({fecha:new Date().toLocaleString(),msg:'Mov '+id+': '+txt,prio:'normal'});save();render();window.open('https://wa.me/5491135565078?text='+encodeURIComponent('🔔 '+id+': '+txt+' - '+currentUser.dni));}
+function renderAuds(){let d=getData();let h='';d.auds.forEach(a=>{h+=`<div class="box"><b>📅 ${a.fecha}</b> - ${a.exp||''}<br>${a.desc}</div>`});document.getElementById('listAuds').innerHTML=h||'<div class="box">Sin audiencias</div>';}
+function addAud(){let f=document.getElementById('audFecha').value;let desc=document.getElementById('audDesc').value;let exp=document.getElementById('audExp').value;if(!f||!desc)return;let d=getData();d.auds.push({fecha:f,desc:desc,exp:exp});d.alerts.push({fecha:new Date().toLocaleString(),msg:'Audiencia '+f+': '+desc,prio:'audiencia'});save();render();if(Notification.permission==='granted')new Notification('⚖️ Audiencia agendada '+f,{body:desc,icon:'./icon-192.png'});window.open('https://wa.me/5491135565078?text='+encodeURIComponent('⚖️ Aud '+f+' '+desc+' - '+currentUser.dni));}
+function renderDocs(){let d=getData();let h='';d.docs.forEach((doc,i)=>{h+=`<div class="box" style="display:flex;justify-content:space-between"><div><b>${doc.tipo}</b><br><small>${doc.name} - ${doc.exp||'sin exp'} - ${doc.fecha}</small></div><div><a href="${doc.data}" download="${doc.name}" style="color:var(--gold)">⬇️</a> <span onclick="getData().docs.splice(${i},1);save();render()" style="color:red;cursor:pointer;margin-left:8px">✕</span></div></div>`});document.getElementById('listDocs').innerHTML=h||'<div class="box">Sin documentos</div>';}
+function uploadDoc(e){let file=e.target.files[0];if(!file)return;let reader=new FileReader();reader.onload=function(ev){let tipo=document.getElementById('docTipo').value;let exp=document.getElementById('docExp').value;let d=getData();d.docs.push({name:file.name,tipo:tipo,exp:exp,fecha:new Date().toLocaleDateString(),data:ev.target.result});d.alerts.push({fecha:new Date().toLocaleString(),msg:'Doc: '+file.name+' ('+tipo+')',prio:'normal'});save();render();renderAdmin();window.open('https://wa.me/5491135565078?text='+encodeURIComponent('📎 Doc '+currentUser.dni+': '+file.name));};reader.readAsDataURL(file);}
+function renderFacsCliente(){let mis=facturas.filter(f=>f.dni===currentUser.dni);let h='';mis.forEach(f=>{let c=f.estado==='Pagada'?'var(--green)':f.estado==='Vencida'?'var(--red)':'var(--gold)';h+=`<div class="box" style="border-left:5px solid ${c}"><b>${f.num}</b> - ${f.concepto}<br><b>$ ${f.monto}</b> - <span style="color:${c};font-weight:800">${f.estado}</span><br><small>Vto: ${f.vto||'-'} - Emitida: ${f.fecha}</small></div>`});document.getElementById('listFacs').innerHTML=h||'<div class="box">Sin facturas</div>';}
+function sendAlert(){let msg=document.getElementById('alertMsg').value;let prio=document.getElementById('alertPrio').value;if(!msg)return;let d=getData();d.alerts.push({fecha:new Date().toLocaleString(),msg:msg,prio:prio});save();renderAdmin();window.open('https://wa.me/5491135565078?text='+encodeURIComponent('🚨 ['+prio.toUpperCase()+'] '+currentUser.dni+': '+msg));alert('Enviado a RGMA');}
+function addFactura(){let dni=document.getElementById('facDni').value.trim();let num=document.getElementById('facNum').value.trim();let concepto=document.getElementById('facConcepto').value.trim();let monto=document.getElementById('facMonto').value.trim();let estado=document.getElementById('facEstado').value;let vto=document.getElementById('facVto').value;if(!dni||!num||!concepto||!monto)return alert('Falta dato');facturas.push({dni:dni,num:num,concepto:concepto,monto:monto,estado:estado,vto:vto,fecha:new Date().toLocaleDateString()});save();renderAdmin();alert('Factura emitida a '+dni);}
 function renderAdmin(){
-let hUsers=''; db.users.forEach(u=>{hUsers+=`<div style="border-bottom:1px solid #eee;padding:4px 0">${u.dni} - ${u.nombre} ${u.admin?'[ADMIN]':''}</div>`}); document.getElementById('adminUsers').innerHTML=hUsers;
-let hAlerts=''; Object.keys(db.data).forEach(dni=>{db.data[dni].alerts?.slice().reverse().forEach(a=>{hAlerts+=`<div class="box ${a.prio==='urgente'?'urg':''}"><small>${a.fecha} - Cliente ${dni}</small><br>${a.msg}</div>`})}); document.getElementById('adminAlerts').innerHTML=hAlerts||'Sin alertas';
-let hExps=''; Object.keys(db.data).forEach(dni=>{db.data[dni].exps?.forEach(e=>{hExps+=`<div class="box ${e.tipo==='jud'?'jud':'adm'}"><b>${dni} - ${e.id}</b> [${e.tipo}] ${e.organismo}<br><small>${e.movs[e.movs.length-1]?.txt||''}</small></div>`})}); document.getElementById('adminExps').innerHTML=hExps||'Sin trámites';
-let hDocs=''; Object.keys(db.data).forEach(dni=>{db.data[dni].docs?.forEach(d=>{hDocs+=`<div class="box"><small>${dni} - ${d.tipo} - ${d.name} - Exp: ${d.exp||'-'}</small><br><a href="${d.data}" download="${d.name}">Bajar</a></div>`})}); document.getElementById('adminDocs').innerHTML=hDocs||'Sin docs';
+let hUsers='';db.users.forEach(u=>{hUsers+=`<div style="border-bottom:1px solid #eee;padding:3px 0">${u.dni} - ${u.nombre} ${u.admin?'[ADMIN]':''}</div>`});document.getElementById('adminUsers').innerHTML=hUsers;
+let hAlerts='';Object.keys(db.data).forEach(dni=>{db.data[dni].alerts?.slice().reverse().forEach(a=>{hAlerts+=`<div class="box ${a.prio==='urgente'?'urg':''}"><small>${a.fecha} - ${dni}</small><br>${a.msg}</div>`})});document.getElementById('adminAlerts').innerHTML=hAlerts||'Sin alertas';
+let hExps='';Object.keys(db.data).forEach(dni=>{db.data[dni].exps?.forEach(e=>{hExps+=`<div class="box ${e.tipo==='jud'?'jud':'adm'}"><b>${dni} - ${e.id}</b> [${e.tipo}] ${e.organismo}<br><small>${e.movs[e.movs.length-1]?.txt||''}</small></div>`})});document.getElementById('adminExps').innerHTML=hExps||'Sin trámites';
+let hDocs='';Object.keys(db.data).forEach(dni=>{db.data[dni].docs?.forEach(d=>{hDocs+=`<div class="box"><small>${dni} - ${d.tipo} - ${d.name} - Exp: ${d.exp||'-'}</small><br><a href="${d.data}" download="${d.name}">Bajar</a></div>`})});document.getElementById('adminDocs').innerHTML=hDocs||'Sin docs';
+let hFac='';facturas.slice().reverse().forEach((f,i)=>{let color=f.estado==='Pagada'?'var(--green)':f.estado==='Vencida'?'var(--red)':'var(--gold)';hFac+=`<div class="box" style="border-left:5px solid ${color}"><b>${f.num}</b> - Cliente ${f.dni}<br>${f.concepto}<br><b>$ ${f.monto}</b> - <span style="color:${color};font-weight:800">${f.estado}</span> - Vto: ${f.vto||'-'}<br><small>${f.fecha}</small> <span onclick="facturas.splice(${facturas.length-1-i},1);save();renderAdmin()" style="color:red;cursor:pointer"> [Eliminar]</span></div>`});document.getElementById('adminFacs').innerHTML=hFac||'Sin facturas';
+document.getElementById('statAlert').innerText=Object.values(db.data).reduce((a,c)=>a+(c.alerts?.length||0),0);
+document.getElementById('statExp').innerText=Object.values(db.data).reduce((a,c)=>a+(c.exps?.length||0),0);
+document.getElementById('statDoc').innerText=Object.values(db.data).reduce((a,c)=>a+(c.docs?.length||0),0);
+document.getElementById('statFac').innerText=facturas.length;
 }
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+if('Notification' in window && Notification.permission!=='granted'){Notification.requestPermission();}
+function checkVenc(){let hoy=new Date();Object.values(db.data).forEach(ud=>{ud.auds?.forEach(aud=>{let fa=new Date(aud.fecha);let diff=Math.ceil((fa-hoy)/(1000*60*60*24));if((diff===1||diff===0)&&Notification.permission==='granted'){new Notification('🚨 RGMA - Audiencia '+(diff===0?'HOY':'MAÑANA'),{body:aud.desc,icon:'./icon-192.png'});}});});} setInterval(checkVenc,60000);
 </script>
 </body>
 </html>
