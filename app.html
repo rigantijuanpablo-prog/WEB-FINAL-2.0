@@ -3,80 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGMA - APP</title>
+<title>RGMA APP</title>
 <style>
-  :root{--blue:#0A1931;--gold:#C8B090;--gold2:#D4AF37}
-  body{margin:0;background:var(--blue);color:#fff;font-family:Inter, sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh}
-  header{padding:30px 20px 10px;display:flex;flex-direction:column;align-items:center}
-  header img{width:110px;height:110px;border-radius:50%;}
-  header h1{color:var(--gold);letter-spacing:3px;margin:15px 0 5px;font-size:22px}
-  header p{color:#fff;opacity:0.7;margin:0;font-size:13px;letter-spacing:2px}
-  .selector{display:flex;gap:20px;margin:40px 0;width:90%;max-width:500px}
-  .card{flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--gold);border-radius:16px;padding:25px 15px;text-align:center;cursor:pointer;transition:0.2s}
-  .card:hover{background:var(--gold);color:var(--blue)}
-  .card h2{margin:10px 0 5px;font-size:18px}
-  .card span{font-size:28px}
-  .panel{display:none;width:90%;max-width:600px;background:#fff;color:var(--blue);border-radius:12px;padding:20px;margin-bottom:30px}
-  .panel.active{display:block}
-  .btn{display:block;background:var(--blue);color:var(--gold);padding:12px;border-radius:8px;text-align:center;text-decoration:none;margin:10px 0;font-weight:700}
-  .back{color:var(--gold);cursor:pointer;text-align:center;margin:15px;display:block}
+:root{--blue:#0A1931;--gold:#C8B090;--red:#E53E3E;--green:#38A169}
+*{box-sizing:border-box} body{margin:0;background:var(--blue);color:#fff;font-family:Inter,sans-serif;padding-bottom:90px}
+header{padding:16px;text-align:center;position:sticky;top:0;background:var(--blue);z-index:10;border-bottom:1px solid rgba(200,176,144,.2);display:flex;align-items:center;justify-content:space-between}
+header.left{display:flex;align-items:center;gap:10px}
+header img{width:50px;height:50px;border-radius:50%;background:#fff;padding:2px}
+.tabs{display:flex;gap:5px;overflow:auto;padding:10px;background:var(--blue);position:sticky;top:78px;z-index:5}
+.tab{white-space:nowrap;padding:6px 10px;border-radius:20px;border:1px solid var(--gold);color:var(--gold);background:transparent;font-size:10px;font-weight:700}
+.tab.active{background:var(--gold);color:var(--blue)}
+.panel{display:none;max-width:600px;margin:0 auto;padding:12px}
+.panel.active{display:block}
+.box{background:#fff;color:#111;border-radius:12px;padding:12px;margin:8px 0;font-size:12px}
+.box.jud{border-left:5px solid var(--blue)}.box.adm{border-left:5px solid var(--gold)}.box.urg{border-left:5px solid var(--red);background:#FFF5F5}
+.btn{background:var(--gold);color:var(--blue);display:block;padding:11px;border-radius:10px;text-align:center;text-decoration:none;font-weight:800;margin:6px 0;font-size:12px;border:0;width:100%}
+.btn.wa{background:#25D366;color:#fff}.btn.red{background:var(--red);color:#fff}.btn.dark{background:var(--blue);color:var(--gold);border:1px solid var(--gold)}
+.input, select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;margin:5px 0;font-size:12px}
+.loginBox{max-width:400px;margin:40px auto;padding:20px;background:#fff;color:#111;border-radius:16px}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:8px 0;z-index:20}
+.nav div{color:#111;font-size:9px;text-align:center;font-weight:700}
+.tag{display:inline-block;padding:2px 6px;border-radius:10px;font-size:9px;font-weight:800;color:#fff}
+.tag.jud{background:var(--blue)}.tag.adm{background:var(--gold);color:var(--blue)}
 </style>
 </head>
 <body>
 
 <header>
-  <img src="./logo-dorado-circulo-blanco.jpg" alt="RGMA">
-  <h1>RGMA</h1>
-  <p>ARGENTINA DESK</p>
+<div class="left"><img src="./logo-dorado-circulo-blanco.jpg"><div style="text-align:left"><div style="color:var(--gold);letter-spacing:2px;font-size:13px;font-weight:800">RGMA</div><div style="font-size:9px;opacity:.6" id="userLabel">ARGENTINA DESK</div></div></div>
+<div onclick="logout()" style="font-size:11px;color:var(--gold)">Salir</div>
 </header>
 
-<div id="home" class="selector">
-  <div class="card" onclick="openPanel('exterior')">
-    <span>🌍</span>
-    <h2>EXTERIOR</h2>
-    <small>Invest in Argentina</small>
-  </div>
-  <div class="card" onclick="openPanel('argentina')">
-    <span>🇦🇷</span>
-    <h2>ARGENTINA</h2>
-    <small>Operar local</small>
-  </div>
+<!-- LOGIN -->
+<div id="login" class="panel active">
+<div class="loginBox">
+<h3 style="margin:0;color:var(--blue)">Ingresar a RGMA APP</h3>
+<p style="font-size:11px;opacity:.7">Clientes: DNI + clave personal. Admin: clave maestra.</p>
+<input id="dni" class="input" placeholder="DNI / CUIT (ej: 30123456)">
+<input id="pass" type="password" class="input" placeholder="Clave">
+<button class="btn dark" onclick="doLogin()">Ingresar</button>
+<button class="btn" onclick="doRegister()">Registrarme por primera vez</button>
+<small style="font-size:10px">Admin: DNI 35565078 / clave: rgma2026<br>Demo cliente: 30123456 / 1234</small>
+</div>
+<div style="max-width:400px;margin:0 auto;text-align:center">
+<p style="font-size:11px;opacity:.6">Modo invitado:</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<button class="btn dark" onclick="guest('exterior')">🌍 Exterior</button>
+<button class="btn dark" onclick="guest('argentina')">🇦🇷 Argentina</button>
+</div>
+</div>
 </div>
 
-<!-- PANEL EXTERIOR -->
-<div id="exterior" class="panel">
-  <h2>Investor Hub - Exterior</h2>
-  <p>Para inversores que quieren entrar a Argentina:</p>
-  <a class="btn" href="#rigi">RIGI - Régimen de Grandes Inversiones</a>
-  <a class="btn" href="#sociedad">Constituir Sociedad / Vehículo</a>
-  <a class="btn" href="#sectores">Sectores: Agro, Energía, Mining, Tech</a>
-  <a class="btn" href="#visa">Residencia por Inversión</a>
-  <a class="btn" href="https://wa.me/54911xxxx" style="background:var(--gold);color:var(--blue)">Hablar con Partner</a>
-  <span class="back" onclick="goHome()">← Volver</span>
+<!-- APP -->
+<div id="app" class="panel">
+<div class="tabs">
+<button class="tab active" onclick="showTab('exps')">📁 Mis Trámites</button>
+<button class="tab" onclick="showTab('auds')">⚖️ Audiencias</button>
+<button class="tab" onclick="showTab('docs')">📂 Docs</button>
+<button class="tab" onclick="showTab('alert')">🚨 Alertar</button>
 </div>
 
-<!-- PANEL ARGENTINA -->
-<div id="argentina" class="panel">
-  <h2>Hub Local - Argentina</h2>
-  <p>Para empresas y personas en Argentina:</p>
-  <a class="btn" href="#exportar">Exportar / Importar</a>
-  <a class="btn" href="#societario">Reestructuración Societaria</a>
-  <a class="btn" href="#fiscal">Planificación Fiscal Internacional</a>
-  <a class="btn" href="#contratos">Contratos Internacionales</a>
-  <a class="btn" href="https://wa.me/54911xxxx" style="background:var(--gold);color:var(--blue)">Contactar Estudio</a>
-  <span class="back" onclick="goHome()">← Volver</span>
+<div id="exps" class="tabC">
+<div style="display:flex;gap:6px;margin:10px 0">
+<button class="btn dark" style="flex:1" onclick="filterExp('all')">Todos</button>
+<button class="btn dark" style="flex:1" onclick="filterExp('jud')">⚖️ Judiciales</button>
+<button class="btn dark" style="flex:1" onclick="filterExp('adm')">📋 Administrativos</button>
+</div>
+<div id="listExps"></div>
+<div class="box">
+<b>+ Nuevo trámite / expediente</b>
+<select id="expTipo" class="input"><option value="jud">⚖️ Judicial</option><option value="adm">📋 Administrativo</option></select>
+<select id="expOrganismo" class="input"><option>Poder Judicial Nación</option><option>PJN Comercial</option><option>PJN Civil</option><option>IGJ</option><option>AFIP</option><option>BCRA</option><option>CNV</option><option>Migraciones</option><option>Marcas / INPI</option><option>Otro</option></select>
+<input id="expId" class="input" placeholder="Nro Exp: 12345/2024 o Tramite IGJ 123">
+<textarea id="expTxt" class="input" placeholder="Detalle / último movimiento"></textarea>
+<button class="btn" onclick="addExp()">Crear + Notificar a RGMA</button>
+</div>
+</div>
+
+<div id="auds" class="tabC" style="display:none">
+<h3 style="color:var(--gold);font-size:13px">Audiencias</h3>
+<div id="listAuds"></div>
+<div class="box"><input id="audFecha" type="date" class="input"><input id="audDesc" class="input" placeholder="Detalle"><select id="audExp" class="input"></select><button class="btn" onclick="addAud()">Agendar</button></div>
+</div>
+
+<div id="docs" class="tabC" style="display:none">
+<h3 style="color:var(--gold);font-size:13px">Repositorio Personal</h3>
+<div class="box">
+<input type="file" id="fileInput" class="input" accept=".pdf,.jpg,.png" onchange="uploadDoc(event)">
+<select id="docTipo" class="input"><option>DNI / Pasaporte</option><option>Poder</option><option>Contrato</option><option>Demanda / Escrito</option><option>Resolución / Sentencia</option><option>Comprobante / Factura</option></select>
+<select id="docExp" class="input"></select>
+</div>
+<div id="listDocs"></div>
+</div>
+
+<div id="alert" class="tabC" style="display:none">
+<div class="box urg"><textarea id="alertMsg" class="input" placeholder="Mensaje para RGMA..."></textarea><select id="alertPrio" class="input"><option value="normal">Normal</option><option value="urgente">🚨 URGENTE 24hs</option><option value="audiencia">⚖️ Audiencia</option></select><button class="btn red" onclick="sendAlert()">Enviar a RGMA (WhatsApp + Panel)</button><a class="btn wa" href="https://wa.me/5491135565078">WhatsApp directo</a></div>
+<div id="perfilExtra"></div>
+</div>
+
+</div>
+
+<!-- ADMIN -->
+<div id="admin" class="panel">
+<h3 style="color:var(--gold)">🔐 Admin RGMA</h3>
+<div class="box"><b>Usuarios registrados:</b><div id="adminUsers"></div></div>
+<div class="box"><b>Alertas de clientes:</b><div id="adminAlerts"></div></div>
+<div class="box"><b>Trámites totales:</b><div id="adminExps"></div></div>
+<div class="box"><b>Docs subidos:</b><div id="adminDocs"></div></div>
+<span class="back" onclick="logout()" style="color:var(--gold);display:block;text-align:center;margin:10px">Cerrar sesión</span>
+</div>
+
+<div class="nav" id="nav" style="display:none">
+<div onclick="showTab('exps')">📁<br>Trámites</div>
+<div onclick="showTab('auds')">⚖️<br>Aud</div>
+<div onclick="showTab('docs')">📂<br>Docs</div>
+<div onclick="showTab('alert')">🚨<br>Alertar</div>
+<div onclick="logout()">🚪<br>Salir</div>
 </div>
 
 <script>
-function openPanel(id){
-  document.getElementById('home').style.display='none';
-  document.getElementById(id).classList.add('active');
+let db = JSON.parse(localStorage.getItem('rgma_db')||'{"users":[{"dni":"30123456","pass":"1234","nombre":"Cliente Demo"},{"dni":"35565078","pass":"rgma2026","nombre":"Admin RGMA","admin":true}],"data":{}}');
+let currentUser=null; let currentFilter='all';
+function saveDB(){localStorage.setItem('rgma_db',JSON.stringify(db));}
+function doLogin(){
+let dni=document.getElementById('dni').value.trim(); let pass=document.getElementById('pass').value.trim();
+let u=db.users.find(x=>x.dni===dni && x.pass===pass);
+if(!u) return alert('DNI o clave incorrecta');
+currentUser=u; if(u.admin){document.getElementById('login').classList.remove('active');document.getElementById('admin').classList.add('active');renderAdmin();return;}
+openApp('argentina');
 }
-function goHome(){
-  document.getElementById('home').style.display='flex';
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+function doRegister(){
+let dni=document.getElementById('dni').value.trim(); let pass=document.getElementById('pass').value.trim();
+if(!dni||!pass) return alert('Completa DNI y clave'); if(db.users.find(x=>x.dni===dni)) return alert('Ya registrado, ingresá');
+db.users.push({dni:dni,pass:pass,nombre:'Cliente '+dni}); db.data[dni]={exps:[],auds:[],docs:[],alerts:[]}; saveDB(); alert('Registrado! Ingresá ahora');}
+function guest(tipo){currentUser={dni:'invitado',nombre:'Invitado '+tipo,guest:true}; openApp(tipo);}
+function openApp(tipo){
+document.getElementById('login').classList.remove('active'); document.getElementById('app').classList.add('active'); document.getElementById('nav').style.display='flex';
+document.getElementById('userLabel').innerText=currentUser.nombre+' - '+tipo.toUpperCase();
+if(!db.data[currentUser.dni]) db.data[currentUser.dni]={exps:[],auds:[],docs:[],alerts:[]};
+let extra=document.getElementById('perfilExtra');
+if(tipo==='exterior') extra.innerHTML='<div class="box"><b>🌍 Exterior</b><br><a class="btn" href="./RGMA-RIGI.png" target="_blank">Guía RIGI</a></div>';
+else extra.innerHTML='<div class="box"><b>🇦🇷 Argentina</b><br><a class="btn" href="./RGMA-Exportar.png" target="_blank">Checklist Exportar</a></div>';
+render();
+}
+function logout(){currentUser=null; document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active')); document.getElementById('login').classList.add('active'); document.getElementById('nav').style.display='none'; document.getElementById('userLabel').innerText='ARGENTINA DESK';}
+function showTab(id){document.querySelectorAll('.tabC').forEach(c=>c.style.display='none');document.getElementById(id).style.display='block';}
+function getData(){return db.data[currentUser.dni];}
+function render(){renderExps();renderAuds();renderDocs();fillSelects();}
+function fillSelects(){
+let d=getData(); let h=''; d.exps.forEach(e=>{h+=`<option value="${e.id}">${e.id} - ${e.organismo}</option>`}); document.getElementById('audExp').innerHTML=h; document.getElementById('docExp').innerHTML='<option value="">Sin vincular</option>'+h;
+}
+function renderExps(){
+let d=getData(); let list=d.exps; if(currentFilter!=='all') list=list.filter(x=>x.tipo===currentFilter);
+let h=''; list.forEach((e,i)=>{
+h+=`<div class="box ${e.tipo==='jud'?'jud':'adm'}"><span class="tag ${e.tipo}">${e.tipo==='jud'?'JUDICIAL':'ADMIN'}</span> <b>${e.id}</b> - ${e.organismo}<br><small>${e.fecha}</small><br>`;
+e.movs.forEach(m=>{h+=`<div style="border-top:1px solid #eee;margin-top:6px;padding-top:4px"><small>${m.fecha}</small><br>${m.txt}</div>`});
+h+=`<button class="btn dark" style="margin-top:6px" onclick="addMovTo('${e.id}')">+ Movimiento</button></div>`;
+}); document.getElementById('listExps').innerHTML=h||'<div class="box">Sin trámites aún. Creá el primero arriba.</div>';
+}
+function filterExp(t){currentFilter=t; renderExps();}
+function addExp(){
+let tipo=document.getElementById('expTipo').value; let org=document.getElementById('expOrganismo').value; let id=document.getElementById('expId').value; let txt=document.getElementById('expTxt').value;
+if(!id) return alert('Nro requerido'); let d=getData();
+d.exps.push({id:id,tipo:tipo,organismo:org,fecha:new Date().toLocaleDateString(),movs:[{fecha:new Date().toLocaleString(),txt:txt||'Trámite creado'}]});
+d.alerts.push({fecha:new Date().toLocaleString(),msg:'Nuevo '+tipo+': '+id+' - '+org+' - '+txt,prio:'normal'}); saveDB(); render(); fillSelects();
+window.open('https://wa.me/5491135565078?text='+encodeURIComponent('📁 Nuevo trámite cliente '+currentUser.dni+' - '+tipo.toUpperCase()+' '+id+' - '+org+' - '+txt));
+}
+function addMovTo(id){
+let txt=prompt('Nuevo movimiento para '+id+':'); if(!txt) return; let d=getData(); let e=d.exps.find(x=>x.id===id); e.movs.push({fecha:new Date().toLocaleString(),txt:txt}); d.alerts.push({fecha:new Date().toLocaleString(),msg:'Mov en '+id+': '+txt,prio:'normal'}); saveDB(); render();
+window.open('https://wa.me/5491135565078?text='+encodeURIComponent('🔔 Movimiento '+id+': '+txt+' - Cliente '+currentUser.dni));
+}
+function renderAuds(){let d=getData(); let h=''; d.auds.forEach(a=>{h+=`<div class="box"><b>📅 ${a.fecha}</b> - ${a.exp||''}<br>${a.desc}</div>`}); document.getElementById('listAuds').innerHTML=h||'<div class="box">Sin audiencias</div>';}
+function addAud(){let f=document.getElementById('audFecha').value; let desc=document.getElementById('audDesc').value; let exp=document.getElementById('audExp').value; if(!f||!desc) return; let d=getData(); d.auds.push({fecha:f,desc:desc,exp:exp}); d.alerts.push({fecha:new Date().toLocaleString(),msg:'Audiencia '+f+': '+desc,prio:'audiencia'}); saveDB(); render(); window.open('https://wa.me/5491135565078?text='+encodeURIComponent('⚖️ Audiencia '+f+' '+desc+' - Cliente '+currentUser.dni));}
+function renderDocs(){let d=getData(); let h=''; d.docs.forEach((doc,i)=>{h+=`<div class="box" style="display:flex;justify-content:space-between"><div><b>${doc.tipo}</b><br><small>${doc.name} - ${doc.exp||'sin exp'} - ${doc.fecha}</small></div><div><a href="${doc.data}" download="${doc.name}" style="color:var(--gold)">⬇️</a> <span onclick="getData().docs.splice(${i},1);saveDB();render()" style="color:red;cursor:pointer">✕</span></div></div>`}); document.getElementById('listDocs').innerHTML=h||'<div class="box">Sin documentos</div>';}
+function uploadDoc(e){
+let file=e.target.files[0]; if(!file) return; let reader=new FileReader();
+reader.onload=function(ev){
+let tipo=document.getElementById('docTipo').value; let exp=document.getElementById('docExp').value;
+let d=getData(); d.docs.push({name:file.name,tipo:tipo,exp:exp,fecha:new Date().toLocaleDateString(),data:ev.target.result});
+d.alerts.push({fecha:new Date().toLocaleString(),msg:'Doc subido: '+file.name+' ('+tipo+')',prio:'normal'}); saveDB(); render(); renderAdmin();
+window.open('https://wa.me/5491135565078?text='+encodeURIComponent('📎 Doc cliente '+currentUser.dni+': '+file.name+' - '+tipo));
+}; reader.readAsDataURL(file);
+}
+function sendAlert(){
+let msg=document.getElementById('alertMsg').value; let prio=document.getElementById('alertPrio').value; if(!msg) return; let d=getData(); d.alerts.push({fecha:new Date().toLocaleString(),msg:msg,prio:prio}); saveDB(); renderAdmin();
+window.open('https://wa.me/5491135565078?text='+encodeURIComponent('🚨 ['+prio.toUpperCase()+'] Cliente '+currentUser.dni+': '+msg)); alert('Enviado a RGMA');
+}
+function renderAdmin(){
+let hUsers=''; db.users.forEach(u=>{hUsers+=`<div style="border-bottom:1px solid #eee;padding:4px 0">${u.dni} - ${u.nombre} ${u.admin?'[ADMIN]':''}</div>`}); document.getElementById('adminUsers').innerHTML=hUsers;
+let hAlerts=''; Object.keys(db.data).forEach(dni=>{db.data[dni].alerts?.slice().reverse().forEach(a=>{hAlerts+=`<div class="box ${a.prio==='urgente'?'urg':''}"><small>${a.fecha} - Cliente ${dni}</small><br>${a.msg}</div>`})}); document.getElementById('adminAlerts').innerHTML=hAlerts||'Sin alertas';
+let hExps=''; Object.keys(db.data).forEach(dni=>{db.data[dni].exps?.forEach(e=>{hExps+=`<div class="box ${e.tipo==='jud'?'jud':'adm'}"><b>${dni} - ${e.id}</b> [${e.tipo}] ${e.organismo}<br><small>${e.movs[e.movs.length-1]?.txt||''}</small></div>`})}); document.getElementById('adminExps').innerHTML=hExps||'Sin trámites';
+let hDocs=''; Object.keys(db.data).forEach(dni=>{db.data[dni].docs?.forEach(d=>{hDocs+=`<div class="box"><small>${dni} - ${d.tipo} - ${d.name} - Exp: ${d.exp||'-'}</small><br><a href="${d.data}" download="${d.name}">Bajar</a></div>`})}); document.getElementById('adminDocs').innerHTML=hDocs||'Sin docs';
 }
 </script>
-
 </body>
 </html>
