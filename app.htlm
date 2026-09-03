@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGMA - Private Client Access</title>
+<style>
+  :root{--navy:#0A1931;--gold:#C8B090;--green:#7ED957;--yellow:#FFD166;--red:#FF6B6B}
+  body{margin:0;background:var(--navy);font-family:Inter,system-ui;color:white;display:flex;justify-content:center;min-height:100vh}
+ .phone{width:100%;max-width:390px;padding:24px}
+ .logo{text-align:center;margin-top:40px;color:var(--gold);letter-spacing:2px;font-weight:800}
+ .card{background:rgba(255,255,255,0.06);border:1px solid rgba(200,176,144,0.3);border-radius:20px;padding:20px;margin-top:20px}
+  input{width:100%;padding:14px;border-radius:12px;border:1px solid var(--gold);background:transparent;color:white;margin:8px 0 16px 0;box-sizing:border-box}
+  button{width:100%;padding:16px;background:var(--gold);color:var(--navy);border:none;border-radius:12px;font-weight:800;font-size:16px;cursor:pointer}
+ .hidden{display:none}
+ .status{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
+ .badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700}
+ .ok{background:var(--green);color:#0A1931}.warn{background:var(--yellow);color:#0A1931}.bad{background:var(--red);color:white}
+ .bar{height:8px;background:rgba(255,255,255,0.2);border-radius:10px;overflow:hidden;margin:10px 0}
+ .fill{height:100%;background:var(--gold);width:60%}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="logo">⚖️ RGMA<br><span style="font-size:10px">ARGENTINA DESK</span></div>
+
+  <!-- LOGIN -->
+  <div id="login">
+    <h2 style="text-align:center;margin-top:40px">Private Client Access</h2>
+    <div class="card">
+      <label>Authorized Email</label>
+      <input id="email" placeholder="you@email.com" value="test@rgma.com">
+      <label>Access Code</label>
+      <input id="code" placeholder="****" value="1234" type="password">
+      <button onclick="entrar()">Enter My Desk</button>
+      <p style="font-size:11px;text-align:center;opacity:0.6;margin-top:16px">Invite-only • Secure • Encrypted<br>test@rgma.com / 1234</p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dash" class="hidden">
+    <h2>RIGI Application — 60%</h2>
+    <div class="bar"><div class="fill"></div></div>
+    <div class="card">
+      <h3>Compliance Dashboard</h3>
+      <div class="status"><span>🟢 AFIP</span><span class="badge ok">Compliant</span></div>
+      <div class="status"><span>🟡 IGJ</span><span class="badge warn">Pending</span></div>
+      <div class="status"><span>🟢 Payroll</span><span class="badge ok">Compliant</span></div>
+      <div class="status"><span>🔴 UIF</span><span class="badge bad">Action Required</span></div>
+    </div>
+    <div class="card">
+      <h3>🦐 ITQ — Langostino</h3>
+      <h1 style="color:var(--gold);margin:0">340 tn</h1>
+      <p style="font-size:12px;opacity:0.7">Used: 198tn (58%) • Remaining: 142tn</p>
+      <div class="bar"><div class="fill" style="width:58%"></div></div>
+    </div>
+    <button onclick="salir()" style="background:transparent;color:white;border:1px solid var(--gold);margin-top:20px">Logout</button>
+  </div>
+</div>
+
+<script>
+const CLIENTES={"test@rgma.com":"1234","ocean.trawl@no":"8841"}
+function entrar(){
+  const m=document.getElementById('email').value.trim().toLowerCase();
+  const c=document.getElementById('code').value.trim();
+  if(CLIENTES[m]===c){
+    localStorage.setItem('rgma',m);
+    showDash();
+  }else{alert('Código no autorizado');}
+}
+function showDash(){
+  document.getElementById('login').classList.add('hidden');
+  document.getElementById('dash').classList.remove('hidden');
+}
+function salir(){localStorage.removeItem('rgma');location.reload();}
+if(localStorage.getItem('rgma')) showDash();
+</script>
+</body>
+</html>
