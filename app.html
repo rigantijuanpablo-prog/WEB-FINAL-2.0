@@ -1,79 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGMA - Private Client Access</title>
+<title>RGMA - APP</title>
 <style>
-  :root{--navy:#0A1931;--gold:#C8B090;--green:#7ED957;--yellow:#FFD166;--red:#FF6B6B}
-  body{margin:0;background:var(--navy);font-family:Inter,system-ui;color:white;display:flex;justify-content:center;min-height:100vh}
- .phone{width:100%;max-width:390px;padding:24px}
- .logo{text-align:center;margin-top:40px;color:var(--gold);letter-spacing:2px;font-weight:800}
- .card{background:rgba(255,255,255,0.06);border:1px solid rgba(200,176,144,0.3);border-radius:20px;padding:20px;margin-top:20px}
-  input{width:100%;padding:14px;border-radius:12px;border:1px solid var(--gold);background:transparent;color:white;margin:8px 0 16px 0;box-sizing:border-box}
-  button{width:100%;padding:16px;background:var(--gold);color:var(--navy);border:none;border-radius:12px;font-weight:800;font-size:16px;cursor:pointer}
- .hidden{display:none}
- .status{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
- .badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700}
- .ok{background:var(--green);color:#0A1931}.warn{background:var(--yellow);color:#0A1931}.bad{background:var(--red);color:white}
- .bar{height:8px;background:rgba(255,255,255,0.2);border-radius:10px;overflow:hidden;margin:10px 0}
- .fill{height:100%;background:var(--gold);width:60%}
+  :root{--blue:#0A1931;--gold:#C8B090;--gold2:#D4AF37}
+  body{margin:0;background:var(--blue);color:#fff;font-family:Inter, sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh}
+  header{padding:30px 20px 10px;display:flex;flex-direction:column;align-items:center}
+  header img{width:110px;height:110px;border-radius:50%;}
+  header h1{color:var(--gold);letter-spacing:3px;margin:15px 0 5px;font-size:22px}
+  header p{color:#fff;opacity:0.7;margin:0;font-size:13px;letter-spacing:2px}
+  .selector{display:flex;gap:20px;margin:40px 0;width:90%;max-width:500px}
+  .card{flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--gold);border-radius:16px;padding:25px 15px;text-align:center;cursor:pointer;transition:0.2s}
+  .card:hover{background:var(--gold);color:var(--blue)}
+  .card h2{margin:10px 0 5px;font-size:18px}
+  .card span{font-size:28px}
+  .panel{display:none;width:90%;max-width:600px;background:#fff;color:var(--blue);border-radius:12px;padding:20px;margin-bottom:30px}
+  .panel.active{display:block}
+  .btn{display:block;background:var(--blue);color:var(--gold);padding:12px;border-radius:8px;text-align:center;text-decoration:none;margin:10px 0;font-weight:700}
+  .back{color:var(--gold);cursor:pointer;text-align:center;margin:15px;display:block}
 </style>
 </head>
 <body>
-<div class="phone">
-  <div class="logo">⚖️ RGMA<br><span style="font-size:10px">ARGENTINA DESK</span></div>
 
-  <!-- LOGIN -->
-  <div id="login">
-    <h2 style="text-align:center;margin-top:40px">Private Client Access</h2>
-    <div class="card">
-      <label>Authorized Email</label>
-      <input id="email" placeholder="you@email.com" value="test@rgma.com">
-      <label>Access Code</label>
-      <input id="code" placeholder="****" value="1234" type="password">
-      <button onclick="entrar()">Enter My Desk</button>
-      <p style="font-size:11px;text-align:center;opacity:0.6;margin-top:16px">Invite-only • Secure • Encrypted<br>test@rgma.com / 1234</p>
-    </div>
+<header>
+  <img src="./logo_dorado_circulo_azul.png" alt="RGMA">
+  <h1>RGMA</h1>
+  <p>ARGENTINA DESK</p>
+</header>
+
+<div id="home" class="selector">
+  <div class="card" onclick="openPanel('exterior')">
+    <span>🌍</span>
+    <h2>EXTERIOR</h2>
+    <small>Invest in Argentina</small>
   </div>
-
-  <!-- DASHBOARD -->
-  <div id="dash" class="hidden">
-    <h2>RIGI Application — 60%</h2>
-    <div class="bar"><div class="fill"></div></div>
-    <div class="card">
-      <h3>Compliance Dashboard</h3>
-      <div class="status"><span>🟢 AFIP</span><span class="badge ok">Compliant</span></div>
-      <div class="status"><span>🟡 IGJ</span><span class="badge warn">Pending</span></div>
-      <div class="status"><span>🟢 Payroll</span><span class="badge ok">Compliant</span></div>
-      <div class="status"><span>🔴 UIF</span><span class="badge bad">Action Required</span></div>
-    </div>
-    <div class="card">
-      <h3>🦐 ITQ — Langostino</h3>
-      <h1 style="color:var(--gold);margin:0">340 tn</h1>
-      <p style="font-size:12px;opacity:0.7">Used: 198tn (58%) • Remaining: 142tn</p>
-      <div class="bar"><div class="fill" style="width:58%"></div></div>
-    </div>
-    <button onclick="salir()" style="background:transparent;color:white;border:1px solid var(--gold);margin-top:20px">Logout</button>
+  <div class="card" onclick="openPanel('argentina')">
+    <span>🇦🇷</span>
+    <h2>ARGENTINA</h2>
+    <small>Operar local</small>
   </div>
 </div>
 
+<!-- PANEL EXTERIOR -->
+<div id="exterior" class="panel">
+  <h2>Investor Hub - Exterior</h2>
+  <p>Para inversores que quieren entrar a Argentina:</p>
+  <a class="btn" href="#rigi">RIGI - Régimen de Grandes Inversiones</a>
+  <a class="btn" href="#sociedad">Constituir Sociedad / Vehículo</a>
+  <a class="btn" href="#sectores">Sectores: Agro, Energía, Mining, Tech</a>
+  <a class="btn" href="#visa">Residencia por Inversión</a>
+  <a class="btn" href="https://wa.me/54911xxxx" style="background:var(--gold);color:var(--blue)">Hablar con Partner</a>
+  <span class="back" onclick="goHome()">← Volver</span>
+</div>
+
+<!-- PANEL ARGENTINA -->
+<div id="argentina" class="panel">
+  <h2>Hub Local - Argentina</h2>
+  <p>Para empresas y personas en Argentina:</p>
+  <a class="btn" href="#exportar">Exportar / Importar</a>
+  <a class="btn" href="#societario">Reestructuración Societaria</a>
+  <a class="btn" href="#fiscal">Planificación Fiscal Internacional</a>
+  <a class="btn" href="#contratos">Contratos Internacionales</a>
+  <a class="btn" href="https://wa.me/54911xxxx" style="background:var(--gold);color:var(--blue)">Contactar Estudio</a>
+  <span class="back" onclick="goHome()">← Volver</span>
+</div>
+
 <script>
-const CLIENTES={"test@rgma.com":"1234","ocean.trawl@no":"8841"}
-function entrar(){
-  const m=document.getElementById('email').value.trim().toLowerCase();
-  const c=document.getElementById('code').value.trim();
-  if(CLIENTES[m]===c){
-    localStorage.setItem('rgma',m);
-    showDash();
-  }else{alert('Código no autorizado');}
+function openPanel(id){
+  document.getElementById('home').style.display='none';
+  document.getElementById(id).classList.add('active');
 }
-function showDash(){
-  document.getElementById('login').classList.add('hidden');
-  document.getElementById('dash').classList.remove('hidden');
+function goHome(){
+  document.getElementById('home').style.display='flex';
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
 }
-function salir(){localStorage.removeItem('rgma');location.reload();}
-if(localStorage.getItem('rgma')) showDash();
 </script>
+
 </body>
 </html>
