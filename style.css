@@ -2651,4 +2651,16 @@ html {
     padding: 80px 24px !important;
   }
 }
+/* FIX: QUE SUBA Y QUE EL CANDADO QUEDE DORADO TRANSPARENTE */
+.barra-flotante-contacto {
+  top: 40% !important;
+  transform: translateY(-50%) !important;
+}
 
+.barra-flotante-contacto .item-flotante.item-dorado {
+  background: rgba(200, 176, 144, 0.20) !important;
+  backdrop-filter: blur(10px) !important;
+}
+.barra-flotante-contacto .item-flotante.item-dorado svg {
+  stroke: #C8B090 !important;
+}
